@@ -1,0 +1,17 @@
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\bin\x86\Debug\GameManagement.dll
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\bin\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\obj\x86\Debug\GameManagement.csprojResolveAssemblyReference.cache
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\obj\x86\Debug\GameManagement.dll
+C:\Users\casfa_000\Desktop\SVN\MegaMen\MegaMen\GameManagement\obj\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\GameManagement.dll
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.dll
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_tile.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_door.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.csprojResolveAssemblyReference.cache
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player.xnb
