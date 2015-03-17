@@ -10,7 +10,7 @@ class Player : AnimatedGameObject
     public float moveSpeed = 0;
 
     public Player(Vector2 startPosition)
-        : base(2, "player")
+        : base(3, "player")
     {
         this.LoadAnimation("Sprites/spr_player", "player", false, 1);
         this.PlayAnimation("player");

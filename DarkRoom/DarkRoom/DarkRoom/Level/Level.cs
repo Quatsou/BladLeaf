@@ -7,7 +7,7 @@ using System.Text;
 
 partial class Level : GameObjectList
 {
-    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources)
+    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies)
     {
         Player player = new Player(new Vector2(120, 100));
         this.Add(player);
@@ -35,5 +35,17 @@ partial class Level : GameObjectList
 
         foreach (Source s in lightSources)
             lights.Add(s);
+
+        foreach (Enemy e in enemies)
+        {
+            e.Position = new Vector2(startX + 32 + (e.Position.X * 64), startY + 32 + (e.Position.Y * 64));
+            this.Add(e);
+        }
+
+        foreach (Friendly f in friendlies)
+        {
+            f.Position = new Vector2(startX + 32 + (f.Position.X * 64), startY + 32 + (f.Position.Y * 64));
+            this.Add(f);
+        }
     }
 }
