@@ -11,3 +11,16 @@ C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_player.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_player.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.exe
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.dll
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.csprojResolveAssemblyReference.cache
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
