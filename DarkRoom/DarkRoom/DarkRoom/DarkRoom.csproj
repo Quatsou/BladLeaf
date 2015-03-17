@@ -72,6 +72,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Enemies\Enemy.cs" />
     <Compile Include="GameObjects\Lights\Light.cs" />
     <Compile Include="GameObjects\Lights\Lights.cs" />
     <Compile Include="GameObjects\Player\Player.cs" />

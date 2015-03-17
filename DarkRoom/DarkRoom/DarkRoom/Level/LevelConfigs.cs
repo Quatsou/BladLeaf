@@ -25,7 +25,6 @@ class LevelConfigs
         for (int x = 3; x < 5; x++)
             for (int y = 0; y < 3; y++)
                 level2[x, y] = TileType.Wall;
-
         CreateConfig(13, 8, level2, ls2);
     }
 

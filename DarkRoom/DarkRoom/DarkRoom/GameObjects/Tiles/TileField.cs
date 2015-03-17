@@ -1,5 +1,9 @@
-﻿class TileField : GameObjectGrid
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+class TileField : GameObjectGrid
 {
+    public Vector2 fieldAnchor, fieldLength;
+
     public TileField(int rows, int columns, int layer = 0, string id = "")
         : base(rows, columns, layer, id)
     {

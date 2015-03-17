@@ -20,12 +20,17 @@ partial class Level : GameObjectList
 
         float startX = Camera.camPos.X - ((sizeX * 64) / 2);
         float startY = Camera.camPos.Y - ((sizeY * 64) / 2);
+        tiles.fieldAnchor = new Vector2(startX, startY);
+        tiles.fieldLength = new Vector2(sizeX * 64, sizeY * 64);
 
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
             {
                 tiles.Add(new Tile(new Vector2(startX + (x * 64), startY + (y * 64))
                     , levelConfig[x, y]), x, y);
+
+                if (levelConfig[x, y] == TileType.Door)
+                   player.Position = new Vector2(startX + (x * 64) + 32, startY + (y * 64) + 28);
             }
 
         foreach (Source s in lightSources)
