@@ -7,3 +7,6 @@
 *.xnb
 *.dll
 *.pdb
+*.suo
+DarkRoom/DarkRoom/DarkRoom/DarkRoom.csproj
+*.cache
