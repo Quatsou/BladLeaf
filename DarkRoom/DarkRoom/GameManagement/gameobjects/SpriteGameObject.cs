@@ -25,6 +25,7 @@ public class SpriteGameObject : GameObject
     {
         if (!visible || sprite == null)
             return;
+
         sprite.Draw(spriteBatch, new Vector2(this.GlobalPosition.X, this.GlobalPosition.Y), 1, origin);
     }
 
