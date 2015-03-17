@@ -29,6 +29,5 @@ class Tile : SpriteGameObject
             sprite = new SpriteSheet("Sprites/spr_door");
 
         BoundingBox = new Rectangle((int)position.X, (int)position.Y, 64, 64);
-
     }
 }

@@ -26,11 +26,16 @@ partial class Level : GameObjectList
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
             {
+<<<<<<< HEAD
                 tiles.Add(new Tile(new Vector2(startX + (x * 64), startY + (y * 64))
                     , levelConfig[x, y]), x, y);
 
                 if (levelConfig[x, y] == TileType.Door)
                    player.Position = new Vector2(startX + (x * 64) + 32, startY + (y * 64) + 28);
+=======
+                Tile tile = new Tile(new Vector2(startX + (x * 64), startY + (y * 64)), levelConfig[x,y]);
+                tiles.Add(tile, x, y);
+>>>>>>> origin/master
             }
 
         foreach (Source s in lightSources)
