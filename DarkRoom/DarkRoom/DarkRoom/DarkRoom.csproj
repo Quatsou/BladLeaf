@@ -72,6 +72,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Lights\Light.cs" />
+    <Compile Include="GameObjects\Lights\Lights.cs" />
     <Compile Include="GameObjects\Player\Player.cs" />
     <Compile Include="GameObjects\Tiles\Tile.cs" />
     <Compile Include="GameObjects\Tiles\TileField.cs" />
@@ -111,6 +113,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Krypton v2.0\Krypton\Krypton.csproj">
+      <Project>{b1bfcb2a-c001-4dac-ba7d-b68bf28757f3}</Project>
+      <Name>Krypton</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameManagement\GameManagement.csproj">
       <Project>{6ceb5f37-0bfa-4a0d-8db7-b25ecd81caae}</Project>
       <Name>GameManagement</Name>

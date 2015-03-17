@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkRoom", "DarkRoom\DarkRoom\DarkRoom.csproj", "{FAB55A9F-DAC9-4031-B25C-FED1A74925B6}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -11,6 +11,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkRoomContent", "DarkRoom\DarkRoomContent\DarkRoomContent.contentproj", "{3DB24195-6FD8-48E0-8325-9877EA5F96EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameManagement", "DarkRoom\GameManagement\GameManagement.csproj", "{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton", "..\Krypton v2.0\Krypton\Krypton.csproj", "{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,12 @@ Global
 		{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}.Release|x86.Build.0 = Release|x86
 		{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}.Setup|x86.ActiveCfg = Setup|x86
 		{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}.Setup|x86.Build.0 = Setup|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Debug|x86.ActiveCfg = Debug|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Debug|x86.Build.0 = Debug|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Release|x86.ActiveCfg = Release|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Release|x86.Build.0 = Release|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Setup|x86.ActiveCfg = Release|x86
+		{B1BFCB2A-C001-4DAC-BA7D-B68BF28757F3}.Setup|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
