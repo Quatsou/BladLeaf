@@ -28,26 +28,6 @@ class Player : AnimatedGameObject
 
         velocity = direction * moveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-        TileField tiles = GameWorld.Find("tiles") as TileField;
-
-        foreach (Tile tile in tiles.Objects)
-        {
-            if (tile.type == TileType.Wall && CollidesWith(tile))
-            {
-                if (Velocity.X > 0)
-                    position = new Vector2(tile.BoundingBox.Left - Sprite.Width / 2, Position.Y);
-                else if (Velocity.X < 0)
-                    position = new Vector2(tile.BoundingBox.Right + Sprite.Width / 2, Position.Y);
-
-                /*if (Velocity.Y > 0)
-                    position = new Vector2(Position.X, tile.BoundingBox.Top - Sprite.Height / 2);
-                else if (Velocity.Y < 0)
-                    position = new Vector2(Position.X, tile.BoundingBox.Bottom + Sprite.Height / 2);*/
-
-                break;
-            }
-        }
-
         base.Update(gameTime);
     }
 
