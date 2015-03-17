@@ -26,3 +26,5 @@ C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameMana
 C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.dll
 C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Krypton.dll
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Krypton.pdb
