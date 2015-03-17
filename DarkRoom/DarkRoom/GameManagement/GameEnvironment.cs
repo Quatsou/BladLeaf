@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Krypton;
+using Krypton.Lights;
 
 public class GameEnvironment : Game
 {
@@ -11,6 +13,7 @@ public class GameEnvironment : Game
     protected InputHelper inputHelper;
     protected Matrix spriteScale;
     protected SamplerState samplerState;
+    //KryptonEngine krypton;
     
     protected static Point screen;
     protected static GameStateManager gameStateManager;
@@ -20,6 +23,8 @@ public class GameEnvironment : Game
 
     public GameEnvironment()
     {
+        //this.krypton = new KryptonEngine(this, "KryptonEffect");
+
         graphics = new GraphicsDeviceManager(this);
 
         inputHelper = new InputHelper();
@@ -61,6 +66,11 @@ public class GameEnvironment : Game
     {
         DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        //this.krypton.Initialize();
+        //krypton.SpriteBatchCompatablityEnabled = true;
+        //krypton.CullMode = CullMode.None;
+        //krypton.AmbientColor = Color.Black;
     }
 
     protected void HandleInput()
@@ -80,8 +90,14 @@ public class GameEnvironment : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.Black);
+
+        //this.krypton.Bluriness = 3;
+        //this.krypton.LightMapPrepare();
+
         spriteBatch.Begin(SpriteSortMode.Deferred, null, samplerState, null, null, null, spriteScale);
         gameStateManager.Draw(gameTime, spriteBatch);
         spriteBatch.End();
+
+        //this.krypton.Draw(gameTime);
     }
 }

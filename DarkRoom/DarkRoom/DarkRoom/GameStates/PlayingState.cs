@@ -15,7 +15,7 @@ class PlayingState : IGameLoopObject
     public PlayingState(ContentManager Content)
     {
         levelConfigs = new LevelConfigs();
-        LoadLevel(2);
+        LoadLevel(1);
     }
 
     public void LoadLevel(int levelNum)

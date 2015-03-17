@@ -115,6 +115,10 @@
     <Compile Include="SpriteSheet.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Krypton v2.0\Krypton\Krypton.csproj">
+      <Project>{b1bfcb2a-c001-4dac-ba7d-b68bf28757f3}</Project>
+      <Name>Krypton</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DarkRoomContent\DarkRoomContent.contentproj">
       <Project>{3DB24195-6FD8-48E0-8325-9877EA5F96EE}</Project>
       <Name>DarkRoomContent</Name>
