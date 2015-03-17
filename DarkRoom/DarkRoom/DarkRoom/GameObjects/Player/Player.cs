@@ -21,16 +21,6 @@ class Player : AnimatedGameObject
 
     public override void Update(GameTime gameTime)
     {
-<<<<<<< HEAD
-=======
-        Vector2 direction = new Vector2((float)Math.Cos(sprite.Rotation - Math.PI / 2),
-                                    (float)Math.Sin(sprite.Rotation - Math.PI / 2));
-        direction.Normalize();
-        Console.WriteLine(direction);
-
-        velocity = direction * moveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
->>>>>>> origin/master
         base.Update(gameTime);
     }
 
@@ -39,16 +29,15 @@ class Player : AnimatedGameObject
         moveSpeed = 0;
 
         if (inputHelper.IsKeyDown(Keys.W))
-            moveSpeed = 10;
+            moveSpeed = 4;
         if (inputHelper.IsKeyDown(Keys.S))
-            moveSpeed = -4f;
+            moveSpeed = -2f;
 
         if (inputHelper.IsKeyDown(Keys.A))
             sprite.Rotation -= 0.05f;
         if (inputHelper.IsKeyDown(Keys.D))
             sprite.Rotation += 0.05f;
 
-<<<<<<< HEAD
         Vector2 direction = new Vector2((float)Math.Cos(sprite.Rotation - Math.PI / 2),
                                     (float)Math.Sin(sprite.Rotation - Math.PI / 2));
         direction.Normalize();
@@ -56,8 +45,6 @@ class Player : AnimatedGameObject
 
         StayInBounds();
 
-=======
->>>>>>> origin/master
         base.HandleInput(inputHelper);
     }
 

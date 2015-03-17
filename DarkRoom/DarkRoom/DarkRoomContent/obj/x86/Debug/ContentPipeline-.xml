@@ -46,6 +46,24 @@
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player.xnb</Output>
       <Time>2015-03-17T15:18:58.6447712+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\spr_enemy.png</Source>
+      <Name>Sprites\spr_enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_enemy.xnb</Output>
+      <Time>2015-03-17T21:33:02.1868608+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_friendly.png</Source>
+      <Name>Sprites\spr_friendly</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_friendly.xnb</Output>
+      <Time>2015-03-17T21:33:02.1878609+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID Null="true" />
