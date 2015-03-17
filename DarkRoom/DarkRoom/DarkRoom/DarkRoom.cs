@@ -58,15 +58,15 @@ public class DarkRoom : GameEnvironment
         SetFullScreen();
         Camera.camPos = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2;
         gameStateManager.AddGameState("playingState", new PlayingState(Content));
-        /*gameStateManager.AddGameState("titleMenu", new TitleMenuState(Content, this));
+        gameStateManager.AddGameState("titleState", new TitleState(this));
         gameStateManager.AddGameState("levelsState", new LevelsState());
-        gameStateManager.AddGameState("OptionsState", new OptionsState(this));
+        /*gameStateManager.AddGameState("OptionsState", new OptionsState(this));
         gameStateManager.AddGameState("helpState", new HelpState());
         gameStateManager.AddGameState("pauseState", new PauseState());
         gameStateManager.AddGameState("controlsState", new ControlsState());
         gameStateManager.AddGameState("levelFinishedState", new LevelFinishedState());
         gameStateManager.AddGameState("gameOverState", new GameOverState());
         gameStateManager.AddGameState("gameWinState", new GameWinState());*/
-        GameEnvironment.gameStateManager.SwitchTo("playingState");
+        GameEnvironment.gameStateManager.SwitchTo("titleState");
     }
 }
