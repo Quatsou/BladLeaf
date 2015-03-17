@@ -7,10 +7,13 @@ using System.Text;
 
 partial class Level : GameObjectList
 {
-    public Level(int sizeX, int sizeY, TileType[,] levelConfig)
+    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources)
     {
         Player player = new Player(new Vector2(120, 100));
         this.Add(player);
+
+        Lights lights = new Lights(new Flashlight(player));
+        this.Add(lights);
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);
@@ -24,5 +27,8 @@ partial class Level : GameObjectList
                 tiles.Add(new Tile(new Vector2(startX + (x * 64), startY + (y * 64))
                     , levelConfig[x, y]), x, y);
             }
+
+        foreach (Source s in lightSources)
+            lights.Add(s);
     }
 }
