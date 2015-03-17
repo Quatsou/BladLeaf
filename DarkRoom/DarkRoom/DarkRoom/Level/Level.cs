@@ -24,8 +24,8 @@ partial class Level : GameObjectList
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
             {
-                tiles.Add(new Tile(new Vector2(startX + (x * 64), startY + (y * 64))
-                    , levelConfig[x, y]), x, y);
+                Tile tile = new Tile(new Vector2(startX + (x * 64), startY + (y * 64)), levelConfig[x,y], x, y);
+                tiles.Add(tile, x, y);
             }
 
         foreach (Source s in lightSources)
