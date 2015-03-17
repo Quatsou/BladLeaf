@@ -4,3 +4,6 @@
 *.txt
 *.cache
 *.xml
+*.xnb
+*.dll
+*.pdb

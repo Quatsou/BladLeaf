@@ -53,9 +53,10 @@ public class DarkRoom : GameEnvironment
     protected override void LoadContent()
     {
         base.LoadContent();
-        screen = new Point(256 + 160, 224); //Screen size, potentially temporarily increased by 10 tiles horizontally.
-        setScaling(1920, 1080);
+        screen = new Point(1920, 1080);
+        setScaling(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         SetFullScreen();
+        Camera.camPos = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2;
         gameStateManager.AddGameState("playingState", new PlayingState(Content));
         /*gameStateManager.AddGameState("titleMenu", new TitleMenuState(Content, this));
         gameStateManager.AddGameState("levelsState", new LevelsState());
