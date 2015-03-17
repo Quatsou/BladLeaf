@@ -11,5 +11,7 @@ class Player : AnimatedGameObject
     {
         this.LoadAnimation("Sprites/spr_player", "player", false, 1);
         this.PlayAnimation("player");
+
+        position = startPosition;
     }
 }

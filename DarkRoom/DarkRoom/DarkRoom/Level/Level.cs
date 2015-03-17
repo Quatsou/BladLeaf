@@ -9,7 +9,7 @@ partial class Level : GameObjectList
     public Level(int sizeX, int sizeY, TileType[,] levelConfig)
     {
         Player player = new Player(new Vector2(120, 100));
-        GameWorld.Add(player);
+        this.Add(player);
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);

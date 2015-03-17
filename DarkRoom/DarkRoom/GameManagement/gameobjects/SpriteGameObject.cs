@@ -25,7 +25,7 @@ public class SpriteGameObject : GameObject
     {
         if (!visible || sprite == null)
             return;
-        sprite.Draw(spriteBatch, new Vector2(this.GlobalPosition.X - Camera.pos.X, this.GlobalPosition.Y - Camera.pos.Y), (float)Camera.scale,origin);
+        sprite.Draw(spriteBatch, new Vector2(this.GlobalPosition.X, this.GlobalPosition.Y), 1, origin);
     }
 
     public void ChangeSprite(string assetname, bool mirror, int sheetIndex = 0)
