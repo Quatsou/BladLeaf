@@ -59,3 +59,4 @@ C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debu
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_dot.xnb

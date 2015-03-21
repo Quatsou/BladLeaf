@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,12 @@ class LevelsState : GameObjectList
                 p.LoadLevel(i + 1);
                 GameEnvironment.GameStateManager.SwitchTo("playingState");
             }
+
+        if (inputHelper.KeyPressed(Keys.Space))
+        {
+            p.LoadLevel(2);
+            GameEnvironment.GameStateManager.SwitchTo("playingState");
+        }
 
         if (quitbutton.Pressed)
             GameEnvironment.GameStateManager.SwitchTo("titleState");

@@ -36,16 +36,20 @@ partial class Level : GameObjectList
         foreach (Source s in lightSources)
             lights.Add(s);
 
+        GameObjectList enemyList = new GameObjectList(2, "enemyList") as GameObjectList;
+        this.Add(enemyList);
         foreach (Enemy e in enemies)
         {
             e.Position = new Vector2(startX + 32 + (e.Position.X * 64), startY + 32 + (e.Position.Y * 64));
-            this.Add(e);
+            enemyList.Add(e);
         }
 
+        GameObjectList friendlyList = new GameObjectList(2, "friendlyList") as GameObjectList;
+        this.Add(friendlyList);
         foreach (Friendly f in friendlies)
         {
             f.Position = new Vector2(startX + 32 + (f.Position.X * 64), startY + 32 + (f.Position.Y * 64));
-            this.Add(f);
+            friendlyList.Add(f);
         }
     }
 }

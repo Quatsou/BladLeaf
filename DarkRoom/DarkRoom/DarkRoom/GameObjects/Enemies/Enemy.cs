@@ -17,4 +17,17 @@ class Enemy : AnimatedGameObject
 
         sprite.Rotation = rotation;
     }
+
+    public override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+        Player player = GameWorld.Find("player") as Player;
+        if (this.CollidesWith(player))
+            Environment.Exit(0);
+    }
+
+    public void Die()
+    {
+        visible = false;
+    }
 }

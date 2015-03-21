@@ -30,7 +30,7 @@ class TitleState : GameObjectList
     {
         base.HandleInput(inputHelper);
 
-        if (playbutton.Pressed)
+        if (playbutton.Pressed || inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.Space))
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
 
         if (quitbutton.Pressed)

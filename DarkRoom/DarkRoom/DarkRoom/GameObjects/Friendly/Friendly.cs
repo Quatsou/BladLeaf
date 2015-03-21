@@ -17,4 +17,9 @@ class Friendly : AnimatedGameObject
 
         sprite.Rotation = rotation;
     }
+
+    public void Escape()
+    {
+        visible = false;
+    }
 }

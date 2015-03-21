@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_tile.xnb</Output>
-      <Time>2015-03-11T17:16:06.0275976+01:00</Time>
+      <Time>2015-03-21T15:37:59.1698764+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_door.jpg</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_door.xnb</Output>
-      <Time>2015-03-11T17:12:18.9619003+01:00</Time>
+      <Time>2015-03-21T15:37:59.1678771+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_door_dark.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb</Output>
-      <Time>2015-03-11T17:12:25.721542+01:00</Time>
+      <Time>2015-03-21T15:37:59.1678771+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_tile_dark.jpg</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb</Output>
-      <Time>2015-03-11T17:09:29.1165775+01:00</Time>
+      <Time>2015-03-21T15:37:59.1698764+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_player.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player.xnb</Output>
-      <Time>2015-03-17T15:18:58.6447712+01:00</Time>
+      <Time>2015-03-21T15:37:59.1698764+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_enemy.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_enemy.xnb</Output>
-      <Time>2015-03-17T21:33:02.1868608+01:00</Time>
+      <Time>2015-03-21T15:37:59.1688764+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_friendly.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_friendly.xnb</Output>
-      <Time>2015-03-17T21:33:02.1878609+01:00</Time>
+      <Time>2015-03-21T15:37:59.1688764+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_title.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb</Output>
-      <Time>2015-03-17T22:19:44.5109874+01:00</Time>
+      <Time>2015-03-21T15:37:59.1668754+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_playbutton.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton.xnb</Output>
-      <Time>2015-03-17T22:31:27.0052836+01:00</Time>
+      <Time>2015-03-21T15:37:59.1648797+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_playbutton_selected.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton_selected.xnb</Output>
-      <Time>2015-03-17T22:32:02.6305304+01:00</Time>
+      <Time>2015-03-21T15:37:59.1648797+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_quitbutton.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton.xnb</Output>
-      <Time>2015-03-17T22:36:01.4872491+01:00</Time>
+      <Time>2015-03-21T15:37:59.1658863+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_quitbutton_selected.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton_selected.xnb</Output>
-      <Time>2015-03-17T22:35:45.3035274+01:00</Time>
+      <Time>2015-03-21T15:37:59.1658863+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_button1.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button1.xnb</Output>
-      <Time>2015-03-17T22:40:00.2599035+01:00</Time>
+      <Time>2015-03-21T15:37:59.1628889+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_button2.png</Source>
@@ -125,7 +125,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button2.xnb</Output>
-      <Time>2015-03-17T22:40:39.7873679+01:00</Time>
+      <Time>2015-03-21T15:37:59.1638763+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_dot.png</Source>
+      <Name>Sprites\spr_dot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_dot.xnb</Output>
+      <Time>2015-03-21T15:43:47.5666806+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

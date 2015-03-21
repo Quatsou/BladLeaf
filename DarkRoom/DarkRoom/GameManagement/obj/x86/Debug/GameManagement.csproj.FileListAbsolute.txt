@@ -59,3 +59,4 @@ C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x8
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.dll
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\obj\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_dot.xnb

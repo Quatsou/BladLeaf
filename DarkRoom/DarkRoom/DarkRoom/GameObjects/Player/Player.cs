@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
 class Player : AnimatedGameObject
 {
-    public float moveSpeed = 0;
+    public Vector2 hitPoint;
 
     public Player(Vector2 startPosition)
         : base(3, "player")
@@ -21,12 +22,41 @@ class Player : AnimatedGameObject
 
     public override void Update(GameTime gameTime)
     {
+        hitPoint = new Vector2(position.X, position.Y - 48);
         base.Update(gameTime);
     }
 
     public override void HandleInput(InputHelper inputHelper)
     {
-        moveSpeed = 0;
+        Movement(inputHelper);
+        StayInBounds();
+
+        if (inputHelper.MouseLeftButtonPressed() || inputHelper.KeyPressed(Keys.Space))
+        {
+            GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+            foreach (Enemy e in enemyList.Objects)
+            {
+                if (e.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
+                {
+                    e.Die();
+                }
+            }
+            GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+            foreach (Friendly f in friendlyList.Objects)
+            {
+                if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
+                {
+                    f.Escape();
+                }
+            }
+        }
+
+        base.HandleInput(inputHelper);
+    }
+
+    public void Movement(InputHelper inputHelper)
+    {
+        float moveSpeed = 0;
 
         if (inputHelper.IsKeyDown(Keys.W))
             moveSpeed = 4;
@@ -42,10 +72,6 @@ class Player : AnimatedGameObject
                                     (float)Math.Sin(sprite.Rotation - Math.PI / 2));
         direction.Normalize();
         position += direction * moveSpeed;
-
-        StayInBounds();
-
-        base.HandleInput(inputHelper);
     }
 
     public void StayInBounds()
@@ -76,7 +102,29 @@ class Player : AnimatedGameObject
                     position.Y += depth.Y;
             }
         }
-      
+
     }
 
+    public static Vector2 RotateVector2(Vector2 point, float radians, Vector2 pivot)
+    {
+        float cosRadians = (float)Math.Cos(radians);
+        float sinRadians = (float)Math.Sin(radians);
+
+        Vector2 translatedPoint = new Vector2();
+        translatedPoint.X = point.X - pivot.X;
+        translatedPoint.Y = point.Y - pivot.Y;
+
+        Vector2 rotatedPoint = new Vector2();
+        rotatedPoint.X = translatedPoint.X * cosRadians - translatedPoint.Y * sinRadians + pivot.X;
+        rotatedPoint.Y = translatedPoint.X * sinRadians + translatedPoint.Y * cosRadians + pivot.Y;
+
+        return rotatedPoint;
+    }
+
+    public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+    {
+        base.Draw(gameTime, spriteBatch);
+        Texture2D pt = GameEnvironment.AssetManager.GetSprite("Sprites/spr_dot");
+        spriteBatch.Draw(pt, RotateVector2(hitPoint, sprite.Rotation, position), Color.White);
+    }
 }
