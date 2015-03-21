@@ -10,27 +10,17 @@ public class TextGameObject : GameObject
     protected float visibleTime;
     protected bool visibleTimer;
 
-    public TextGameObject(string assetname, int layer = 0, bool visibleTimer = false, string id = "")
+    public TextGameObject(string text, int layer = 0, bool visibleTimer = false, string id = "")
         : base(layer, id)
     {
-        spriteFont = GameEnvironment.AssetManager.Content.Load<SpriteFont>(assetname);
+        spriteFont = GameEnvironment.AssetManager.Content.Load<SpriteFont>("menuFont");
+        this.text = text;
         color = Color.White;
-        this.visibleTimer = visibleTimer;
-        visibleTime = 5;
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        if (visible)
-            spriteBatch.DrawString(spriteFont, text, this.GlobalPosition, color);
-
-        if (visibleTimer)
-        {
-            if (visibleTime > 0)
-                visibleTime -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-            else
-                visible = false;
-        }
+        spriteBatch.DrawString(spriteFont, text, this.GlobalPosition, color);
     }
 
     public Color Color

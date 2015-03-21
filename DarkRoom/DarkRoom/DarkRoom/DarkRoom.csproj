@@ -79,6 +79,7 @@
     <Compile Include="GameObjects\Player\Player.cs" />
     <Compile Include="GameObjects\Tiles\Tile.cs" />
     <Compile Include="GameObjects\Tiles\TileField.cs" />
+    <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\LevelsState.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="GameStates\TitleState.cs" />

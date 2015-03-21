@@ -9,8 +9,8 @@ using System.Text;
 class PlayingState : IGameLoopObject
 {
     public Level currentLevel;
-    public TileType[,] levelConfig = new TileType[28, 15];
     public LevelConfigs levelConfigs;
+    public int levelNum;
 
     public PlayingState(ContentManager Content)
     {
@@ -19,8 +19,10 @@ class PlayingState : IGameLoopObject
 
     public void LoadLevel(int levelNum)
     {
+        this.levelNum = levelNum;
         currentLevel = new Level(levelConfigs.sizesX[levelNum - 1], levelConfigs.sizesY[levelNum - 1], levelConfigs.configurations[levelNum - 1],
-            levelConfigs.lightSourcesConfig[levelNum - 1], levelConfigs.enemiesConfig[levelNum - 1], levelConfigs.friendliesConfig[levelNum - 1]);
+            levelConfigs.lightSourcesConfig[levelNum - 1], levelConfigs.enemiesConfig[levelNum - 1], levelConfigs.friendliesConfig[levelNum - 1],
+            levelConfigs.timerConfig[levelNum - 1]);
     }
 
     public virtual void HandleInput(InputHelper inputHelper) //Triggers the pause state

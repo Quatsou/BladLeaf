@@ -23,7 +23,12 @@ class Enemy : AnimatedGameObject
         base.Update(gameTime);
         Player player = GameWorld.Find("player") as Player;
         if (this.CollidesWith(player))
-            Environment.Exit(0);
+            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+    }
+
+    public override Rectangle BoundingBox
+    {
+        get { return new Rectangle((int)position.X - 20, (int)position.Y - 20, 40, 40); }
     }
 
     public void Die()

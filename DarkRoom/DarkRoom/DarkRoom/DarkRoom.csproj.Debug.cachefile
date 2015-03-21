@@ -13,3 +13,8 @@ Content\Sprites\Menu\spr_quitbutton_selected.xnb
 Content\Sprites\Menu\spr_button1.xnb
 Content\Sprites\Menu\spr_button2.xnb
 Content\Sprites\spr_dot.xnb
+Content\Sprites\Menu\spr_button_selected.xnb
+Content\Sprites\Menu\spr_button.xnb
+Content\menuFont.xnb
+Content\Sprites\Menu\spr_levelbutton.xnb
+Content\levelFont.xnb

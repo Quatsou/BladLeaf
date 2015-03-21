@@ -12,6 +12,7 @@ class LevelConfigs
     public List<List<Source>> lightSourcesConfig = new List<List<Source>>();
     public List<List<Enemy>> enemiesConfig = new List<List<Enemy>>();
     public List<List<Friendly>> friendliesConfig = new List<List<Friendly>>();
+    public List<float> timerConfig = new List<float>();
 
     public LevelConfigs()
     {
@@ -26,7 +27,7 @@ class LevelConfigs
 
         TileType[,] level1 = new TileType[9, 6];
         level1[4, 5] = TileType.Door;
-        CreateConfig(9, 6, level1, ls1, enemies1, friendlies1);
+        CreateConfig(9, 6, level1, ls1, enemies1, friendlies1, 5);
 
         //Level2
         List<Source> ls2 = new List<Source>();
@@ -45,10 +46,10 @@ class LevelConfigs
         for (int x = 8; x < 10; x++)
             for (int y = 0; y < 3; y++)
                 level2[x, y] = TileType.Wall;
-        CreateConfig(13, 8, level2, ls2, enemies2, friendlies2);
+        CreateConfig(13, 8, level2, ls2, enemies2, friendlies2, 60);
     }
 
-    public void CreateConfig(int sizeX, int sizeY, TileType[,] config, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies)
+    public void CreateConfig(int sizeX, int sizeY, TileType[,] config, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
         sizesX.Add(sizeX);
         sizesY.Add(sizeY);
@@ -56,5 +57,6 @@ class LevelConfigs
         lightSourcesConfig.Add(lightSources);
         enemiesConfig.Add(enemies);
         friendliesConfig.Add(friendlies);
+        timerConfig.Add(timer);
     }
 }

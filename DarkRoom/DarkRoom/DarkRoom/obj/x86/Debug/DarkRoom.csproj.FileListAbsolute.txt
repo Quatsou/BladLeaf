@@ -60,3 +60,8 @@ C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debu
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_dot.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button_selected.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\menuFont.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_levelbutton.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\levelFont.xnb

@@ -11,6 +11,10 @@ partial class Level : GameObjectList
 
     public override void Update(GameTime gameTime)
     {
+        if (timer > 0)
+            timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+        else
+            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         base.Update(gameTime);
     }
 
@@ -22,6 +26,7 @@ partial class Level : GameObjectList
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
+        spriteBatch.DrawString(font, timer.ToString("0:00"), new Vector2(50, 50), Color.White);
     }
 }
 

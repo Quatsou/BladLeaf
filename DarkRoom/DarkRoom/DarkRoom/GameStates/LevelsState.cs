@@ -19,7 +19,7 @@ class LevelsState : GameObjectList
         title.Position = new Vector2(GameEnvironment.Screen.X / 2 - title.Sprite.Width / 2, 100);
         this.Add(title);
 
-        quitbutton = new Button("Sprites/Menu/spr_quitbutton");
+        quitbutton = new Button("Quit");
         quitbutton.Position = new Vector2(50, 900);
         this.Add(quitbutton);
 

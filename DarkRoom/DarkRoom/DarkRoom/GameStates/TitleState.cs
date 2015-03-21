@@ -17,11 +17,11 @@ class TitleState : GameObjectList
         title.Position = new Vector2(GameEnvironment.Screen.X / 2 - title.Sprite.Width / 2, 100);
         this.Add(title);
 
-        playbutton = new Button("Sprites/Menu/spr_playbutton");
+        playbutton = new Button("Play");
         playbutton.Position = new Vector2(50, 400);
         this.Add(playbutton);
 
-        quitbutton = new Button("Sprites/Menu/spr_quitbutton");
+        quitbutton = new Button("Quit");
         quitbutton.Position = new Vector2(50, 900);
         this.Add(quitbutton);
     }

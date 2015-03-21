@@ -7,8 +7,14 @@ using System.Text;
 
 partial class Level : GameObjectList
 {
-    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies)
+    public float timer;
+    public SpriteFont font;
+
+    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
+        this.timer = timer;
+        font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("levelFont");
+
         Player player = new Player(new Vector2(20, 100));
         this.Add(player);
 

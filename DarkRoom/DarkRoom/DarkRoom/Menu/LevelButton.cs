@@ -7,12 +7,17 @@ class LevelButton : SpriteGameObject
     //A  button with 2 states, pressed or released
     protected bool pressed;
     protected bool selected;
+    protected int number;
+    SpriteFont font;
 
     public LevelButton(int number)
-        : base("Sprites/Menu/spr_button" + number.ToString(), 1, "")
+        : base("Sprites/Menu/spr_levelbutton", 1, "")
     {
         pressed = false;
         selected = false;
+        font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("levelFont");
+        this.number = number;
+
     }
 
     public override void HandleInput(InputHelper inputHelper)
@@ -39,6 +44,7 @@ class LevelButton : SpriteGameObject
            // spriteBatch.Draw(selectedButton, this.position, null, Color.White);
        // else
             base.Draw(gameTime, spriteBatch);
+            spriteBatch.DrawString(font, number.ToString(), new Vector2(position.X + 7, position.Y), Color.Black);
     }
 
     public override void Reset()

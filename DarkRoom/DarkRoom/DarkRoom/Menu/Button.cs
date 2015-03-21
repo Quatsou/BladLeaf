@@ -6,14 +6,19 @@ class Button : SpriteGameObject
     //A  button with 2 states, pressed or released
     protected bool pressed;
     protected bool selected;
-    Texture2D selectedButton;
+    protected string text;
+    Texture2D selectedButton, button;
+    SpriteFont font;
 
-    public Button(string imageAsset, int layer = 1, string id = "")
-        : base(imageAsset, layer, id)
+    public Button(string text, int layer = 1, string id = "")
+        : base("Sprites/Menu/spr_button", layer, id)
     {
         pressed = false;
         selected = false;
-        selectedButton = GameEnvironment.AssetManager.GetSprite(imageAsset + "_selected");
+        button = GameEnvironment.AssetManager.GetSprite("Sprites/Menu/spr_button");
+        selectedButton = GameEnvironment.AssetManager.GetSprite("Sprites/Menu/spr_button_selected");
+        this.text = text;
+        font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("menuFont");
     }
 
     public override void HandleInput(InputHelper inputHelper)
@@ -40,6 +45,7 @@ class Button : SpriteGameObject
             spriteBatch.Draw(selectedButton, this.position, null, Color.White);
         else
             base.Draw(gameTime, spriteBatch);
+        spriteBatch.DrawString(font, text, new Vector2(position.X + 20, position.Y + 20), Color.White);
     }
 
     public override void Reset()

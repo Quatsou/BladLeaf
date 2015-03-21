@@ -18,6 +18,11 @@ class Friendly : AnimatedGameObject
         sprite.Rotation = rotation;
     }
 
+    public override Rectangle BoundingBox
+    {
+        get { return new Rectangle((int)position.X - 20, (int)position.Y - 20, 40, 40); }
+    }
+
     public void Escape()
     {
         visible = false;
