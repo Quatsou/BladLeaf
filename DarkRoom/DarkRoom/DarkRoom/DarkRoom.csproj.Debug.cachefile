@@ -5,9 +5,9 @@ Content\Sprites\spr_tile_dark.xnb
 Content\Sprites\spr_player.xnb
 Content\Sprites\spr_enemy.xnb
 Content\Sprites\spr_friendly.xnb
-Content\Sprites\Menu\spr_title.xnb
 Content\Sprites\Menu\spr_playbutton.xnb
 Content\Sprites\Menu\spr_playbutton_selected.xnb
+Content\Sprites\Menu\spr_title.xnb
 Content\Sprites\Menu\spr_quitbutton.xnb
 Content\Sprites\Menu\spr_quitbutton_selected.xnb
 Content\Sprites\Menu\spr_button1.xnb
