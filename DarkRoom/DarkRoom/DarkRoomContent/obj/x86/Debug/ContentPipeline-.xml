@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_friendly.xnb</Output>
-      <Time>2015-03-21T16:03:13.4792604+01:00</Time>
+      <Time>2015-03-21T17:55:11.1655138+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu\spr_title.png</Source>
@@ -72,60 +72,6 @@
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb</Output>
       <Time>2015-03-21T15:37:59.1668754+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_playbutton.png</Source>
-      <Name>Sprites\Menu\spr_playbutton</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton.xnb</Output>
-      <Time>2015-03-21T15:37:59.1648797+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_playbutton_selected.png</Source>
-      <Name>Sprites\Menu\spr_playbutton_selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton_selected.xnb</Output>
-      <Time>2015-03-21T15:37:59.1648797+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_quitbutton.png</Source>
-      <Name>Sprites\Menu\spr_quitbutton</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton.xnb</Output>
-      <Time>2015-03-21T15:37:59.1658863+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_quitbutton_selected.png</Source>
-      <Name>Sprites\Menu\spr_quitbutton_selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton_selected.xnb</Output>
-      <Time>2015-03-21T15:37:59.1658863+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_button1.png</Source>
-      <Name>Sprites\Menu\spr_button1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button1.xnb</Output>
-      <Time>2015-03-21T15:37:59.1628889+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Menu\spr_button2.png</Source>
-      <Name>Sprites\Menu\spr_button2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button2.xnb</Output>
-      <Time>2015-03-21T15:37:59.1638763+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_dot.png</Source>

@@ -29,12 +29,6 @@ C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_enemy.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_friendly.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton_selected.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton_selected.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button1.xnb
-C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button2.xnb
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile.xnb
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door.xnb
 C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
