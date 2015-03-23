@@ -6,13 +6,15 @@ using System.Text;
 
 class Enemy : AnimatedGameObject
 {
+    public Vector2 Coords;
+
     public Enemy(Vector2 startPosition, float rotation)
         : base(2, "enemy")
     {
         this.LoadAnimation("Sprites/spr_enemy", "enemy", false, 1);
         this.PlayAnimation("enemy");
 
-        position = startPosition;
+        Coords = startPosition;
         origin = new Vector2(sprite.Width/2, sprite.Height/2);
 
         sprite.Rotation = rotation;
@@ -24,6 +26,7 @@ class Enemy : AnimatedGameObject
         Player player = GameWorld.Find("player") as Player;
         if (this.CollidesWith(player))
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+        Console.WriteLine(currentAnimation);
     }
 
     public override Rectangle BoundingBox
@@ -31,8 +34,15 @@ class Enemy : AnimatedGameObject
         get { return new Rectangle((int)position.X - 20, (int)position.Y - 20, 40, 40); }
     }
 
+    public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+    {
+        base.Draw(gameTime, spriteBatch);
+       // Console.WriteLine("Drawing enemy");
+    }
+
     public void Die()
     {
         visible = false;
+        Console.WriteLine("Killed enemy");
     }
 }

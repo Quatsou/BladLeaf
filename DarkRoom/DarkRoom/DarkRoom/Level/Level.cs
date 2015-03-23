@@ -36,7 +36,7 @@ partial class Level : GameObjectList
                     , levelConfig[x, y]), x, y);
 
                 if (levelConfig[x, y] == TileType.Door)
-                   player.Position = new Vector2(startX + (x * 64) + 32, startY + (y * 64) + 28);
+                    player.Position = new Vector2(startX + (x * 64) + 32, startY + (y * 64) + 28);
             }
 
         foreach (Source s in lightSources)
@@ -46,16 +46,18 @@ partial class Level : GameObjectList
         this.Add(enemyList);
         foreach (Enemy e in enemies)
         {
-            e.Position = new Vector2(startX + 32 + (e.Position.X * 64), startY + 32 + (e.Position.Y * 64));
+            e.Position = new Vector2(startX + 32 + (e.Coords.X * 64), startY + 32 + (e.Coords.Y * 64));
             enemyList.Add(e);
+            Console.WriteLine(e.Position);
         }
 
         GameObjectList friendlyList = new GameObjectList(2, "friendlyList") as GameObjectList;
         this.Add(friendlyList);
         foreach (Friendly f in friendlies)
         {
-            f.Position = new Vector2(startX + 32 + (f.Position.X * 64), startY + 32 + (f.Position.Y * 64));
+            f.Position = new Vector2(startX + 32 + (f.Coords.X * 64), startY + 32 + (f.Coords.Y * 64));
             friendlyList.Add(f);
+            Console.WriteLine("Added friendly");
         }
     }
 }

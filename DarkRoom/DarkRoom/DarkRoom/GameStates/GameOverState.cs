@@ -31,7 +31,7 @@ class GameOverState : GameObjectList
         if (quitbutton.Pressed)
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
 
-        if (retrybutton.Pressed)
+        if (retrybutton.Pressed || inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.Space))
         {
             playingstate.LoadLevel(playingstate.levelNum);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
