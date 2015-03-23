@@ -44,7 +44,88 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player.xnb</Output>
-      <Time>2015-03-12T16:27:28.9536994+01:00</Time>
+      <Time>2015-03-22T19:56:22.4443592+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_title.png</Source>
+      <Name>Sprites\Menu\spr_title</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb</Output>
+      <Time>2015-03-18T23:04:45.0615265+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_dot.png</Source>
+      <Name>Sprites\spr_dot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_dot.xnb</Output>
+      <Time>2015-03-22T19:56:22.440359+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_enemy.png</Source>
+      <Name>Sprites\spr_enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_enemy.xnb</Output>
+      <Time>2015-03-22T19:56:22.441359+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_friendly.png</Source>
+      <Name>Sprites\spr_friendly</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_friendly.xnb</Output>
+      <Time>2015-03-22T19:56:22.4433592+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_button_selected.png</Source>
+      <Name>Sprites\Menu\spr_button_selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button_selected.xnb</Output>
+      <Time>2015-03-22T19:56:22.4383589+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_button.png</Source>
+      <Name>Sprites\Menu\spr_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_button.xnb</Output>
+      <Time>2015-03-22T19:56:22.4373588+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_levelbutton.png</Source>
+      <Name>Sprites\Menu\spr_levelbutton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_levelbutton.xnb</Output>
+      <Time>2015-03-22T19:56:22.4383589+01:00</Time>
+    </Item>
+    <Item>
+      <Source>menuFont.spritefont</Source>
+      <Name>menuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\menuFont.xnb</Output>
+      <Time>2015-03-22T19:56:22.4543598+01:00</Time>
+    </Item>
+    <Item>
+      <Source>levelFont.spritefont</Source>
+      <Name>levelFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\levelFont.xnb</Output>
+      <Time>2015-03-22T19:56:22.4533597+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

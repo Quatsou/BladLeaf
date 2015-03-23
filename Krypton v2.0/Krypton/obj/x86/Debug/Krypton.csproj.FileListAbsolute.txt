@@ -22,3 +22,9 @@ C:\Users\Hayco\Documents\GitHub\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Kryp
 C:\Users\Hayco\Documents\GitHub\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Hayco\Documents\GitHub\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll
 C:\Users\Hayco\Documents\GitHub\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.dll
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\bin\x86\Debug\Krypton.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.csprojResolveAssemblyReference.cache
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.dll
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\Krypton v2.0\Krypton\obj\x86\Debug\Krypton.pdb

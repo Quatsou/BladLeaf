@@ -5,6 +5,10 @@ using Microsoft.Xna.Framework.Media;
 
 public class DarkRoom : GameEnvironment
 {
+    QuadRenderComponent quadRender;
+    ShadowmapResolver shadowmapResolver;
+    RenderTarget2D screenShadows;
+
     static void Main()
     {
         DarkRoom game = new DarkRoom();
@@ -15,6 +19,7 @@ public class DarkRoom : GameEnvironment
     {
         Content.RootDirectory = "Content";
         this.IsMouseVisible = true;
+        quadRender = new QuadRenderComponent(this);
     }
 
     public void setScaling(int scaleX, int scaleY)
@@ -61,6 +66,12 @@ public class DarkRoom : GameEnvironment
         gameStateManager.AddGameState("titleState", new TitleState(this));
         gameStateManager.AddGameState("levelsState", new LevelsState());
         gameStateManager.AddGameState("gameOverState", new GameOverState());
+
+        shadowmapResolver = new ShadowmapResolver(GraphicsDevice, quadRender, ShadowmapSize.Size256, ShadowmapSize.Size1024);
+        shadowmapResolver.LoadContent(Content);
+        // Create a new SpriteBatch, which can be used to draw textures.
+        screenShadows = new RenderTarget2D(GraphicsDevice, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+
         /*gameStateManager.AddGameState("OptionsState", new OptionsState(this));
         gameStateManager.AddGameState("helpState", new HelpState());
         gameStateManager.AddGameState("pauseState", new PauseState());
