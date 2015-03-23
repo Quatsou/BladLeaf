@@ -61,9 +61,9 @@ public class DarkRoom : GameEnvironment
         gameStateManager.AddGameState("titleState", new TitleState(this));
         gameStateManager.AddGameState("levelsState", new LevelsState());
         gameStateManager.AddGameState("gameOverState", new GameOverState());
+        gameStateManager.AddGameState("pauseState", new PauseState());
         /*gameStateManager.AddGameState("OptionsState", new OptionsState(this));
         gameStateManager.AddGameState("helpState", new HelpState());
-        gameStateManager.AddGameState("pauseState", new PauseState());
         gameStateManager.AddGameState("controlsState", new ControlsState());
         gameStateManager.AddGameState("levelFinishedState", new LevelFinishedState());
         gameStateManager.AddGameState("gameWinState", new GameWinState());*/

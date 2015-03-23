@@ -24,7 +24,5 @@ class Tile : SpriteGameObject
 
         if (type == TileType.Wall)
             visible = false;
-        else if (type == TileType.Door)
-            sprite = new SpriteSheet("Sprites/spr_door");
     }
 }

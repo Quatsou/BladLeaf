@@ -7,6 +7,7 @@ using System.Text;
 class Friendly : AnimatedGameObject
 {
     public Vector2 Coords;
+    public bool escaped;
 
     public Friendly(Vector2 startPosition, float rotation)
         : base(2, "friendly")
@@ -25,8 +26,15 @@ class Friendly : AnimatedGameObject
         get { return new Rectangle((int)position.X - 20, (int)position.Y - 20, 40, 40); }
     }
 
+    public override void Reset()
+    {
+        visible = true;
+        escaped = false;
+    }
+
     public void Escape()
     {
         visible = false;
+        escaped = true;
     }
 }

@@ -72,20 +72,24 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Animation\Slash.cs" />
     <Compile Include="GameObjects\Enemies\Enemy.cs" />
     <Compile Include="GameObjects\Friendly\Friendly.cs" />
     <Compile Include="GameObjects\Lights\Light.cs" />
     <Compile Include="GameObjects\Lights\Lights.cs" />
     <Compile Include="GameObjects\Player\Player.cs" />
+    <Compile Include="GameObjects\Tiles\Door.cs" />
     <Compile Include="GameObjects\Tiles\Tile.cs" />
     <Compile Include="GameObjects\Tiles\TileField.cs" />
     <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\LevelsState.cs" />
+    <Compile Include="GameStates\PauseState.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="GameStates\TitleState.cs" />
     <Compile Include="Level\Level.cs" />
     <Compile Include="Level\LevelConfigs.cs" />
     <Compile Include="Level\LevelGameLoop.cs" />
+    <Compile Include="Menu\PauseButton.cs" />
     <Compile Include="Menu\Button.cs" />
     <Compile Include="Menu\LevelButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

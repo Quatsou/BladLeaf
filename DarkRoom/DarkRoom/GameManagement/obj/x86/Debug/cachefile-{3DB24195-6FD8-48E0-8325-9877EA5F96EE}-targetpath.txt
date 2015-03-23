@@ -12,3 +12,7 @@ Content\Sprites\Menu\spr_button.xnb
 Content\menuFont.xnb
 Content\Sprites\Menu\spr_levelbutton.xnb
 Content\levelFont.xnb
+Content\Sprites\spr_slash@7.xnb
+Content\Sprites\spr_doorwhite.xnb
+Content\Sprites\Menu\spr_pause.xnb
+Content\Sprites\Menu\spr_pause_selected.xnb

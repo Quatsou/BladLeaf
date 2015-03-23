@@ -7,6 +7,7 @@ using System.Text;
 class Enemy : AnimatedGameObject
 {
     public Vector2 Coords;
+    public bool dead;
 
     public Enemy(Vector2 startPosition, float rotation)
         : base(2, "enemy")
@@ -37,12 +38,18 @@ class Enemy : AnimatedGameObject
     public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
-       // Console.WriteLine("Drawing enemy");
+    }
+
+    public override void Reset()
+    {
+        visible = true;
+        dead = false;
     }
 
     public void Die()
     {
+        GameWorld.Add(new Slash(position));
         visible = false;
-        Console.WriteLine("Killed enemy");
+        dead = true;
     }
 }

@@ -127,6 +127,42 @@
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\levelFont.xnb</Output>
       <Time>2015-03-21T16:30:55.3805674+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\spr_slash@7.png</Source>
+      <Name>Sprites\spr_slash@7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_slash@7.xnb</Output>
+      <Time>2015-03-23T15:12:59.9861474+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_doorwhite.png</Source>
+      <Name>Sprites\spr_doorwhite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_doorwhite.xnb</Output>
+      <Time>2015-03-23T15:40:11.369894+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_pause.png</Source>
+      <Name>Sprites\Menu\spr_pause</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_pause.xnb</Output>
+      <Time>2015-03-23T16:02:00.9893053+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_pause_selected.png</Source>
+      <Name>Sprites\Menu\spr_pause_selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_pause_selected.xnb</Output>
+      <Time>2015-03-23T16:02:52.8512462+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID Null="true" />

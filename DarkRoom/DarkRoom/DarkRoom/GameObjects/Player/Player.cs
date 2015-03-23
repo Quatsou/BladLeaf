@@ -36,6 +36,8 @@ class Player : AnimatedGameObject
             GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
             foreach (Enemy e in enemyList.Objects)
             {
+                if (e.dead)
+                    continue;
                 if (e.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
                     e.Die();
@@ -45,6 +47,8 @@ class Player : AnimatedGameObject
             GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
             foreach (Friendly f in friendlyList.Objects)
             {
+                if (f.escaped)
+                    continue;
                 if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
                     f.Escape();

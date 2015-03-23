@@ -59,3 +59,7 @@ C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\menuFont.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_levelbutton.xnb
 C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\levelFont.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_slash@7.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_doorwhite.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause_selected.xnb
