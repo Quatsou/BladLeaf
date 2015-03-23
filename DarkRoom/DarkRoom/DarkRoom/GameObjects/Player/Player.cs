@@ -39,6 +39,7 @@ class Player : AnimatedGameObject
                 if (e.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
                     e.Die();
+                    return;
                 }
             }
             GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
@@ -47,6 +48,7 @@ class Player : AnimatedGameObject
                 if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
                     f.Escape();
+                    return;
                 }
             }
         }
