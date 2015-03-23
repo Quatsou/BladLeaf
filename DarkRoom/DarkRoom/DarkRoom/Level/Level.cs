@@ -26,7 +26,7 @@ partial class Level : GameObjectList
         Player player = new Player(new Vector2(20, 100));
         this.Add(player);
 
-        Lights lights = new Lights(new Flashlight(player));
+        Lights lights = new Lights();
         this.Add(lights);
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
