@@ -22,7 +22,6 @@ class Button : SpriteGameObject
     {
         pressed = inputHelper.MouseLeftButtonPressed() &&
             BoundingBox.Contains((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y);
-
        // if (pressed)
            // GameEnvironment.AssetManager.PlaySound("snd_menu_click", 1f);
 

@@ -33,9 +33,28 @@ class Player : AnimatedGameObject
         Movement(inputHelper);
         StayInBounds();
 
+        GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+
+        foreach (Enemy e in enemyList.Objects)
+        {
+            if (e.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
+                e.selected = true;
+            else
+                e.selected = false;
+        }
+
+        GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+
+        foreach (Friendly f in friendlyList.Objects)
+        {
+            if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
+                f.selected = true;
+            else
+                f.selected = false;
+        }
+
         if (inputHelper.MouseLeftButtonPressed() || inputHelper.KeyPressed(Keys.Space))
         {
-            GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
             foreach (Enemy e in enemyList.Objects)
             {
                 if (e.dead)
@@ -46,14 +65,14 @@ class Player : AnimatedGameObject
                     return;
                 }
             }
-            GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+
             foreach (Friendly f in friendlyList.Objects)
             {
                 if (f.escaped)
                     continue;
                 if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
-                    f.Escape();
+                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
                     return;
                 }
             }

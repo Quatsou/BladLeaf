@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,10 @@ class Enemy : AnimatedGameObject
 {
     public Vector2 Coords;
     public bool dead;
+    public bool selected = false;
+
+    double sinValue = 0;
+    float offset = 0;
 
     public Enemy(Vector2 startPosition, float rotation)
         : base(2, "enemy")
@@ -37,6 +42,19 @@ class Enemy : AnimatedGameObject
 
     public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
     {
+        if (visible && selected)
+        {
+            SpriteSheet selectedSprite = new SpriteSheet("Sprites/spr_enemyselect");
+
+            sinValue += gameTime.ElapsedGameTime.TotalSeconds * Math.PI * 6;
+            offset = ((float)Math.Sin(sinValue) + 1);
+            float scale = offset / 27 + 0.925f;
+            float alpha = offset - 0.6f;
+
+            Rectangle spritePart = new Rectangle(0, 0, selectedSprite.Width, selectedSprite.Height);
+            spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.DarkRed * alpha,
+            0f, new Vector2(selectedSprite.Width/2,selectedSprite.Height/2), scale, SpriteEffects.None, 0.0f);
+        }
         base.Draw(gameTime, spriteBatch);
     }
 
