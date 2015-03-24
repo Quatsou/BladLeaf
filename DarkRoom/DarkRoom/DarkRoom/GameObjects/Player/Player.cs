@@ -72,7 +72,7 @@ class Player : AnimatedGameObject
                     continue;
                 if (f.BoundingBox.Contains(new Point((int)RotateVector2(hitPoint, sprite.Rotation, position).X, (int)RotateVector2(hitPoint, sprite.Rotation, position).Y)))
                 {
-                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+                    f.Die();
                     return;
                 }
             }

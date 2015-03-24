@@ -30,6 +30,9 @@ class Slash : AnimatedGameObject
         {
             GameWorld.Remove(this);
             killedObject.Visible = false;
+
+            if (killedObject is Friendly)
+                GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         }
     }
 

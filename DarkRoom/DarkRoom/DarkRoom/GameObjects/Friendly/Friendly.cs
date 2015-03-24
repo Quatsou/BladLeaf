@@ -11,6 +11,7 @@ class Friendly : AnimatedGameObject
     public bool escaped = false;
     float escapeRotateValue = 0.15f;
     public bool selected = false;
+    public bool dead = false;
     double sinValue = 0f;
     float offset = 0;
 
@@ -41,7 +42,7 @@ class Friendly : AnimatedGameObject
             offset = ((float)Math.Sin(sinValue) + 1);
             float scale = offset / 27 + 0.925f;
             float alpha = offset - 0.6f;
-
+            
             Rectangle spritePart = new Rectangle(0, 0, selectedSprite.Width, selectedSprite.Height);
             spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.DarkGreen * alpha,
             sprite.Rotation, new Vector2(selectedSprite.Width / 2, selectedSprite.Height / 2), scale, SpriteEffects.None, 0.0f);
@@ -77,6 +78,7 @@ class Friendly : AnimatedGameObject
     public override void Reset()
     {
         visible = true;
+        dead = false;
         escaped = false;
         sprite.Alpha = 1f;
         sprite.Rotation = 0f;
@@ -84,7 +86,18 @@ class Friendly : AnimatedGameObject
 
     public void Escape()
     {
-        GameEnvironment.AssetManager.PlaySound("Audio/snd_friendlyreleased",1);
-        escaped = true;
+        if (!dead)
+        {
+            GameEnvironment.AssetManager.PlaySound("Audio/snd_friendlyreleased", 1);
+            escaped = true;
+        }
+    }
+
+    public void Die()
+    {
+        dead = true;
+        Slash slash = new Slash(position, this as GameObject);
+        slash.Sprite.Color = Color.Red;
+        GameWorld.Add(slash);
     }
 }

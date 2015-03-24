@@ -67,6 +67,8 @@ class Enemy : AnimatedGameObject
     public void Die()
     {
         dead = true;
-        GameWorld.Add(new Slash(position, this as GameObject));
+        Slash slash = new Slash(position, this as GameObject);
+        slash.Sprite.Color = Color.LightGreen;
+        GameWorld.Add(slash);
     }
 }
