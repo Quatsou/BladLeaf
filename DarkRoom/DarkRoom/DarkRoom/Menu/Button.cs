@@ -13,6 +13,7 @@ class Button : SpriteGameObject
     public Button(string text, int layer = 1, string id = "")
         : base("Sprites/Menu/spr_button", layer, id)
     {
+        selected = false;
         this.text = text;
         font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("menuFont");
         selectedButton = GameEnvironment.AssetManager.GetSprite("Sprites/Menu/spr_button_selected");

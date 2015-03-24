@@ -6,6 +6,7 @@ using System.Text;
 
 class LevelConfigs
 {
+    public static int levelsCompleted = 0;
     public List<TileType[,]> configurations = new List<TileType[,]>();
     public List<int> sizesX = new List<int>();
     public List<int> sizesY = new List<int>();
@@ -14,7 +15,8 @@ class LevelConfigs
     public List<float> timerConfig = new List<float>();
 
     public LevelConfigs()
-    {
+    {   
+        //Level1
         List<Enemy> enemies1 = new List<Enemy>();
         enemies1.Add(new Enemy(new Vector2(4, 2), 0f));
 
@@ -22,11 +24,12 @@ class LevelConfigs
         friendlies1.Add(new Friendly(new Vector2(4, 0), 3.14f));
 
         TileType[,] level1 = new TileType[9, 6];
-        level1[4, 5] = TileType.Door;
+        level1[2, 5] = TileType.Door;
         level1[2, 4] = TileType.LightSource;
         level1[7, 1] = TileType.LightSource;
         CreateConfig(9, 6, level1, enemies1, friendlies1, 5);
 
+        //Level2
         List<Enemy> enemies2 = new List<Enemy>();
         enemies2.Add(new Enemy(new Vector2(6, 2), 0f));
 

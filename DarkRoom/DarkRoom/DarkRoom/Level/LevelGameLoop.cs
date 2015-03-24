@@ -41,6 +41,7 @@ partial class Level : GameObjectList
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
+
         spriteBatch.DrawString(font, timer.ToString("0:00"), new Vector2(50, 50), Color.White);
     }
 
@@ -69,7 +70,10 @@ partial class Level : GameObjectList
         TileField tiles = GameWorld.Find("tiles") as TileField;
         Player player = GameWorld.Find("player") as Player;
         if (player.BoundingBox.Intersects(door.BoundingBox))
+        {
+            LevelConfigs.levelsCompleted++;
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
+        }
     }
 }
 

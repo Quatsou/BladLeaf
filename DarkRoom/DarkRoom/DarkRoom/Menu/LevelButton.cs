@@ -40,8 +40,13 @@ class LevelButton : SpriteGameObject
         //if (selected)
            // spriteBatch.Draw(selectedButton, this.position, null, Color.White);
        // else
+        if (LevelConfigs.levelsCompleted < number - 1)
+            return;
+        else
+        {
             base.Draw(gameTime, spriteBatch);
             spriteBatch.DrawString(font, number.ToString(), new Vector2(position.X + 7, position.Y), Color.Black);
+        }
     }
 
     public override void Reset()

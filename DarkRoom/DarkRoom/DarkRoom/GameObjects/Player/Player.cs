@@ -157,7 +157,7 @@ class Player : AnimatedGameObject
     {
         base.Draw(gameTime, spriteBatch);
         Texture2D pt = GameEnvironment.AssetManager.GetSprite("Sprites/spr_dot");
-        Vector2 dotPos = new Vector2(hitPoint.X - pt.Width / 2, hitPoint.Y - pt.Height / 2);
-        spriteBatch.Draw(pt, RotateVector2(dotPos, sprite.Rotation, position), Color.White);
+        Vector2 dotPos = RotateVector2(hitPoint, sprite.Rotation, position);
+        spriteBatch.Draw(pt, new Vector2(dotPos.X - pt.Width / 2, dotPos.Y - pt.Height / 2), Color.White);
     }
 }
