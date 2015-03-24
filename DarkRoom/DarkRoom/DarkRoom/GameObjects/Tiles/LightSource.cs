@@ -8,7 +8,7 @@ using System.Text;
 class LightSource : SpriteGameObject
 {
     public LightSource(Vector2 startPosition)
-        : base("Sprites/spr_tile", 2, "light")
+        : base("Sprites/spr_dot", 2, "light")
     {
         position = startPosition;
     }

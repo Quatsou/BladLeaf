@@ -12,9 +12,10 @@ partial class Level : GameObjectList
     public SpriteFont font;
     public bool completed;
     public Door door;
-    public List<LightSource> lightSources;
+    public List<LightSource> lightSources = new List<LightSource>();
     public int sizeX, sizeY;
     PauseButton pauseButton;
+    public TileType[,] levelLayout;
 
     public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
@@ -22,6 +23,7 @@ partial class Level : GameObjectList
         this.timer = timer;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
+        levelLayout = levelConfig;
         font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("levelFont");
 
         pauseButton = new PauseButton();
@@ -53,8 +55,8 @@ partial class Level : GameObjectList
                 }
                 else if (levelConfig[x, y] == TileType.LightSource)
                 {
-                    LightSource temp = new LightSource(new Vector2(startX + (x * Tile.TILESIZE), startY + 60 + (y * Tile.TILESIZE)));
-                    lightSources.Add(temp);
+                    lightSources.Add(new LightSource(new Vector2(x, y)));
+                    LightSource temp = new LightSource(new Vector2(startX + 32 + (x * Tile.TILESIZE), startY + 32 + (y * Tile.TILESIZE)));
                     this.Add(temp);
                 }
             }

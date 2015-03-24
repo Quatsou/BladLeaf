@@ -23,6 +23,8 @@ class LevelConfigs
 
         TileType[,] level1 = new TileType[9, 6];
         level1[4, 5] = TileType.Door;
+        level1[2, 4] = TileType.LightSource;
+        level1[7, 1] = TileType.LightSource;
         CreateConfig(9, 6, level1, enemies1, friendlies1, 5);
 
         List<Enemy> enemies2 = new List<Enemy>();
