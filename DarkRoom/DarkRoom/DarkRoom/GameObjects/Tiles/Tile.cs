@@ -15,6 +15,7 @@ enum TileType
 class Tile : SpriteGameObject
 {
     public TileType type;
+    public const int TILESIZE = 64;
 
     public Tile(Vector2 pos, TileType type)
         : base("Sprites/spr_tile", 1, "tile", 0)

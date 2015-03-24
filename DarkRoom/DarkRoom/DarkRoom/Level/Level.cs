@@ -7,6 +7,7 @@ using System.Text;
 
 partial class Level : GameObjectList
 {
+    float clockTimer;
     public float timer;
     public SpriteFont font;
     public bool completed;
@@ -32,21 +33,21 @@ partial class Level : GameObjectList
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);
 
-        float startX = Camera.camPos.X - ((sizeX * 64) / 2);
-        float startY = Camera.camPos.Y - ((sizeY * 64) / 2);
+        float startX = Camera.camPos.X - ((sizeX * Tile.TILESIZE) / 2);
+        float startY = Camera.camPos.Y - ((sizeY * Tile.TILESIZE) / 2);
         tiles.fieldAnchor = new Vector2(startX, startY);
-        tiles.fieldLength = new Vector2(sizeX * 64, sizeY * 64);
+        tiles.fieldLength = new Vector2(sizeX * Tile.TILESIZE, sizeY * Tile.TILESIZE);
 
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
             {
-                tiles.Add(new Tile(new Vector2(startX + (x * 64), startY + (y * 64))
+                tiles.Add(new Tile(new Vector2(startX + (x * Tile.TILESIZE), startY + (y * Tile.TILESIZE))
                     , levelConfig[x, y]), x, y);
 
                 if (levelConfig[x, y] == TileType.Door)
                 { 
-                    player.Position = new Vector2(startX + (x * 64) + 32, startY + (y * 64) + 28);
-                    door = new Door(new Vector2(startX + (x * 64), startY + 60 + (y * 64)));
+                    player.Position = new Vector2(startX + (x * Tile.TILESIZE) + 32, startY + (y * Tile.TILESIZE) + 28);
+                    door = new Door(new Vector2(startX + (x * Tile.TILESIZE), startY + 60 + (y * Tile.TILESIZE)));
                     this.Add(door);
                 }
             }
@@ -59,7 +60,7 @@ partial class Level : GameObjectList
         foreach (Enemy e in enemies)
         {
             e.Reset();
-            e.Position = new Vector2(startX + 32 + (e.Coords.X * 64), startY + 32 + (e.Coords.Y * 64));
+            e.Position = new Vector2(startX + 32 + (e.Coords.X * Tile.TILESIZE), startY + 32 + (e.Coords.Y * Tile.TILESIZE));
             enemyList.Add(e);
             Console.WriteLine(e.Position);
         }
@@ -69,9 +70,14 @@ partial class Level : GameObjectList
         foreach (Friendly f in friendlies)
         {
             f.Reset();
-            f.Position = new Vector2(startX + 32 + (f.Coords.X * 64), startY + 32 + (f.Coords.Y * 64));
+            f.Position = new Vector2(startX + 32 + (f.Coords.X * Tile.TILESIZE), startY + 32 + (f.Coords.Y * Tile.TILESIZE));
             friendlyList.Add(f);
             Console.WriteLine("Added friendly");
         }
+
+        //Remove previous door arrow
+        DoorArrow doorArrow = GameWorld.Find("doorarrow") as DoorArrow;
+        if(doorArrow != null)
+            GameWorld.Remove(doorArrow);
     }
 }

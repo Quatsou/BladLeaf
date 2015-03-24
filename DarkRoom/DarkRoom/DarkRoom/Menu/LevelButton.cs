@@ -5,19 +5,16 @@ using System;
 class LevelButton : SpriteGameObject
 {
     //A  button with 2 states, pressed or released
-    protected bool pressed;
-    protected bool selected;
+    protected bool pressed = false;
+    protected bool selected = false;
     protected int number;
     SpriteFont font;
 
     public LevelButton(int number)
         : base("Sprites/Menu/spr_levelbutton", 1, "")
     {
-        pressed = false;
-        selected = false;
         font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("levelFont");
         this.number = number;
-
     }
 
     public override void HandleInput(InputHelper inputHelper)

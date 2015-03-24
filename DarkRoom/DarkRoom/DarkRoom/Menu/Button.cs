@@ -4,8 +4,8 @@ using Microsoft.Xna.Framework.Graphics;
 class Button : SpriteGameObject
 {
     //A  button with 2 states, pressed or released
-    protected bool pressed;
-    protected bool selected;
+    protected bool pressed = false;
+    protected bool selected = false;
     protected string text;
     Texture2D selectedButton;
     SpriteFont font;
@@ -13,8 +13,6 @@ class Button : SpriteGameObject
     public Button(string text, int layer = 1, string id = "")
         : base("Sprites/Menu/spr_button", layer, id)
     {
-        pressed = false;
-        selected = false;
         this.text = text;
         font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("menuFont");
         selectedButton = GameEnvironment.AssetManager.GetSprite("Sprites/Menu/spr_button_selected");
@@ -44,6 +42,7 @@ class Button : SpriteGameObject
             spriteBatch.Draw(selectedButton, this.position, null, Color.White);
         else
             base.Draw(gameTime, spriteBatch);
+
         spriteBatch.DrawString(font, text, new Vector2(position.X + 20, position.Y + 20), Color.White);
     }
 

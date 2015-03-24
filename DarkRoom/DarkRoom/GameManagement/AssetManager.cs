@@ -31,13 +31,13 @@ public class AssetManager
 
     public void PlaySound(string assetName, float volume, bool loop = false)
     {
-        SoundEffect soundEffect = contentManager.Load<SoundEffect>("Sounds/SFX/" + assetName);
+        SoundEffect soundEffect = contentManager.Load<SoundEffect>(assetName);
         soundEffect.Play(volume * sfxVolume, 0, 0);
     }
 
     public SoundEffectInstance GetSound(string assetName, float volume)
     {
-        SoundEffect soundEffect = contentManager.Load<SoundEffect>("Sounds/SFX/" + assetName);
+        SoundEffect soundEffect = contentManager.Load<SoundEffect>(assetName);
         SoundEffectInstance soundInstance;
         soundInstance = soundEffect.CreateInstance();
         soundInstance.Volume = volume * sfxVolume;
@@ -46,7 +46,7 @@ public class AssetManager
 
     public SoundEffectInstance GetLoopSound(string assetName, float volume)
     {
-        SoundEffect soundEffect = contentManager.Load<SoundEffect>("Sounds/SFX/" + assetName);
+        SoundEffect soundEffect = contentManager.Load<SoundEffect>(assetName);
         SoundEffectInstance soundInstance;
         soundInstance = soundEffect.CreateInstance();
         soundInstance.Volume = volume * sfxVolume;
@@ -57,7 +57,7 @@ public class AssetManager
     public void PlayMusic(string assetName, bool repeat = true)
     {
         MediaPlayer.IsRepeating = repeat;
-        MediaPlayer.Play(contentManager.Load<Song>("Sounds/Music/" + assetName));
+        MediaPlayer.Play(contentManager.Load<Song>(assetName));
     }
 
     public void PlayGameMusic()
@@ -78,7 +78,7 @@ public class AssetManager
 
     public void AddGameMusic(string assetName, int arrayIndex)
     {
-        songs[arrayIndex] = contentManager.Load<Song>("Sounds/Music/" + assetName);
+        songs[arrayIndex] = contentManager.Load<Song>(assetName);
     }
 
     public ContentManager Content

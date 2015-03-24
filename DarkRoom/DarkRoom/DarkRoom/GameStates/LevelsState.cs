@@ -19,8 +19,8 @@ class LevelsState : GameObjectList
         title.Position = new Vector2(GameEnvironment.Screen.X / 2 - title.Sprite.Width / 2, 100);
         this.Add(title);
 
-        quitbutton = new Button("Quit");
-        quitbutton.Position = new Vector2(50, 900);
+        quitbutton = new Button("Back");
+        quitbutton.Position = new Vector2(100, 590);
         this.Add(quitbutton);
 
         buttons = new LevelButton[2];
@@ -28,7 +28,7 @@ class LevelsState : GameObjectList
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i] = new LevelButton(i + 1);
-            buttons[i].Position = new Vector2((i + 1) * 100, 400);
+            buttons[i].Position = new Vector2(15+(i + 1) * 100, 430);
             this.Add(buttons[i]);
         }
     }

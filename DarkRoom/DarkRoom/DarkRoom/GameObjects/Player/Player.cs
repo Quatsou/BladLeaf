@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 class Player : AnimatedGameObject
 {
     public Vector2 hitPoint;
+    float smoothRotationValue = 0f;
+    const float ROTATIONSMOOTHNESS = 3f; // Higher is slower and smoother
 
     public Player(Vector2 startPosition)
         : base(3, "player")
@@ -70,9 +72,14 @@ class Player : AnimatedGameObject
             moveSpeed = -2f;
 
         if (inputHelper.IsKeyDown(Keys.A))
-            sprite.Rotation -= 0.05f;
+            smoothRotationValue += (-0.1f - smoothRotationValue) / ROTATIONSMOOTHNESS;
         if (inputHelper.IsKeyDown(Keys.D))
-            sprite.Rotation += 0.05f;
+            smoothRotationValue += (0.1f - smoothRotationValue) / ROTATIONSMOOTHNESS;
+
+        if(!inputHelper.IsKeyDown(Keys.A) && !inputHelper.IsKeyDown(Keys.D))
+            smoothRotationValue += (0 - smoothRotationValue) / (ROTATIONSMOOTHNESS/2);
+
+        sprite.Rotation += smoothRotationValue;
 
         Vector2 direction = new Vector2((float)Math.Cos(sprite.Rotation - Math.PI / 2),
                                     (float)Math.Sin(sprite.Rotation - Math.PI / 2));
@@ -131,6 +138,7 @@ class Player : AnimatedGameObject
     {
         base.Draw(gameTime, spriteBatch);
         Texture2D pt = GameEnvironment.AssetManager.GetSprite("Sprites/spr_dot");
-        spriteBatch.Draw(pt, RotateVector2(hitPoint, sprite.Rotation, position), Color.White);
+        Vector2 dotPos = new Vector2(hitPoint.X - pt.Width / 2, hitPoint.Y - pt.Height / 2);
+        spriteBatch.Draw(pt, RotateVector2(dotPos, sprite.Rotation, position), Color.White);
     }
 }

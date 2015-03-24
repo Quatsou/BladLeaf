@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 partial class Level : GameObjectList
 {
-
     public override void HandleInput(InputHelper inputHelper)
     {
         if (pauseButton.Pressed)
@@ -14,9 +13,16 @@ partial class Level : GameObjectList
 
     public override void Update(GameTime gameTime)
     {
-        if (timer > 0)
-            timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if (clockTimer > 0)
+            clockTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         else
+        {
+            clockTimer = 1;
+            timer -= 1;
+            GameEnvironment.AssetManager.PlaySound("Audio/snd_clocktick", 0.5f);
+        }
+
+        if(timer <= 0)
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
 
         if (!completed)
@@ -48,7 +54,13 @@ partial class Level : GameObjectList
             if (f.escaped)
                 escapedFriendlyCount++;
             if (escapedFriendlyCount == friendlyList.Objects.Count)
+            {
                 completed = true;
+
+                Door door = GameWorld.Find("door") as Door;
+                Vector2 doorPos = door.GlobalPosition + new Vector2(Tile.TILESIZE/2, -Tile.TILESIZE);
+                GameWorld.Add(new DoorArrow(doorPos));
+            }
         }
     }
 

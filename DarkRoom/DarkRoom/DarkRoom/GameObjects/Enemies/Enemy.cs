@@ -25,7 +25,7 @@ class Enemy : AnimatedGameObject
     {
         base.Update(gameTime);
         Player player = GameWorld.Find("player") as Player;
-        if (this.CollidesWith(player))
+        if (!dead && this.CollidesWith(player))
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         Console.WriteLine(currentAnimation);
     }
@@ -48,8 +48,7 @@ class Enemy : AnimatedGameObject
 
     public void Die()
     {
-        GameWorld.Add(new Slash(position));
-        visible = false;
         dead = true;
+        GameWorld.Add(new Slash(position, this as GameObject));
     }
 }

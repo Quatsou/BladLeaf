@@ -18,11 +18,11 @@ class TitleState : GameObjectList
         this.Add(title);
 
         playbutton = new Button("Play");
-        playbutton.Position = new Vector2(50, 400);
+        playbutton.Position = new Vector2(100, 430);
         this.Add(playbutton);
 
         quitbutton = new Button("Quit");
-        quitbutton.Position = new Vector2(50, 900);
+        quitbutton.Position = new Vector2(100, 590);
         this.Add(quitbutton);
     }
 

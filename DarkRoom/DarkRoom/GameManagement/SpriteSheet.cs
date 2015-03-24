@@ -11,6 +11,8 @@ public class SpriteSheet
     protected int sheetRows;
     protected bool mirror;
     protected float rotation = 0;
+    protected Color color = Color.White;
+    protected float alpha = 1f;
 
     public SpriteSheet(string assetname, int sheetIndex = 0)
     {
@@ -39,7 +41,7 @@ public class SpriteSheet
         SpriteEffects spriteEffects = SpriteEffects.None;
         if (mirror)
             spriteEffects = SpriteEffects.FlipHorizontally;
-        spriteBatch.Draw(sprite, new Vector2(position.X * scale, position.Y * scale), spritePart, Color.White,
+        spriteBatch.Draw(sprite, new Vector2(position.X * scale, position.Y * scale), spritePart, color * alpha,
             rotation, origin, scale, spriteEffects, 0.0f);
     }
 
@@ -89,6 +91,18 @@ public class SpriteSheet
     {
         get { return rotation; }
         set { rotation = value; }
+    }
+
+    public Color Color
+    {
+        get { return color; }
+        set { color = value; }
+    }
+
+    public float Alpha
+    {
+        get { return alpha; }
+        set { alpha = value; }
     }
 
     public int SheetIndex
