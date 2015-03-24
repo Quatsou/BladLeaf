@@ -53,7 +53,7 @@ class Enemy : AnimatedGameObject
 
             Rectangle spritePart = new Rectangle(0, 0, selectedSprite.Width, selectedSprite.Height);
             spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.DarkRed * alpha,
-            0f, new Vector2(selectedSprite.Width/2,selectedSprite.Height/2), scale, SpriteEffects.None, 0.0f);
+            sprite.Rotation, new Vector2(selectedSprite.Width/2,selectedSprite.Height/2), scale, SpriteEffects.None, 0.0f);
         }
         base.Draw(gameTime, spriteBatch);
     }

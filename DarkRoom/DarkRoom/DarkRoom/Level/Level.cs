@@ -79,9 +79,59 @@ partial class Level : GameObjectList
             Console.WriteLine("Added friendly");
         }
 
+        Randomize();
+
         //Remove previous door arrow
         DoorArrow doorArrow = GameWorld.Find("doorarrow") as DoorArrow;
         if(doorArrow != null)
             GameWorld.Remove(doorArrow);
+    }
+
+    public void Randomize()
+    {
+        GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+        GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+
+        foreach (Enemy e in enemyList.Objects)
+        {
+            e.Position = CalculateRandomPos();
+            float rnd = (float)GameEnvironment.Random.Next(0, 64) / 10;
+            e.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
+        }
+        foreach (Friendly f in friendlyList.Objects)
+        {
+            f.Position = CalculateRandomPos();
+            float rnd = (float)GameEnvironment.Random.Next(0, 64) / 10;
+            f.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
+        }
+    }
+
+    public Vector2 CalculateRandomPos()
+    {
+
+        TileField tiles = GameWorld.Find("tiles") as TileField;
+        Vector2 fieldDimensions = new Vector2(tiles.fieldLength.X / 64, tiles.fieldLength.Y / 64);
+
+        int x = GameEnvironment.Random.Next(0, (int)fieldDimensions.X + 1);
+        int y = GameEnvironment.Random.Next(0, (int)fieldDimensions.Y + 1);
+
+        if (tiles.GetTileType(x, y) == TileType.Wall || tiles.GetTileType(x, y) == TileType.Door)
+            return CalculateRandomPos();
+        else
+        {
+            GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+            GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+            foreach (Enemy e in enemyList.Objects)
+            {
+                if (e.Position == new Vector2(tiles.fieldAnchor.X + 32 + (x * 64), tiles.fieldAnchor.Y + 32 + (y * 64)))
+                    return CalculateRandomPos();
+            }
+            foreach (Friendly f in friendlyList.Objects)
+            {
+                if (f.Position == new Vector2(tiles.fieldAnchor.X + 32 + (x * 64), tiles.fieldAnchor.Y + 32 + (y * 64)))
+                    return CalculateRandomPos();
+            }
+            return new Vector2(tiles.fieldAnchor.X + 32 + (x * 64), tiles.fieldAnchor.Y + 32 + (y * 64));
+        }
     }
 }
