@@ -53,9 +53,9 @@ public class DarkRoom : GameEnvironment
     protected override void LoadContent()
     {
         base.LoadContent();
-        screen = new Point(1920, 1080);
-        setScaling(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-        SetFullScreen();
+        screen = new Point(700,500);
+        setScaling(700, 500);
+        //SetFullScreen();
         Camera.camPos = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2;
         gameStateManager.AddGameState("playingState", new PlayingState(Content));
         gameStateManager.AddGameState("titleState", new TitleState(this));
