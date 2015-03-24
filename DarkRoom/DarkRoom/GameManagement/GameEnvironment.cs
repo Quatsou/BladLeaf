@@ -71,6 +71,8 @@ public class GameEnvironment : Game
         inputHelper.Update();
         if (inputHelper.KeyPressed(Keys.Escape))
             Environment.Exit(0);
+        //if (inputHelper.KeyPressed(Keys.F5))
+            
         gameStateManager.HandleInput(inputHelper);
     }
 
