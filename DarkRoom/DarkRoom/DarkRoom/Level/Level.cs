@@ -12,12 +12,16 @@ partial class Level : GameObjectList
     public SpriteFont font;
     public bool completed;
     public Door door;
+    public List<LightSource> lightSources;
+    public int sizeX, sizeY;
     PauseButton pauseButton;
 
-    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Source> lightSources, List<Enemy> enemies, List<Friendly> friendlies, float timer)
+    public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
         completed = false;
         this.timer = timer;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
         font = GameEnvironment.AssetManager.Content.Load<SpriteFont>("levelFont");
 
         pauseButton = new PauseButton();
@@ -26,9 +30,6 @@ partial class Level : GameObjectList
 
         Player player = new Player(new Vector2(20, 100));
         this.Add(player);
-
-        Lights lights = new Lights();
-        this.Add(lights);
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);
@@ -50,10 +51,13 @@ partial class Level : GameObjectList
                     door = new Door(new Vector2(startX + (x * Tile.TILESIZE), startY + 60 + (y * Tile.TILESIZE)));
                     this.Add(door);
                 }
+                else if (levelConfig[x, y] == TileType.LightSource)
+                {
+                    LightSource temp = new LightSource(new Vector2(startX + (x * Tile.TILESIZE), startY + 60 + (y * Tile.TILESIZE)));
+                    lightSources.Add(temp);
+                    this.Add(temp);
+                }
             }
-
-        foreach (Source s in lightSources)
-            lights.Add(s);
 
         GameObjectList enemyList = new GameObjectList(2, "enemyList") as GameObjectList;
         this.Add(enemyList);

@@ -76,10 +76,10 @@
     <Compile Include="GameObjects\DoorArrow.cs" />
     <Compile Include="GameObjects\Enemies\Enemy.cs" />
     <Compile Include="GameObjects\Friendly\Friendly.cs" />
-    <Compile Include="GameObjects\Lights\Light.cs" />
-    <Compile Include="GameObjects\Lights\Lights.cs" />
-    <Compile Include="GameObjects\Lights\QuadRenderComponent.cs" />
-    <Compile Include="GameObjects\Lights\ShadowMapResolver.cs">
+    <Compile Include="GameObjects\Shadow\ShadowMap.cs" />
+    <Compile Include="GameObjects\Tiles\LightSource.cs" />
+    <Compile Include="GameObjects\Shadow\QuadRenderComponent.cs" />
+    <Compile Include="GameObjects\Shadow\ShadowMapResolver.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameObjects\Player\Player.cs" />

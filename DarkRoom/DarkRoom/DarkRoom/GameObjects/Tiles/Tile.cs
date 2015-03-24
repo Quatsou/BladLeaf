@@ -9,7 +9,8 @@ enum TileType
 {
     Background,
     Wall,
-    Door
+    Door,
+    LightSource
 }
 
 class Tile : SpriteGameObject
