@@ -8,7 +8,7 @@ using System.Text;
 class ShadowMap : GameObject
 {
     float[,] shadowMapInitial, shadowMap;
-    float lightRange = 300, innerRange = 150;
+    float lightRange = 250, innerRange = 100;
     const int lightTileSep = 16;
     int lightBlockSize = Tile.TILESIZE / lightTileSep;
     float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
@@ -48,7 +48,6 @@ class ShadowMap : GameObject
                 //Muren zijn sowieso shaduw
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-
                     List<float> dist = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE);
                     float minDistance = float.MaxValue;
 
@@ -61,13 +60,14 @@ class ShadowMap : GameObject
                     if (minDistance - tileIns > lightRange)
                     {
                         float distFromLightRange = (minDistance - tileIns) - lightRange;
-                        int lightTileSize = Tile.TILESIZE / lightTileSep;
-                        float amountBlocksToSkip = (float)Math.Floor(distFromLightRange / lightTileSize);
-                        x += (int)amountBlocksToSkip;
-                        Console.Write("Skipped " + amountBlocksToSkip.ToString() + " " + lightTileSize.ToString() + "-pixel blocks." + " Jumped from x: " + (x - (int)amountBlocksToSkip).ToString() + " to x: " + x.ToString() + " because of a distance from the lightrange of " + distFromLightRange.ToString());
-                    }
+                        int amountTilesToSkip = (int)Math.Floor(distFromLightRange / Tile.TILESIZE);
 
-                    if (minDistance + tileIns < innerRange)
+                        if (x + amountTilesToSkip >= sizeX)
+                            continue;
+                        else
+                            x += amountTilesToSkip;
+                    }
+                    else if (minDistance + tileIns < innerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMapInitial);
                     }
