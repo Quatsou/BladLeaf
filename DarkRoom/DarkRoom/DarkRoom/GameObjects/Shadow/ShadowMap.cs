@@ -120,15 +120,6 @@ class ShadowMap : GameObject
 
     public override void HandleInput(InputHelper inputHelper)
     {
-
-        if (inputHelper.MouseLeftButtonPressed())
-            ToggleLights();
-
-        base.HandleInput(inputHelper);
-    }
-
-    public override void Update(GameTime gameTime)
-    {
         base.Update(gameTime);
 
         shadowMap = shadowMapInitial;
@@ -147,6 +138,11 @@ class ShadowMap : GameObject
                     }
                 }
             }
+
+        if (inputHelper.MouseLeftButtonPressed())
+            ToggleLights();
+
+        base.HandleInput(inputHelper);
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
