@@ -40,7 +40,13 @@ class ShadowMap : GameObject
             {
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-                    float minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
+                    List<float> dist = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE);
+                    float minDistance = float.MaxValue;
+
+                    //If there are lights
+                    if (dist.Any())
+                        minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
+
                     float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
                     if (minDistance + tileIns < innerRange)
                     {
@@ -74,8 +80,10 @@ class ShadowMap : GameObject
     {
         List<float> distances = new List<float>();
         foreach (LightSource ls in lightSources)
-            distances.Add(DistanceTo((ls.Position.X + 0.5f) * Tile.TILESIZE, (ls.Position.Y + 0.5f) * Tile.TILESIZE, x, y));
-
+        {
+            if (ls.On)
+                distances.Add(DistanceTo((ls.Position.X + 0.5f) * Tile.TILESIZE, (ls.Position.Y + 0.5f) * Tile.TILESIZE, x, y));
+        }
         return distances;
     }
 
@@ -96,12 +104,16 @@ class ShadowMap : GameObject
 
     public void ToggleLights()
     {
-
+        foreach (LightSource ls in lightSources)
+            ls.LightOff(0.3f, this);
     }
 
-    public override void Update(GameTime gameTime)
+    public override void HandleInput(InputHelper inputHelper)
     {
-        base.Update(gameTime);
+        if (inputHelper.MouseLeftButtonPressed())
+            ToggleLights();
+
+        base.HandleInput(inputHelper);
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
