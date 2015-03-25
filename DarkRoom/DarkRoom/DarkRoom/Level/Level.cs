@@ -35,7 +35,7 @@ partial class Level : GameObjectList
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);
-        
+                
         float startX = Camera.camPos.X - ((sizeX * Tile.TILESIZE) / 2);
         float startY = Camera.camPos.Y - ((sizeY * Tile.TILESIZE) / 2);
         tiles.fieldAnchor = new Vector2(startX, startY);
@@ -88,7 +88,7 @@ partial class Level : GameObjectList
         if(doorArrow != null)
             GameWorld.Remove(doorArrow);
 
-        ShadowMap shadowMap = new ShadowMap(this);
+        ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources);
         this.Add(shadowMap);
     }
 

@@ -9,29 +9,34 @@ class ShadowMap : GameObject
 {
     float[,] shadowMap;
     int lightRange = 200;
-    Level level;
+    int sizeX, sizeY;
+    TileType[,] levelLayout;
+    List<LightSource> lightSources;
 
-    public ShadowMap(Level level)
+    public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources)
         : base(4, "shadow")
     {
-        this.level = level;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.levelLayout = levelLayout;
+        this.lightSources = lightSources;
         SetInitialSM();
     }
 
     public void SetInitialSM()
     {
         //Hier wordt een shadowmap aangemaakt voor het level (lightsources veranderen niet van positie)
-        shadowMap = new float[level.sizeX * Tile.TILESIZE / 8, level.sizeY * Tile.TILESIZE / 8];
+        shadowMap = new float[sizeX * Tile.TILESIZE / 8, sizeY * Tile.TILESIZE / 8];
         FilterTiles();
     }
 
     public void FilterTiles()
     {
         //Voor optimalisatie worden eerst alle tiles gezet die sowieso helemaal belicht zijn of helemaal donker.
-        for (int x = 0; x < level.sizeX; x++)
-            for (int y = 0; y < level.sizeX; y++)
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
             {
-                if (level.levelLayout[x, y] != TileType.Wall)
+                if (levelLayout[x, y] != TileType.Wall)
                 {
                     int minDistance = MinDistanceToLS(x, y);
                     int tileIns = (int)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
@@ -52,7 +57,7 @@ class ShadowMap : GameObject
         //Minimal distance to lightsource
         double minimal = double.MaxValue;
 
-        foreach (LightSource ls in level.lightSources)
+        foreach (LightSource ls in lightSources)
         {
             double distance = DistanceTo(new Point((int)ls.Position.X, (int)ls.Position.Y), new Point(x, y));
             if (distance < minimal)
@@ -60,7 +65,7 @@ class ShadowMap : GameObject
                 minimal = distance;
             }
         }
-        return (int)minimal;
+        return (int)minimal * Tile.TILESIZE;
     }
 
     private double DistanceTo(Point p1, Point p2)
@@ -90,10 +95,10 @@ class ShadowMap : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        for (int xi = 0; xi < level.sizeX * 8; xi++)
-            for (int yi = 0; yi < level.sizeX * 8; yi++)
+        for (int xi = 0; xi < sizeX * 8; xi++)
+            for (int yi = 0; yi < sizeY * 8; yi++)
             {
-                DrawingHelper.DrawRectangle(new Rectangle(xi, yi, 8, 8), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
+                //DrawingHelper.DrawRectangle(new Rectangle(xi, yi, 8, 8), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
             }
     }
 
