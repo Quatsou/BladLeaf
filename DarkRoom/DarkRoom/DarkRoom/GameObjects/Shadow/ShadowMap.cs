@@ -131,7 +131,10 @@ class ShadowMap : GameObject
     {
         base.Update(gameTime);
 
-        shadowMap = shadowMapInitial;
+        for (int x = 0; x < sizeX * lightTileSep; x++)
+            for (int y = 0; y < sizeY * lightTileSep; y++)
+                shadowMap[x,y] = shadowMapInitial[x,y];
+
         ////Lightlevels voor zaklamp
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
@@ -144,6 +147,25 @@ class ShadowMap : GameObject
                     if (distanceFL + tileIns < Player.flashLightInnerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMap);
+                    }
+                    else if (distanceFL - tileIns < Player.flashLightRange)
+                    {
+                        for (int xi = 0; xi < lightTileSep; xi++)
+                            for (int yi = 0; yi < lightTileSep; yi++)
+                            {
+                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
+                                float lightLevel = 0;
+                                foreach (int d in distances)
+                                {
+                                    float temp = 1 - (d - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
+                                    if (temp < 0)
+                                        temp = 0;
+                                    lightLevel += (float)Math.Pow(temp, 2);
+                                }
+                                if (lightLevel > 1)
+                                    lightLevel = 1;
+                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = (float)Math.Sqrt(lightLevel);
+                            }
                     }
                 }
             }
