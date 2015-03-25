@@ -8,7 +8,7 @@ using System.Text;
 class ShadowMap : GameObject
 {
     float[,] shadowMap;
-    int lightRange = 200;
+    int lightRange = 250, innerRange = 200;
     int sizeX, sizeY;
     TileType[,] levelLayout;
     List<LightSource> lightSources;
@@ -42,13 +42,19 @@ class ShadowMap : GameObject
                 {
                     int minDistance = MinDistanceToLS(x, y);
                     int tileIns = (int)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
-                    if (minDistance + tileIns < lightRange)
+                    if (minDistance + tileIns < innerRange)
                     {
+                        Console.WriteLine("x: " + x + ", y: " + y);
                         SetTileSMTo(x, y, 1);
                     }
                     else if (minDistance - tileIns < lightRange)
                     {
-
+                        //List<int> distances = GetDistances(x, y);
+                        //int lightLevel = 0;
+                        //foreach (int d in distances)
+                        //{
+                        //    lightLevel += (d - innerRange) / (lightRange - innerRange);
+                        //}
                     }
                 }
             }
