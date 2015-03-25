@@ -7,17 +7,17 @@ using System.Text;
 
 class ShadowMap : GameObject
 {
-    double[,] shadowMapInitial, shadowMap;
-    double lightRange = 300, innerRange = 200;
+    float[,] shadowMapInitial, shadowMap;
+    float lightRange = 300, innerRange = 150;
     const int lightTileSep = 16;
     int lightBlockSize = Tile.TILESIZE / lightTileSep;
-    double tileIns = (double)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
+    float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
     int sizeX, sizeY;
     TileType[,] levelLayout;
     List<LightSource> lightSources;
     Vector2 levelOffset;
     Player player;
-    double lightLevel;
+    float lightLevel;
 
     public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources, Vector2 levelOffset, Player player)
         : base(4, "shadow")
@@ -34,13 +34,12 @@ class ShadowMap : GameObject
     public void SetInitialSM()
     {
         //Hier wordt een shadowmap aangemaakt voor het level (lightsources veranderen niet van positie)
-        shadowMap = new double[sizeX * lightTileSep, sizeY * lightTileSep];
-        shadowMapInitial = new double[sizeX * lightTileSep, sizeY * lightTileSep];
-        CalculateLLLS();
-        CalculateLLFL();
+        shadowMap = new float[sizeX * lightTileSep, sizeY * lightTileSep];
+        shadowMapInitial = new float[sizeX * lightTileSep, sizeY * lightTileSep];
+        CalculateLightLevels();
     }
 
-    public void CalculateLLLS()
+    public void CalculateLightLevels()
     {
         //Voor optimalisatie worden eerst alle tiles gezet die sowieso helemaal belicht zijn of helemaal donker.
         for (int x = 0; x < sizeX; x++)
@@ -50,14 +49,14 @@ class ShadowMap : GameObject
                 if (levelLayout[x, y] != TileType.Wall)
                 {
 
-                    List<double> dist = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE);
-                    double minDistance = double.MaxValue;
+                    List<float> dist = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE);
+                    float minDistance = float.MaxValue;
 
                     //If there are lights
                     if (dist.Any())
                         minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
 
-                    double tileIns = Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
+                    float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
                     if (minDistance + tileIns < innerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMapInitial);
@@ -68,18 +67,18 @@ class ShadowMap : GameObject
                         for (int xi = 0; xi < lightTileSep; xi++)
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
-                                List<double> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
+                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
                                 lightLevel = 0;
                                 foreach (int d in distances)
                                 {
-                                    double temp = 1 - (d - innerRange) / (lightRange - innerRange);
+                                    float temp = 1 - (d - innerRange) / (lightRange - innerRange);
                                     if (temp < 0)
                                         temp = 0;
-                                    lightLevel += Math.Pow(temp, 2);
+                                    lightLevel += (float)Math.Pow(temp, 2);
                                 }
                                 if (lightLevel > 1)
                                     lightLevel = 1;
-                                shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi] = Math.Sqrt(lightLevel);
+                                shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi] = (float)Math.Sqrt(lightLevel);
                             }
                     }
                     
@@ -87,9 +86,9 @@ class ShadowMap : GameObject
             }
     }
 
-    private List<double> GetDistances(double x, double y)
+    private List<float> GetDistances(float x, float y)
     {
-        List<double> distances = new List<double>();
+        List<float> distances = new List<float>();
         foreach (LightSource ls in lightSources)
         {
             if (ls.On)
@@ -98,54 +97,18 @@ class ShadowMap : GameObject
         return distances;
     }
 
-    private double DistanceTo(double x1, double y1, double x2, double y2)
+    private float DistanceTo(float x1, float y1, float x2, float y2)
     {
         //Helper methode voor distance 2 punten.
-        return Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+        return (float)Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
     }
 
-    private void SetTileSMTo(int x, int y, double value, double[,] map)
+    private void SetTileSMTo(int x, int y, float value, float[,] map)
     {
         for (int xi = 0; xi < lightTileSep; xi++)
             for (int yi = 0; yi < lightTileSep; yi++)
             {
                 map[x * lightTileSep + xi, y * lightTileSep + yi] = value;
-            }
-    }
-
-    private void CalculateLLFL()
-    {
-        ////Lightlevels voor zaklamp
-        for (int x = 0; x < sizeX; x++)
-            for (int y = 0; y < sizeY; y++)
-            {
-                //Muren zijn sowieso shaduw
-                if (levelLayout[x, y] != TileType.Wall)
-                {
-                    //Check of geheel in range van zaklamp
-                    double distanceFL = DistanceTo((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
-                    if (distanceFL + tileIns < Player.flashLightInnerRange)
-                    {
-                        SetTileSMTo(x, y, 1, shadowMap);
-                    }
-                    //Check gedeeltelijk in range zaklamp
-                    else if (distanceFL - tileIns < Player.flashLightRange)
-                    {
-                        for (int xi = 0; xi < lightTileSep; xi++)
-                            for (int yi = 0; yi < lightTileSep; yi++)
-                            {
-                                double distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
-                                double temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
-                                if (temp < 0)
-                                    temp = 0;
-                                lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
-                                lightLevel = Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
-                                if (lightLevel > 1)
-                                    lightLevel = 1;
-                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
-                            }
-                    }
-                }
             }
     }
 
@@ -172,7 +135,38 @@ class ShadowMap : GameObject
             for (int y = 0; y < sizeY * lightTileSep; y++)
                 shadowMap[x,y] = shadowMapInitial[x,y];
 
-        CalculateLLFL();
+        ////Lightlevels voor zaklamp
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
+            {
+                //Muren zijn sowieso shaduw
+                if (levelLayout[x, y] != TileType.Wall)
+                {
+                    //Check of geheel in range van zaklamp
+                    float distanceFL = DistanceTo((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
+                    if (distanceFL + tileIns < Player.flashLightInnerRange)
+                    {
+                        SetTileSMTo(x, y, 1, shadowMap);
+                    }
+                    //Check gedeeltelijk in range zaklamp
+                    else if (distanceFL - tileIns < Player.flashLightRange)
+                    {
+                        for (int xi = 0; xi < lightTileSep; xi++)
+                            for (int yi = 0; yi < lightTileSep; yi++)
+                            {
+                                float distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
+                                float temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
+                                if (temp < 0)
+                                    temp = 0;
+                                lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
+                                lightLevel = (float)Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
+                                if (lightLevel > 1)
+                                    lightLevel = 1;
+                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
+                            }
+                    }
+                }
+            }
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -180,7 +174,7 @@ class ShadowMap : GameObject
         for (int xi = 0; xi < sizeX * lightTileSep; xi++)
             for (int yi = 0; yi < sizeY * lightTileSep; yi++)
             {
-                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * lightBlockSize, (int)levelOffset.Y + yi * lightBlockSize, lightBlockSize, lightBlockSize), spriteBatch, Color.Black * (float)(1 - shadowMap[xi, yi]));
+                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * lightBlockSize, (int)levelOffset.Y + yi * lightBlockSize, lightBlockSize, lightBlockSize), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
             }
     }
 }
