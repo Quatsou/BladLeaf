@@ -38,7 +38,7 @@ class LevelConfigs
         TileType[,] level2 = new TileType[13, 8];
         level2[6, 7] = TileType.Door;
         level2[2, 4] = TileType.LightSource;
-        level2[7, 1] = TileType.LightSource;
+        //level2[7, 1] = TileType.LightSource;
         for (int x = 3; x < 5; x++)
             for (int y = 0; y < 3; y++)
                 level2[x, y] = TileType.Wall;
@@ -46,7 +46,6 @@ class LevelConfigs
             for (int y = 0; y < 3; y++)
                 level2[x, y] = TileType.Wall;
 
-        level2[7, 1] = TileType.LightSource;
         CreateConfig(13, 8, level2, enemies2, friendlies2, 60);
     }
 
