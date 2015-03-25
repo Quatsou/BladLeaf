@@ -13,6 +13,20 @@ partial class Level : GameObjectList
 
     public override void Update(GameTime gameTime)
     {
+        base.Update(gameTime);
+
+        if (!finishedRandomizing)
+        {
+            if (randomTimer > 0)
+                randomTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else
+            {
+                randomTimer = 1.5f;
+                Randomize();
+            }
+            return;
+        }
+
         if (clockTimer > 0)
             clockTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         else
@@ -29,8 +43,6 @@ partial class Level : GameObjectList
             CheckCompletion();
         else
             CheckDoor();
-
-        base.Update(gameTime);
     }
 
     public override void Reset()
