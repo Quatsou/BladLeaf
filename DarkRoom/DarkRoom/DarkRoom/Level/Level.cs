@@ -8,18 +8,21 @@ using System.Text;
 partial class Level : GameObjectList
 {
     float clockTimer;
-    public float timer;
+    public float timer, randomTimer;
     public SpriteFont font;
-    public bool completed;
+    public bool completed, finishedRandomizing;
     public Door door;
     public List<LightSource> lightSources = new List<LightSource>();
-    public int sizeX, sizeY;
+    public int sizeX, sizeY, randomizeCounter;
     PauseButton pauseButton;
     public TileType[,] levelLayout;
 
     public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
         completed = false;
+        finishedRandomizing = false;
+        randomTimer = 1.5f;
+        randomizeCounter = GameEnvironment.Random.Next(3, 7);
         this.timer = timer;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
@@ -66,7 +69,6 @@ partial class Level : GameObjectList
         foreach (Enemy e in enemies)
         {
             e.Reset();
-            e.Position = new Vector2(startX + 32 + (e.Coords.X * Tile.TILESIZE), startY + 32 + (e.Coords.Y * Tile.TILESIZE));
             enemyList.Add(e);
         }
 
@@ -75,7 +77,6 @@ partial class Level : GameObjectList
         foreach (Friendly f in friendlies)
         {
             f.Reset();
-            f.Position = new Vector2(startX + 32 + (f.Coords.X * Tile.TILESIZE), startY + 32 + (f.Coords.Y * Tile.TILESIZE));
             friendlyList.Add(f);
         }
 
@@ -106,6 +107,29 @@ partial class Level : GameObjectList
             f.Position = CalculateRandomPos();
             float rnd = (float)GameEnvironment.Random.Next(0, 64) / 10;
             f.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
+        }
+        randomizeCounter--;
+        if (randomizeCounter == 0)
+        {
+            FinishRandomizing();
+            finishedRandomizing = true;
+        }
+    }
+
+    public void FinishRandomizing()
+    {
+        TileField tiles = GameWorld.Find("tiles") as TileField;
+        GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+        GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+        foreach (Enemy e in enemyList.Objects)
+        {
+            e.Position = new Vector2(tiles.fieldAnchor.X + 32 + (e.Coords.X * Tile.TILESIZE), tiles.fieldAnchor.Y + 32 + (e.Coords.Y * Tile.TILESIZE));
+            e.Sprite.Rotation = e.startRotation;
+        }
+        foreach (Friendly f in friendlyList.Objects)
+        {
+            f.Position = new Vector2(tiles.fieldAnchor.X + 32 + (f.Coords.X * Tile.TILESIZE), tiles.fieldAnchor.Y + 32 + (f.Coords.Y * Tile.TILESIZE));
+            f.Sprite.Rotation = f.startRotation;
         }
     }
 

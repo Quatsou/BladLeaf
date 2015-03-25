@@ -12,6 +12,7 @@ class Friendly : AnimatedGameObject
     float escapeRotateValue = 0.15f;
     public bool selected = false;
     public bool dead = false;
+    public float startRotation;
     double sinValue = 0f;
     float offset = 0;
 
@@ -24,6 +25,7 @@ class Friendly : AnimatedGameObject
         Coords = startPosition;
         origin = new Vector2(sprite.Width / 2, sprite.Height / 2);
 
+        startRotation = rotation;
         sprite.Rotation = rotation;
     }
 
