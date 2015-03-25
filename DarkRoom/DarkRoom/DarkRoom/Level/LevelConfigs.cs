@@ -6,7 +6,7 @@ using System.Text;
 
 class LevelConfigs
 {
-    public static int levelsCompleted = 0;
+    public static int levelsCompleted = 5;
     public List<TileType[,]> configurations = new List<TileType[,]>();
     public List<int> sizesX = new List<int>();
     public List<int> sizesY = new List<int>();
@@ -38,6 +38,8 @@ class LevelConfigs
 
         TileType[,] level2 = new TileType[13, 8];
         level2[6, 7] = TileType.Door;
+        level1[2, 4] = TileType.LightSource;
+        level1[7, 1] = TileType.LightSource;
         for (int x = 3; x < 5; x++)
             for (int y = 0; y < 3; y++)
                 level2[x, y] = TileType.Wall;
