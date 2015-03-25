@@ -56,6 +56,16 @@ class ShadowMap : GameObject
                         minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
 
                     float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
+
+                    if (minDistance - tileIns > lightRange)
+                    {
+                        float distFromLightRange = (minDistance - tileIns) - lightRange;
+                        int lightTileSize = Tile.TILESIZE / lightTileSep;
+                        float amountBlocksToSkip = (float)Math.Floor(distFromLightRange / lightTileSize);
+                        x += (int)amountBlocksToSkip;
+                        Console.Write("Skipped " + amountBlocksToSkip.ToString() + " " + lightTileSize.ToString() + "-pixel blocks." + " Jumped from x: " + (x - (int)amountBlocksToSkip).ToString() + " to x: " + x.ToString() + " because of a distance from the lightrange of " + distFromLightRange.ToString());
+                    }
+
                     if (minDistance + tileIns < innerRange)
                     {
                         Console.WriteLine("x: " + x + ", y: " + y);
