@@ -109,7 +109,7 @@ class ShadowMap : GameObject
         for (int xi = 0; xi < sizeX * 8; xi++)
             for (int yi = 0; yi < sizeY * 8; yi++)
             {
-                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * 8, (int)levelOffset.Y + yi * 8, 8, 8), spriteBatch, Color.Red * (1 - shadowMap[xi, yi]) * 0.5f);
+                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * 8, (int)levelOffset.Y + yi * 8, 8, 8), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
             }
     }
 }
