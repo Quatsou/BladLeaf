@@ -1,6 +1,6 @@
 using System;
 
-namespace DarkRoom
+namespace KryptonTestbed
 {
 #if WINDOWS || XBOX
     static class Program
@@ -10,7 +10,7 @@ namespace DarkRoom
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (KryptonDemoGame game = new KryptonDemoGame())
             {
                 game.Run();
             }

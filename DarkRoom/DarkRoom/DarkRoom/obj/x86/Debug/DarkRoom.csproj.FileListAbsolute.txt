@@ -1,0 +1,86 @@
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.exe
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.csprojResolveAssemblyReference.cache
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.dll
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_player.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_player.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.exe
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.dll
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.pdb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.csprojResolveAssemblyReference.cache
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_enemy.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_friendly.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_door_dark.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_tile_dark.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_player.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_enemy.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_friendly.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_playbutton_selected.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_quitbutton_selected.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button1.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button2.xnb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.exe
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\DarkRoom.pdb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.dll
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Krypton.dll
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Krypton.pdb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\GameManagement.pdb
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.csprojResolveAssemblyReference.cache
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.exe
+C:\Users\Hayco\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\obj\x86\Debug\DarkRoom.pdb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_dot.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button_selected.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\menuFont.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_levelbutton.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\levelFont.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_slash@7.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_doorwhite.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause_selected.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_enemy.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_friendly.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button_selected.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_button.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_levelbutton.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_title.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_dot.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\menuFont.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\levelFont.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_slash@7.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_doorwhite.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\Menu\spr_pause_selected.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_doorarrow.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_slash.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_friendlyreleased.xnb
+C:\Users\Jesse de Ruijter\Documents\BladLeaf\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_clocktick.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_doorarrow.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_enemyselect.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Sprites\spr_friendlyselect.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_slash.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_friendlyreleased.xnb
+C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\DarkRoom\bin\x86\Debug\Content\Audio\snd_clocktick.xnb
