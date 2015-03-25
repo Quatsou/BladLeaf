@@ -226,6 +226,16 @@
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_dot_glow.xnb</Output>
       <Time>2015-03-25T15:07:16.5307179+01:00</Time>
     </Item>
+    <Item>
+      <Source>Audio\Dark Room.mp3</Source>
+      <Name>Audio\Dark Room</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\Dark Room.xnb</Output>
+      <Extra>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\Dark Room.wma</Extra>
+      <Time>2015-03-25T19:00:12.364861+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID Null="true" />

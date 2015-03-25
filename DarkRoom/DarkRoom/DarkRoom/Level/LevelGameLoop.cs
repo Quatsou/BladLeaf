@@ -33,7 +33,7 @@ partial class Level : GameObjectList
         {
             clockTimer = 1;
             timer -= 1;
-            GameEnvironment.AssetManager.PlaySound("Audio/snd_clocktick", 0.5f);
+            GameEnvironment.AssetManager.PlaySound("Audio/snd_clocktick", 1f);
         }
 
         if(timer <= 0)

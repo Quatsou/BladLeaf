@@ -7,26 +7,25 @@ using System.Text;
 
 class Friendly : AnimatedGameObject
 {
-    public Vector2 Coords;
+    public Vector2[] Coords;
     public bool escaped = false;
     float escapeRotateValue = 0.15f;
     public bool selected = false;
     public bool dead = false;
-    public float startRotation;
+    public float[] startRotation;
     double sinValue = 0f;
     float offset = 0;
 
-    public Friendly(Vector2 startPosition, float rotation)
+    public Friendly(Vector2[] coords, float[] rotation)
         : base(2, "friendly")
     {
         this.LoadAnimation("Sprites/spr_friendly", "friendly", false, 1);
         this.PlayAnimation("friendly");
 
-        Coords = startPosition;
+        this.Coords = coords;
         origin = new Vector2(sprite.Width / 2, sprite.Height / 2);
 
         startRotation = rotation;
-        sprite.Rotation = rotation;
     }
 
     public override Rectangle BoundingBox

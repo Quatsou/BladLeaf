@@ -14,6 +14,7 @@ class Player : AnimatedGameObject
     public const float flashLightRange = 200f;
     public const float flashLightInnerRange = 150f;
     const float ROTATIONSMOOTHNESS = 3f; // Higher is slower and smoother
+    public bool CanMove;
 
     public Player(Vector2 startPosition)
         : base(3, "player")
@@ -23,6 +24,7 @@ class Player : AnimatedGameObject
 
         position = startPosition;
         origin = new Vector2(sprite.Width/2, sprite.Height/2);
+        CanMove = false;
     }
 
     public override void Update(GameTime gameTime)
@@ -33,6 +35,9 @@ class Player : AnimatedGameObject
 
     public override void HandleInput(InputHelper inputHelper)
     {
+        if (!CanMove)
+            return;
+
         Movement(inputHelper);
         StayInBounds();
 

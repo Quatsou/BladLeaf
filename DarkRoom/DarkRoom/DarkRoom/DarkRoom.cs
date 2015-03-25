@@ -55,7 +55,7 @@ public class DarkRoom : GameEnvironment
         base.LoadContent();
         screen = new Point(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
         setScaling(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-        SetFullScreen();
+        //SetFullScreen();
         Camera.camPos = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2;
         gameStateManager.AddGameState("playingState", new PlayingState(Content));
         gameStateManager.AddGameState("titleState", new TitleState(this));

@@ -7,25 +7,24 @@ using System.Text;
 
 class Enemy : AnimatedGameObject
 {
-    public Vector2 Coords;
+    public Vector2[] Coords;
     public bool dead;
     public bool selected = false;
-    public float startRotation;
+    public float[] startRotation;
 
     double sinValue = 0;
     float offset = 0;
 
-    public Enemy(Vector2 startPosition, float rotation)
+    public Enemy(Vector2[] coords, float[] rotation)
         : base(2, "enemy")
     {
         this.LoadAnimation("Sprites/spr_enemy", "enemy", false, 1);
         this.PlayAnimation("enemy");
 
-        Coords = startPosition;
+        this.Coords = coords;
         origin = new Vector2(sprite.Width/2, sprite.Height/2);
 
         startRotation = rotation;
-        sprite.Rotation = rotation;
     }
 
     public override void Update(GameTime gameTime)

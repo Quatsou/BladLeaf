@@ -18,10 +18,18 @@ class LevelConfigs
     {   
         //Level1
         List<Enemy> enemies1 = new List<Enemy>();
-        enemies1.Add(new Enemy(new Vector2(4, 2), 0f));
+        Vector2[] lvl1Coordse = new Vector2[3]; float[] lvl1rotationse = new float[3];
+        lvl1Coordse[0] = new Vector2(1, 1); lvl1rotationse[0] = 3.14f;
+        lvl1Coordse[1] = new Vector2(2, 2); lvl1rotationse[1] = 4.20f;
+        lvl1Coordse[2] = new Vector2(3, 3); lvl1rotationse[2] = 1.11f;
+        enemies1.Add(new Enemy(lvl1Coordse, lvl1rotationse));
 
         List<Friendly> friendlies1 = new List<Friendly>();
-        friendlies1.Add(new Friendly(new Vector2(4, 0), 3.14f));
+        Vector2[] lvl1Coordsf = new Vector2[3]; float[] lvl1rotationsf = new float[3];
+        lvl1Coordsf[0] = new Vector2(1, 0); lvl1rotationsf[0] = 3.14f;
+        lvl1Coordsf[1] = new Vector2(2, 1); lvl1rotationsf[1] = 4.20f;
+        lvl1Coordsf[2] = new Vector2(3, 2); lvl1rotationsf[2] = 1.11f;
+        friendlies1.Add(new Friendly(lvl1Coordsf, lvl1rotationsf));
 
         TileType[,] level1 = new TileType[9, 6];
         level1[2, 5] = TileType.Door;
@@ -30,10 +38,18 @@ class LevelConfigs
 
         //Level2
         List<Enemy> enemies2 = new List<Enemy>();
-        enemies2.Add(new Enemy(new Vector2(6, 2), 0f));
+        Vector2[] lvl2Coordse = new Vector2[3]; float[] lvl2rotationse = new float[3];
+        lvl2Coordse[0] = new Vector2(0, 1); lvl2rotationse[0] = 3.14f;
+        lvl2Coordse[1] = new Vector2(1, 2); lvl2rotationse[1] = 4.20f;
+        lvl2Coordse[2] = new Vector2(2, 3); lvl2rotationse[2] = 1.11f;
+        enemies2.Add(new Enemy(lvl2Coordse, lvl2rotationse));
 
         List<Friendly> friendlies2 = new List<Friendly>();
-        friendlies2.Add(new Friendly(new Vector2(6, 0), 3.14f));
+        Vector2[] lvl2Coordsf = new Vector2[3]; float[] lvl2rotationsf = new float[3];
+        lvl2Coordsf[0] = new Vector2(0, 0); lvl2rotationsf[0] = 3.14f;
+        lvl2Coordsf[1] = new Vector2(1, 1); lvl2rotationsf[1] = 4.20f;
+        lvl2Coordsf[2] = new Vector2(2, 2); lvl2rotationsf[2] = 1.11f;
+        friendlies2.Add(new Friendly(lvl2Coordsf, lvl2rotationsf));
 
         TileType[,] level2 = new TileType[13, 8];
         level2[6, 7] = TileType.Door;

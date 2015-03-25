@@ -19,6 +19,7 @@ class PlayingState : IGameLoopObject
 
     public void LoadLevel(int levelNum)
     {
+        GameEnvironment.AssetManager.PlayMusic("Audio/Dark Room", true);
         currentLevel = new Level(levelConfigs.sizesX[levelNum - 1], levelConfigs.sizesY[levelNum - 1], levelConfigs.configurations[levelNum - 1], levelConfigs.enemiesConfig[levelNum - 1], levelConfigs.friendliesConfig[levelNum - 1],
             levelConfigs.timerConfig[levelNum - 1]);
         this.levelNum = levelNum;
