@@ -10,6 +10,7 @@ class Enemy : AnimatedGameObject
     public Vector2 Coords;
     public bool dead;
     public bool selected = false;
+    public float startRotation;
 
     double sinValue = 0;
     float offset = 0;
@@ -23,6 +24,7 @@ class Enemy : AnimatedGameObject
         Coords = startPosition;
         origin = new Vector2(sprite.Width/2, sprite.Height/2);
 
+        startRotation = rotation;
         sprite.Rotation = rotation;
     }
 
