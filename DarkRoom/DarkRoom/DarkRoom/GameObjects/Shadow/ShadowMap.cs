@@ -49,26 +49,16 @@ class ShadowMap : GameObject
                 //Muren zijn sowieso shaduw
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-                    List<double> dist = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE);
+
+                    List<double> dist = GetDistances((x + 0.5) * Tile.TILESIZE, (y + 0.5) * Tile.TILESIZE);
                     double minDistance = double.MaxValue;
 
                     //If there are lights
                     if (dist.Any())
-                        minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
+                        minDistance = GetDistances((x + 0.5) * Tile.TILESIZE, (y + 0.5) * Tile.TILESIZE).Min();
 
                     double tileIns = Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
-
-                    if (minDistance - tileIns > lightRange)
-                    {
-                        float distFromLightRange = (minDistance - tileIns) - lightRange;
-                        int amountTilesToSkip = (int)Math.Floor(distFromLightRange / Tile.TILESIZE);
-
-                        if (x + amountTilesToSkip >= sizeX)
-                            continue;
-                        else
-                            x += amountTilesToSkip;
-                    }
-                    else if (minDistance + tileIns < innerRange)
+                    if (minDistance + tileIns < innerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMapInitial);
                     }
@@ -78,7 +68,7 @@ class ShadowMap : GameObject
                         for (int xi = 0; xi < lightTileSep; xi++)
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
-                                List<double> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
+                                List<double> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize);
                                 lightLevel = 0;
                                 foreach (int d in distances)
                                 {
@@ -103,7 +93,7 @@ class ShadowMap : GameObject
         foreach (LightSource ls in lightSources)
         {
             if (ls.On)
-                distances.Add(DistanceTo((ls.Position.X + 0.5f) * Tile.TILESIZE, (ls.Position.Y + 0.5f) * Tile.TILESIZE, x, y));
+                distances.Add(DistanceTo((ls.Position.X + 0.5) * Tile.TILESIZE, (ls.Position.Y + 0.5) * Tile.TILESIZE, x, y));
         }
         return distances;
     }
@@ -133,7 +123,7 @@ class ShadowMap : GameObject
                 if (levelLayout[x, y] != TileType.Wall)
                 {
                     //Check of geheel in range van zaklamp
-                    double distanceFL = DistanceTo((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
+                    double distanceFL = DistanceTo((x + 0.5) * Tile.TILESIZE, (y + 0.5) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
                     if (distanceFL + tileIns < Player.flashLightInnerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMap);
@@ -144,7 +134,7 @@ class ShadowMap : GameObject
                         for (int xi = 0; xi < lightTileSep; xi++)
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
-                                double distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
+                                double distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
                                 double temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
                                 if (temp < 0)
                                     temp = 0;
