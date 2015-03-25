@@ -11,8 +11,8 @@ class Player : AnimatedGameObject
     public Vector2 hitPoint;
     float smoothRotationValue = 0f;
     public const float flashLightFOV = 2f;
-    public const float flashLightRange = 250f;
-    public const float flashLightInnerRange = 200f;
+    public const float flashLightRange = 200f;
+    public const float flashLightInnerRange = 150f;
     const float ROTATIONSMOOTHNESS = 3f; // Higher is slower and smoother
 
     public Player(Vector2 startPosition)

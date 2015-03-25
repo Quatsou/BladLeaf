@@ -17,6 +17,7 @@ class ShadowMap : GameObject
     List<LightSource> lightSources;
     Vector2 levelOffset;
     Player player;
+    float lightLevel;
 
     public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources, Vector2 levelOffset, Player player)
         : base(4, "shadow")
@@ -68,7 +69,6 @@ class ShadowMap : GameObject
 
                     if (minDistance + tileIns < innerRange)
                     {
-                        Console.WriteLine("x: " + x + ", y: " + y);
                         SetTileSMTo(x, y, 1, shadowMapInitial);
                     }
                     //Gedeeltelijk in range van een lightsource
@@ -78,7 +78,7 @@ class ShadowMap : GameObject
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
                                 List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
-                                float lightLevel = 0;
+                                lightLevel = 0;
                                 foreach (int d in distances)
                                 {
                                     float temp = 1 - (d - innerRange) / (lightRange - innerRange);
@@ -152,29 +152,27 @@ class ShadowMap : GameObject
                 //Muren zijn sowieso shaduw
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-                    //Check of in range van zaklamp
+                    //Check of geheel in range van zaklamp
                     float distanceFL = DistanceTo((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
                     if (distanceFL + tileIns < Player.flashLightInnerRange)
                     {
                         SetTileSMTo(x, y, 1, shadowMap);
                     }
+                    //Check gedeeltelijk in range zaklamp
                     else if (distanceFL - tileIns < Player.flashLightRange)
                     {
                         for (int xi = 0; xi < lightTileSep; xi++)
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
-                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
-                                float lightLevel = 0;
-                                foreach (int d in distances)
-                                {
-                                    float temp = 1 - (d - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
-                                    if (temp < 0)
-                                        temp = 0;
-                                    lightLevel += (float)Math.Pow(temp, 2);
-                                }
+                                float distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
+                                float temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
+                                if (temp < 0)
+                                    temp = 0;
+                                lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
+                                lightLevel = (float)Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
                                 if (lightLevel > 1)
                                     lightLevel = 1;
-                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = (float)Math.Sqrt(lightLevel);
+                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
                             }
                     }
                 }
