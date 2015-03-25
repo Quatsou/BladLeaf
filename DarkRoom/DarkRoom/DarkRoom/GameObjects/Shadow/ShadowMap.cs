@@ -40,7 +40,7 @@ class ShadowMap : GameObject
             {
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-                    int minDistance = MinDistanceToLS(x, y);
+                    int minDistance = GetDistances((int)(x + 0.5) * Tile.TILESIZE, (int)(y + 0.5) * Tile.TILESIZE).Min();
                     int tileIns = (int)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
                     if (minDistance + tileIns < innerRange)
                     {
@@ -49,31 +49,34 @@ class ShadowMap : GameObject
                     }
                     else if (minDistance - tileIns < lightRange)
                     {
-                        //List<int> distances = GetDistances(x, y);
-                        //int lightLevel = 0;
-                        //foreach (int d in distances)
-                        //{
-                        //    lightLevel += (d - innerRange) / (lightRange - innerRange);
-                        //}
+                        for (int xi = 0; xi < 8; xi++)
+                            for (int yi = 0; yi < 8; yi++)
+                            {
+                                List<int> distances = GetDistances((x * Tile.TILESIZE + xi * 8), (y * Tile.TILESIZE + yi * 8));
+                                float lightLevel = 0;
+                                foreach (int d in distances)
+                                {
+                                    float temp = 1 - (d - innerRange) / (lightRange - innerRange);
+                                    if (temp < 0)
+                                        temp = 0;
+                                    lightLevel += temp;
+                                }
+                                if (lightLevel > 1)
+                                    lightLevel = 1;
+                                shadowMap[x * 8 + xi, y * 8 + yi] = lightLevel;
+                            }
                     }
                 }
             }
     }
 
-    private int MinDistanceToLS(int x, int y)
+    private List<int> GetDistances(int x, int y)
     {
-        //Minimal distance to lightsource
-        double minimal = double.MaxValue;
-
+        List<int> distances = new List<int>();
         foreach (LightSource ls in lightSources)
-        {
-            double distance = DistanceTo(new Point((int)ls.Position.X, (int)ls.Position.Y), new Point(x, y));
-            if (distance < minimal)
-            {
-                minimal = distance;
-            }
-        }
-        return (int)minimal * Tile.TILESIZE;
+            distances.Add((int)DistanceTo(new Point((int)(ls.Position.X + 0.5) * Tile.TILESIZE, (int)(ls.Position.Y + 0.5) * Tile.TILESIZE), new Point(x, y)));
+
+        return distances;
     }
 
     private double DistanceTo(Point p1, Point p2)
