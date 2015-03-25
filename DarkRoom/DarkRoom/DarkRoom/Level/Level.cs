@@ -86,7 +86,7 @@ partial class Level : GameObjectList
         if(doorArrow != null)
             GameWorld.Remove(doorArrow);
 
-        ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources, new Vector2(startX, startY));
+        ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources, new Vector2(startX, startY), player);
         this.Add(shadowMap);
     }
 
