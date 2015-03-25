@@ -21,4 +21,9 @@ public class DrawingHelper
         spriteBatch.Draw(pixel, new Rectangle(r.Left, r.Top, r.Width, bw), col); // Top
         spriteBatch.Draw(pixel, new Rectangle(r.Left, r.Bottom, r.Width, bw), col); // Bottom
     }
+
+    public static void DrawFillRectangle(Rectangle r, SpriteBatch spriteBatch, Color col)
+    {
+        spriteBatch.Draw(pixel, r, col);
+    }
 }

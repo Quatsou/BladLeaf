@@ -68,7 +68,6 @@ partial class Level : GameObjectList
             e.Reset();
             e.Position = new Vector2(startX + 32 + (e.Coords.X * Tile.TILESIZE), startY + 32 + (e.Coords.Y * Tile.TILESIZE));
             enemyList.Add(e);
-            Console.WriteLine(e.Position);
         }
 
         GameObjectList friendlyList = new GameObjectList(2, "friendlyList") as GameObjectList;
@@ -78,7 +77,6 @@ partial class Level : GameObjectList
             f.Reset();
             f.Position = new Vector2(startX + 32 + (f.Coords.X * Tile.TILESIZE), startY + 32 + (f.Coords.Y * Tile.TILESIZE));
             friendlyList.Add(f);
-            Console.WriteLine("Added friendly");
         }
 
         Randomize();
@@ -88,7 +86,7 @@ partial class Level : GameObjectList
         if(doorArrow != null)
             GameWorld.Remove(doorArrow);
 
-        ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources);
+        ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources, new Vector2(startX, startY));
         this.Add(shadowMap);
     }
 

@@ -12,14 +12,16 @@ class ShadowMap : GameObject
     int sizeX, sizeY;
     TileType[,] levelLayout;
     List<LightSource> lightSources;
+    Vector2 levelOffset;
 
-    public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources)
+    public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources, Vector2 levelOffset)
         : base(4, "shadow")
     {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         this.levelLayout = levelLayout;
         this.lightSources = lightSources;
+        this.levelOffset = levelOffset;
         SetInitialSM();
     }
 
@@ -98,10 +100,8 @@ class ShadowMap : GameObject
         for (int xi = 0; xi < sizeX * 8; xi++)
             for (int yi = 0; yi < sizeY * 8; yi++)
             {
-                //DrawingHelper.DrawRectangle(new Rectangle(xi, yi, 8, 8), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
+                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * 8, (int)levelOffset.Y + yi * 8, 8, 8), spriteBatch, Color.Red * (1 - shadowMap[xi, yi]));
             }
     }
-
-    
 }
 
