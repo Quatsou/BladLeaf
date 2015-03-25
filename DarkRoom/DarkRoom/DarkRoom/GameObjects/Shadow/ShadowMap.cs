@@ -9,8 +9,6 @@ class ShadowMap : GameObject
 {
     float[,] shadowMap;
     float lightRange = 250, innerRange = 200;
-    const int lightTileSep = 16;
-    int lightBlockSize = Tile.TILESIZE / lightTileSep;
     int sizeX, sizeY;
     TileType[,] levelLayout;
     List<LightSource> lightSources;
@@ -30,7 +28,7 @@ class ShadowMap : GameObject
     public void SetInitialSM()
     {
         //Hier wordt een shadowmap aangemaakt voor het level (lightsources veranderen niet van positie)
-        shadowMap = new float[sizeX * lightTileSep, sizeY * lightTileSep];
+        shadowMap = new float[sizeX * Tile.TILESIZE / 8, sizeY * Tile.TILESIZE / 8];
         FilterTiles();
     }
 
@@ -51,21 +49,21 @@ class ShadowMap : GameObject
                     }
                     else if (minDistance - tileIns < lightRange)
                     {
-                        for (int xi = 0; xi < lightTileSep; xi++)
-                            for (int yi = 0; yi < lightTileSep; yi++)
+                        for (int xi = 0; xi < 8; xi++)
+                            for (int yi = 0; yi < 8; yi++)
                             {
-                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5f) * lightBlockSize);
+                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * 8, y * Tile.TILESIZE + (yi + 0.5f) * 8);
                                 float lightLevel = 0;
                                 foreach (int d in distances)
                                 {
                                     float temp = 1 - (d - innerRange) / (lightRange - innerRange);
                                     if (temp < 0)
                                         temp = 0;
-                                    lightLevel += (float)Math.Pow(temp, 2);
+                                    lightLevel += temp;
                                 }
                                 if (lightLevel > 1)
                                     lightLevel = 1;
-                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = (float)Math.Sqrt(lightLevel);
+                                shadowMap[x * 8 + xi, y * 8 + yi] = lightLevel;
                             }
                     }
                 }
@@ -89,11 +87,16 @@ class ShadowMap : GameObject
 
     private void SetTileSMTo(int x, int y, float value)
     {
-        for (int xi = 0; xi < lightTileSep; xi++)
-            for (int yi = 0; yi < lightTileSep; yi++)
+        for (int xi = 0; xi < 8; xi++)
+            for (int yi = 0; yi < 8; yi++)
             {
-                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = value;
+                shadowMap[x * 8 + xi, y * 8 + yi] = value;
             }
+    }
+
+    public void ToggleLights()
+    {
+
     }
 
     public override void Update(GameTime gameTime)
@@ -103,10 +106,10 @@ class ShadowMap : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        for (int xi = 0; xi < sizeX * lightTileSep; xi++)
-            for (int yi = 0; yi < sizeY * lightTileSep; yi++)
+        for (int xi = 0; xi < sizeX * 8; xi++)
+            for (int yi = 0; yi < sizeY * 8; yi++)
             {
-                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * lightBlockSize, (int)levelOffset.Y + yi * lightBlockSize, lightBlockSize, lightBlockSize), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
+                DrawingHelper.DrawFillRectangle(new Rectangle((int)levelOffset.X + xi * 8, (int)levelOffset.Y + yi * 8, 8, 8), spriteBatch, Color.Black * (1 - shadowMap[xi, yi]));
             }
     }
 }
