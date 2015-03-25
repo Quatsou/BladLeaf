@@ -32,8 +32,11 @@ class LightSource : SpriteGameObject
 
      void LightBackOn(ShadowMap shadowMap)
      {
-         On = true;
-         shadowMap.SetInitialSM();
+         if (!On)
+         {
+             On = true;
+             shadowMap.SetInitialSM();
+         }
      }
 
 }
