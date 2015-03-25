@@ -8,7 +8,7 @@ using System.Text;
 class ShadowMap : GameObject
 {
     float[,] shadowMap;
-    int lightRange = 250, innerRange = 200;
+    float lightRange = 250, innerRange = 200;
     int sizeX, sizeY;
     TileType[,] levelLayout;
     List<LightSource> lightSources;
@@ -40,8 +40,8 @@ class ShadowMap : GameObject
             {
                 if (levelLayout[x, y] != TileType.Wall)
                 {
-                    int minDistance = GetDistances((int)(x + 0.5) * Tile.TILESIZE, (int)(y + 0.5) * Tile.TILESIZE).Min();
-                    int tileIns = (int)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
+                    float minDistance = GetDistances((x + 0.5f) * Tile.TILESIZE, (y + 0.5f) * Tile.TILESIZE).Min();
+                    float tileIns = (float)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
                     if (minDistance + tileIns < innerRange)
                     {
                         Console.WriteLine("x: " + x + ", y: " + y);
@@ -52,7 +52,7 @@ class ShadowMap : GameObject
                         for (int xi = 0; xi < 8; xi++)
                             for (int yi = 0; yi < 8; yi++)
                             {
-                                List<int> distances = GetDistances((x * Tile.TILESIZE + xi * 8), (y * Tile.TILESIZE + yi * 8));
+                                List<float> distances = GetDistances(x * Tile.TILESIZE + (xi + 0.5f) * 8, y * Tile.TILESIZE + (yi + 0.5f) * 8);
                                 float lightLevel = 0;
                                 foreach (int d in distances)
                                 {
@@ -70,19 +70,19 @@ class ShadowMap : GameObject
             }
     }
 
-    private List<int> GetDistances(int x, int y)
+    private List<float> GetDistances(float x, float y)
     {
-        List<int> distances = new List<int>();
+        List<float> distances = new List<float>();
         foreach (LightSource ls in lightSources)
-            distances.Add((int)DistanceTo(new Point((int)(ls.Position.X + 0.5) * Tile.TILESIZE, (int)(ls.Position.Y + 0.5) * Tile.TILESIZE), new Point(x, y)));
+            distances.Add(DistanceTo((ls.Position.X + 0.5f) * Tile.TILESIZE, (ls.Position.Y + 0.5f) * Tile.TILESIZE, x, y));
 
         return distances;
     }
 
-    private double DistanceTo(Point p1, Point p2)
+    private float DistanceTo(float x1, float y1, float x2, float y2)
     {
         //Helper methode voor distance 2 punten.
-        return Math.Sqrt(Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
+        return (float)Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
     }
 
     private void SetTileSMTo(int x, int y, float value)
