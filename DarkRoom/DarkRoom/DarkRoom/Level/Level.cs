@@ -19,6 +19,8 @@ partial class Level : GameObjectList
 
     public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
+        ShadowMap.flashLightMode = false;
+
         completed = false;
         finishedRandomizing = false;
         randomTimer = 1.5f;
@@ -115,6 +117,7 @@ partial class Level : GameObjectList
         randomizeCounter--;
         if (randomizeCounter == 0)
         {
+            ShadowMap.flashLightMode = true;
             FinishRandomizing();
             finishedRandomizing = true;
         }

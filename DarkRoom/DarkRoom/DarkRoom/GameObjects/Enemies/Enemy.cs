@@ -46,7 +46,7 @@ class Enemy : AnimatedGameObject
     {
         if (visible && selected)
         {
-            SpriteSheet selectedSprite = new SpriteSheet("Sprites/spr_enemyselect");
+            SpriteSheet selectedSprite = new SpriteSheet("Sprites/spr_frenemy_selected");
 
             sinValue += gameTime.ElapsedGameTime.TotalSeconds * Math.PI * 6;
             offset = ((float)Math.Sin(sinValue) + 1);
@@ -54,14 +54,29 @@ class Enemy : AnimatedGameObject
             float alpha = offset - 0.6f;
 
             Rectangle spritePart = new Rectangle(0, 0, selectedSprite.Width, selectedSprite.Height);
-            spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.DarkRed * alpha,
+            spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.White * alpha,
             sprite.Rotation, new Vector2(selectedSprite.Width/2,selectedSprite.Height/2), scale, SpriteEffects.None, 0.0f);
         }
+
         base.Draw(gameTime, spriteBatch);
+
+        if (visible && !dead && ShadowMap.flashLightMode)
+        {
+            sprite.Alpha = 0;
+
+            SpriteSheet darksprite = new SpriteSheet("Sprites/spr_darkfrenemy");
+            spriteBatch.Draw(darksprite.Sprite, new Vector2(position.X, position.Y), null, Color.White,
+            sprite.Rotation, new Vector2(darksprite.Sprite.Width / 2, darksprite.Sprite.Height / 2), 1, SpriteEffects.None, 0.0f);
+        }
+        else
+        {
+            sprite.Alpha = 1;
+        }
     }
 
     public override void Reset()
     {
+        selected = false;
         visible = true;
         dead = false;
     }
