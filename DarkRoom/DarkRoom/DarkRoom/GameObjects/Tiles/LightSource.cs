@@ -17,26 +17,4 @@ class LightSource : SpriteGameObject
         position = startPosition;
     }
 
-    public void LightOff(float seconds, ShadowMap shadowMap)
-    {
-        if (On)
-        {
-            On = false;
-            shadowMap.SetInitialSM();
-
-            lightOffTimer = new Timer(seconds * 1000);
-            lightOffTimer.Enabled = true;
-            lightOffTimer.Elapsed += delegate { lightOffTimer.Enabled = false; LightBackOn(shadowMap); };
-        }
-    }
-
-     void LightBackOn(ShadowMap shadowMap)
-     {
-         if (!On)
-         {
-             On = true;
-             shadowMap.SetInitialSM();
-         }
-     }
-
 }

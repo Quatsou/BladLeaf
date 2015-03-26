@@ -37,7 +37,7 @@ class Friendly : AnimatedGameObject
     {
         if (visible && selected)
         {
-            SpriteSheet selectedSprite = new SpriteSheet("Sprites/spr_friendlyselect");
+            SpriteSheet selectedSprite = new SpriteSheet("Sprites/spr_frenemy_selected");
 
             sinValue += gameTime.ElapsedGameTime.TotalSeconds * Math.PI * 6;
             offset = ((float)Math.Sin(sinValue) + 1);
@@ -45,10 +45,21 @@ class Friendly : AnimatedGameObject
             float alpha = offset - 0.6f;
             
             Rectangle spritePart = new Rectangle(0, 0, selectedSprite.Width, selectedSprite.Height);
-            spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.DarkGreen * alpha,
+            spriteBatch.Draw(selectedSprite.Sprite, new Vector2(position.X, position.Y), spritePart, Color.White * alpha,
             sprite.Rotation, new Vector2(selectedSprite.Width / 2, selectedSprite.Height / 2), scale, SpriteEffects.None, 0.0f);
+
         }
+
         base.Draw(gameTime, spriteBatch);
+
+        if (visible && !escaped && ShadowMap.flashLightMode)
+        {
+            sprite.Alpha = 0;
+
+            SpriteSheet darksprite = new SpriteSheet("Sprites/spr_darkfrenemy");
+            spriteBatch.Draw(darksprite.Sprite, new Vector2(position.X, position.Y), null, Color.White,
+            sprite.Rotation, new Vector2(darksprite.Sprite.Width / 2, darksprite.Sprite.Height / 2), 1, SpriteEffects.None, 0.0f);
+        }
     }
 
     public override void Update(GameTime gameTime)
@@ -81,6 +92,7 @@ class Friendly : AnimatedGameObject
         visible = true;
         dead = false;
         escaped = false;
+        selected = false;
         sprite.Alpha = 1f;
         sprite.Rotation = 0f;
     }
@@ -89,13 +101,15 @@ class Friendly : AnimatedGameObject
     {
         if (!dead)
         {
-            GameEnvironment.AssetManager.PlaySound("Audio/snd_friendlyreleased", 1);
+            sprite.Alpha = 1;
             escaped = true;
+            GameEnvironment.AssetManager.PlaySound("Audio/snd_friendlyreleased", 1);
         }
     }
 
     public void Die()
     {
+        ShadowMap.flashLightMode = false;
         dead = true;
         Slash slash = new Slash(position, this as GameObject);
         slash.Sprite.Color = Color.Red;
