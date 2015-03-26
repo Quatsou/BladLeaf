@@ -24,4 +24,12 @@ Content\Audio\snd_friendlyreleased.xnb
 Content\Audio\snd_clocktick.xnb
 Content\Sprites\spr_dot_glow.xnb
 Content\Audio\Dark Room.xnb
+Content\Sprites\spr_cone_up.xnb
+Content\Sprites\spr_cone_down.xnb
+Content\Sprites\spr_cone_down_left.xnb
+Content\Sprites\spr_cone_down_right.xnb
+Content\Sprites\spr_cone_left.xnb
+Content\Sprites\spr_cone_right.xnb
+Content\Sprites\spr_cone_up_left.xnb
+Content\Sprites\spr_cone_up_right.xnb
 Content\Audio\Dark Room.wma

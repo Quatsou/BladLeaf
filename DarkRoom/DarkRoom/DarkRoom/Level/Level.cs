@@ -69,6 +69,9 @@ partial class Level : GameObjectList
         foreach (Enemy e in enemies)
         {
             e.Reset();
+            Cone c = new Cone("spr_cone_up", e);
+            GameWorld.Add(c);
+            e.cone = c;
             enemyList.Add(e);
         }
 
@@ -101,6 +104,7 @@ partial class Level : GameObjectList
             e.Position = CalculateRandomPos();
             float rnd = (float)GameEnvironment.Random.Next(0, 64) / 10;
             e.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
+            e.cone.AdjustCone();
         }
         foreach (Friendly f in friendlyList.Objects)
         {
@@ -129,6 +133,7 @@ partial class Level : GameObjectList
         {
             e.Position = new Vector2(tiles.fieldAnchor.X + 32 + (e.Coords[config].X * Tile.TILESIZE), tiles.fieldAnchor.Y + 32 + (e.Coords[config].Y * Tile.TILESIZE));
             e.Sprite.Rotation = e.startRotation[config];
+            e.cone.AdjustCone();
         }
         foreach (Friendly f in friendlyList.Objects)
         {

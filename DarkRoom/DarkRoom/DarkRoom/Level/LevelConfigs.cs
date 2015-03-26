@@ -19,9 +19,9 @@ class LevelConfigs
         //Level1
         List<Enemy> enemies1 = new List<Enemy>();
         Vector2[] lvl1Coordse = new Vector2[3]; float[] lvl1rotationse = new float[3];
-        lvl1Coordse[0] = new Vector2(1, 1); lvl1rotationse[0] = 3.14f;
-        lvl1Coordse[1] = new Vector2(2, 2); lvl1rotationse[1] = 4.20f;
-        lvl1Coordse[2] = new Vector2(3, 3); lvl1rotationse[2] = 1.11f;
+        lvl1Coordse[0] = new Vector2(1, 1); lvl1rotationse[0] = 0.785f;
+        lvl1Coordse[1] = new Vector2(1, 1); lvl1rotationse[1] = 1.570f;
+        lvl1Coordse[2] = new Vector2(1, 1); lvl1rotationse[2] = 3.927f;
         enemies1.Add(new Enemy(lvl1Coordse, lvl1rotationse));
 
         List<Friendly> friendlies1 = new List<Friendly>();
@@ -31,10 +31,10 @@ class LevelConfigs
         lvl1Coordsf[2] = new Vector2(3, 2); lvl1rotationsf[2] = 1.11f;
         friendlies1.Add(new Friendly(lvl1Coordsf, lvl1rotationsf));
 
-        TileType[,] level1 = new TileType[9, 6];
+        TileType[,] level1 = new TileType[28, 15];
         level1[2, 5] = TileType.Door;
         level1[2, 4] = TileType.LightSource;
-        CreateConfig(9, 6, level1, enemies1, friendlies1, 5);
+        CreateConfig(28, 15, level1, enemies1, friendlies1, 60);
 
         //Level2
         List<Enemy> enemies2 = new List<Enemy>();

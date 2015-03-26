@@ -91,7 +91,7 @@ public class SpriteGameObject : GameObject
 
     public bool CollidesWith(SpriteGameObject obj)
     {
-        if (!this.Visible || !obj.Visible || !BoundingBox.Intersects(obj.BoundingBox))
+        if (!BoundingBox.Intersects(obj.BoundingBox))
             return false;
         Rectangle b = Collision.Intersection(BoundingBox, obj.BoundingBox);
         for (int x = 0; x < b.Width; x++)

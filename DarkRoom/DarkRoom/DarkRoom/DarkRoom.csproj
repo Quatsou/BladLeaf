@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="GameObjects\Animation\Slash.cs" />
     <Compile Include="GameObjects\DoorArrow.cs" />
+    <Compile Include="GameObjects\Enemies\Cone.cs" />
     <Compile Include="GameObjects\Enemies\Enemy.cs" />
     <Compile Include="GameObjects\Friendly\Friendly.cs" />
     <Compile Include="GameObjects\Shadow\ShadowMap.cs" />

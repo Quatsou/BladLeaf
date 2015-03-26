@@ -8,6 +8,7 @@ using System.Text;
 class Enemy : AnimatedGameObject
 {
     public Vector2[] Coords;
+    public Cone cone;
     public bool dead;
     public bool selected = false;
     public float[] startRotation;
@@ -30,6 +31,7 @@ class Enemy : AnimatedGameObject
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+
         Player player = GameWorld.Find("player") as Player;
         if (!dead && this.CollidesWith(player))
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
