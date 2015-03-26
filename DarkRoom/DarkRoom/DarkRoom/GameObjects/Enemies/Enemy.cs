@@ -87,5 +87,6 @@ class Enemy : AnimatedGameObject
         Slash slash = new Slash(position, this as GameObject);
         slash.Sprite.Color = Color.LightGreen;
         GameWorld.Add(slash);
+        GameWorld.Remove(cone);
     }
 }

@@ -8,7 +8,7 @@ class PauseButton : SpriteGameObject
     protected bool selected;
     Texture2D selectedButton;
 
-    public PauseButton(int layer = 1, string id = "")
+    public PauseButton(int layer = 11, string id = "")
         : base("Sprites/Menu/spr_pause", layer, id)
     {
         pressed = false;

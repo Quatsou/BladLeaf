@@ -8,20 +8,11 @@ using System.Text;
 class Cone : SpriteGameObject
 {
     Enemy e;
-    Texture2D up, up_right, right, down_right, down, down_left, left, up_left;
 
     public Cone(string imageAsset, Enemy e)
         : base ("Sprites/" + imageAsset, 4)
     {
         this.e = e;
-        up = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_up");
-        up_right = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_up_right");
-        right = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_right");
-        down_right = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_down_right");
-        down = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_down");
-        down_left = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_down_left");
-        left = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_left");
-        up_left = GameEnvironment.AssetManager.GetSprite("Sprites/spr_cone_up_left");
     }
 
     public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
@@ -29,7 +20,7 @@ class Cone : SpriteGameObject
         base.Update(gameTime);
 
         Player player = GameWorld.Find("player") as Player;
-        if (this.CollidesWith(player))
+        if (this.CollidesWith(player) && player.CanMove)
         {
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         }
@@ -37,7 +28,8 @@ class Cone : SpriteGameObject
 
     public override void Draw(Microsoft.Xna.Framework.GameTime gameTime, SpriteBatch spriteBatch)
     {
-        base.Draw(gameTime, spriteBatch);
+        if (!ShadowMap.flashLightMode)
+            base.Draw(gameTime, spriteBatch);
     }
 
     public void AdjustCone()

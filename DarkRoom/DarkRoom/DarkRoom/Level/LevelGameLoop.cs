@@ -21,8 +21,32 @@ partial class Level : GameObjectList
                 randomTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             else
             {
-                randomTimer = 1.5f;
-                Randomize();
+                if (randomizeCounter == -1)
+                {
+                    finishedRandomizing = true;
+                    Player player = GameWorld.Find("player") as Player;
+                    player.CanMove = true;
+                    ShadowMap.lightsoff = false;
+                    ShadowMap.flashLightMode = true;
+                    randomTimer = 1f;
+                    return;
+                }
+                if (ShadowMap.lightsoff)
+                {
+                    if (randomizeCounter == 0)
+                    {
+                        FinishRandomizing();
+                        randomizeCounter--;
+                    }
+                    else
+                        Randomize();
+
+                    ShadowMap.lightsoff = false;
+                }
+                else
+                    ShadowMap.lightsoff = true;
+
+                randomTimer = 1f;
             }
             return;
         }
@@ -60,6 +84,7 @@ partial class Level : GameObjectList
     public void CheckCompletion()
     {
         int escapedFriendlyCount = 0;
+        int deadEnemyCount = 0;
 
         GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
         foreach (Friendly f in friendlyList.Objects)
@@ -73,6 +98,18 @@ partial class Level : GameObjectList
                 Door door = GameWorld.Find("door") as Door;
                 Vector2 doorPos = door.GlobalPosition + new Vector2(Tile.TILESIZE/2, -Tile.TILESIZE);
                 GameWorld.Add(new DoorArrow(doorPos));
+            }
+        }
+
+        GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
+        foreach (Enemy e in enemyList.Objects)
+        {
+            if (e.dead)
+                deadEnemyCount++;
+            if (deadEnemyCount == enemyList.Objects.Count)
+            {
+                GameEnvironment.GameStateManager.SwitchTo("levelsState");
+                LevelConfigs.levelsCompleted++;
             }
         }
     }

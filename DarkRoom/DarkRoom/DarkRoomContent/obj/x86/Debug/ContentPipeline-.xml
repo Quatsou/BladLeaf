@@ -173,24 +173,6 @@
       <Time>2015-03-25T15:07:16.5297178+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\spr_enemyselect.png</Source>
-      <Name>Sprites\spr_enemyselect</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_enemyselect.xnb</Output>
-      <Time>2015-03-25T15:07:16.5317176+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\spr_friendlyselect.png</Source>
-      <Name>Sprites\spr_friendlyselect</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_friendlyselect.xnb</Output>
-      <Time>2015-03-25T15:07:16.5327177+01:00</Time>
-    </Item>
-    <Item>
       <Source>Audio\snd_slash.wav</Source>
       <Name>Audio\snd_slash</Name>
       <Importer>WavImporter</Importer>
@@ -243,7 +225,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_up.xnb</Output>
-      <Time>2015-03-26T14:21:01.2666536+01:00</Time>
+      <Time>2015-03-26T15:41:03.1318123+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_down.png</Source>
@@ -252,7 +234,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_down.xnb</Output>
-      <Time>2015-03-26T14:22:33.8585057+01:00</Time>
+      <Time>2015-03-26T15:41:03.123807+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_down_left.png</Source>
@@ -261,7 +243,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_down_left.xnb</Output>
-      <Time>2015-03-26T14:22:43.4390924+01:00</Time>
+      <Time>2015-03-26T15:41:03.1258076+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_down_right.png</Source>
@@ -270,7 +252,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_down_right.xnb</Output>
-      <Time>2015-03-26T14:22:23.2255694+01:00</Time>
+      <Time>2015-03-26T15:41:03.1278074+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_left.png</Source>
@@ -279,7 +261,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_left.xnb</Output>
-      <Time>2015-03-26T14:22:53.5108379+01:00</Time>
+      <Time>2015-03-26T15:41:03.1298084+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_right.png</Source>
@@ -288,7 +270,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_right.xnb</Output>
-      <Time>2015-03-26T14:21:59.958346+01:00</Time>
+      <Time>2015-03-26T15:41:03.1308122+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_up_left.png</Source>
@@ -297,7 +279,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_up_left.xnb</Output>
-      <Time>2015-03-26T14:23:03.0661489+01:00</Time>
+      <Time>2015-03-26T15:41:03.1328267+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_cone_up_right.png</Source>
@@ -306,7 +288,43 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_cone_up_right.xnb</Output>
-      <Time>2015-03-26T14:21:45.008103+01:00</Time>
+      <Time>2015-03-26T15:41:03.1338281+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_darkfrenemy.png</Source>
+      <Name>Sprites\spr_darkfrenemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_darkfrenemy.xnb</Output>
+      <Time>2015-03-26T15:41:04.7962379+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_frenemy_selected.png</Source>
+      <Name>Sprites\spr_frenemy_selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_frenemy_selected.xnb</Output>
+      <Time>2015-03-26T15:41:04.7940099+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_black_top.png</Source>
+      <Name>Sprites\spr_black_top</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_black_top.xnb</Output>
+      <Time>2015-03-26T18:33:59.667015+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spr_black_side.png</Source>
+      <Name>Sprites\spr_black_side</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_black_side.xnb</Output>
+      <Time>2015-03-26T18:33:07.8036193+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -9,7 +9,6 @@ using System.Timers;
 class LightSource : SpriteGameObject
 {
     public bool On = true;
-    Timer lightOffTimer;
 
     public LightSource(Vector2 startPosition)
         : base("Sprites/spr_dot", 2, "light")

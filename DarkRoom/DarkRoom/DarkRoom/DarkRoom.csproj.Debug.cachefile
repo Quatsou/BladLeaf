@@ -17,8 +17,6 @@ Content\Sprites\spr_doorwhite.xnb
 Content\Sprites\Menu\spr_pause.xnb
 Content\Sprites\Menu\spr_pause_selected.xnb
 Content\Sprites\spr_doorarrow.xnb
-Content\Sprites\spr_enemyselect.xnb
-Content\Sprites\spr_friendlyselect.xnb
 Content\Audio\snd_slash.xnb
 Content\Audio\snd_friendlyreleased.xnb
 Content\Audio\snd_clocktick.xnb
@@ -32,4 +30,8 @@ Content\Sprites\spr_cone_left.xnb
 Content\Sprites\spr_cone_right.xnb
 Content\Sprites\spr_cone_up_left.xnb
 Content\Sprites\spr_cone_up_right.xnb
+Content\Sprites\spr_darkfrenemy.xnb
+Content\Sprites\spr_frenemy_selected.xnb
+Content\Sprites\spr_black_top.xnb
+Content\Sprites\spr_black_side.xnb
 Content\Audio\Dark Room.wma

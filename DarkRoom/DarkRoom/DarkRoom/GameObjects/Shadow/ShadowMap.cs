@@ -18,7 +18,7 @@ class ShadowMap : GameObject
     Vector2 levelOffset;
     Player player;
     double lightLevel;
-    public static bool flashLightMode = false;
+    public static bool flashLightMode = false, lightsoff = false;
 
     public ShadowMap(int sizeX, int sizeY, TileType[,] levelLayout, List<LightSource> lightSources, Vector2 levelOffset, Player player)
         : base(4, "shadow")
@@ -163,6 +163,11 @@ class ShadowMap : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        if (lightsoff)
+        {
+            DrawingHelper.DrawFillRectangle(new Rectangle(0, 0, GameEnvironment.Screen.X, GameEnvironment.Screen.Y), spriteBatch, Color.Black);
+            return;
+        }
         if (flashLightMode)
         {
             for (int xi = 0; xi < sizeX * lightTileSep; xi++)

@@ -9,6 +9,7 @@ partial class Level : GameObjectList
 {
     float clockTimer;
     public float timer, randomTimer;
+    public float[] rotations;
     public SpriteFont font;
     public bool completed, finishedRandomizing;
     public Door door;
@@ -21,10 +22,20 @@ partial class Level : GameObjectList
     {
         ShadowMap.flashLightMode = false;
 
+        rotations = new float[8];
+        rotations[0] = 0f;
+        rotations[1] = 0.785f;
+        rotations[2] = 1.570f;
+        rotations[3] = 2.356f;
+        rotations[4] = 3.141f;
+        rotations[5] = 3.927f;
+        rotations[6] = 4.712f;
+        rotations[7] = 5.498f;
+
         completed = false;
         finishedRandomizing = false;
         randomTimer = 1.5f;
-        randomizeCounter = GameEnvironment.Random.Next(3, 7);
+        randomizeCounter = 5;
         this.timer = timer;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
@@ -45,6 +56,11 @@ partial class Level : GameObjectList
         float startY = Camera.camPos.Y - ((sizeY * Tile.TILESIZE) / 2);
         tiles.fieldAnchor = new Vector2(startX, startY);
         tiles.fieldLength = new Vector2(sizeX * Tile.TILESIZE, sizeY * Tile.TILESIZE);
+
+        GameWorld.Add(new BlackBar(new Vector2(startX - 192, startY), "Sprites/spr_black_side"));
+        GameWorld.Add(new BlackBar(new Vector2(startX + tiles.fieldLength.X, startY), "Sprites/spr_black_side"));
+        GameWorld.Add(new BlackBar(new Vector2(startX, startY - 192), "Sprites/spr_black_top"));
+        GameWorld.Add(new BlackBar(new Vector2(startX, startY + tiles.fieldLength.Y), "Sprites/spr_black_top"));
 
         for (int x = 0; x < sizeX; x++)
             for (int y = 0; y < sizeY; y++)
@@ -104,8 +120,7 @@ partial class Level : GameObjectList
         foreach (Enemy e in enemyList.Objects)
         {
             e.Position = CalculateRandomPos();
-            float rnd = (float)GameEnvironment.Random.Next(0, 64) / 10;
-            e.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
+            e.Sprite.Rotation = rotations[GameEnvironment.Random.Next(0, rotations.Length - 1)];
             e.cone.AdjustCone();
         }
         foreach (Friendly f in friendlyList.Objects)
@@ -115,12 +130,6 @@ partial class Level : GameObjectList
             f.Sprite.Rotation = ((float)GameEnvironment.Random.NextDouble() * rnd);
         }
         randomizeCounter--;
-        if (randomizeCounter == 0)
-        {
-            ShadowMap.flashLightMode = true;
-            FinishRandomizing();
-            finishedRandomizing = true;
-        }
     }
 
     public void FinishRandomizing()
@@ -143,9 +152,6 @@ partial class Level : GameObjectList
             f.Position = new Vector2(tiles.fieldAnchor.X + 32 + (f.Coords[config].X * Tile.TILESIZE), tiles.fieldAnchor.Y + 32 + (f.Coords[config].Y * Tile.TILESIZE));
             f.Sprite.Rotation = f.startRotation[config];
         }
-
-        Player player = GameWorld.Find("player") as Player;
-        player.CanMove = true;
     }
 
     public Vector2 CalculateRandomPos()
