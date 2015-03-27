@@ -8,7 +8,7 @@ using System.Text;
 class ShadowMap : GameObject
 {
     double[,] shadowMapInitial, shadowMap;
-    double lightRange = 300, innerRange = 200;
+    double lightRange = 150, innerRange = 100;
     const int lightTileSep = 8;
     int lightBlockSize = Tile.TILESIZE / lightTileSep;
     double tileIns = (double)Math.Sqrt(Math.Pow(Tile.TILESIZE, 2) * 2) + 1;
@@ -37,7 +37,8 @@ class ShadowMap : GameObject
         //Hier wordt een shadowmap aangemaakt voor het level (lightsources veranderen niet van positie)
         shadowMap = new double[sizeX * lightTileSep, sizeY * lightTileSep];
         shadowMapInitial = new double[sizeX * lightTileSep, sizeY * lightTileSep];
-        //CalculateLLLS();
+        if (lightSources.Count > 0)
+            CalculateLLLS();
         CalculateLLFL();
     }
 

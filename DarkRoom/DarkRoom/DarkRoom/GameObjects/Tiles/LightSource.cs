@@ -11,7 +11,7 @@ class LightSource : SpriteGameObject
     public bool On = true;
 
     public LightSource(Vector2 startPosition)
-        : base("Sprites/spr_dot", 2, "light")
+        : base("", 2, "light")
     {
         position = startPosition;
     }
