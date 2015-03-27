@@ -125,7 +125,7 @@ class LevelConfigs
             {0,0,0,0,0,0}};
         CreateConfig(10, 6, ToTileType(level4, 10, 6), enemies4, friendlies4, 20);
 
-        //Level4
+        //Level5
         List<Enemy> enemies5 = new List<Enemy>();
 
         enemies5.Add(new Enemy(
@@ -186,8 +186,8 @@ class LevelConfigs
             {0,0,0,0,0,0,0,0,0,1,1,1}};
         CreateConfig(13, 12, ToTileType(level5, 13, 12), enemies5, friendlies5, 30);
 
-        //Level 5
-        List<Enemy> enemies5 = new List<Enemy>();
+        //Level 6
+        List<Enemy> enemies6 = new List<Enemy>();
 
         enemies6.Add(new Enemy(
             CreateCoords(0, 2, 2, 0, 2, 0),
