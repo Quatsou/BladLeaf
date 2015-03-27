@@ -10,14 +10,15 @@ class Player : AnimatedGameObject
 {
     public Vector2 hitPoint;
     float smoothRotationValue = 0f;
-    public const float flashLightFOV = 2f;
+    public const float flashLightFOV = 120;
     public const float flashLightRange = 200f;
     public const float flashLightInnerRange = 150f;
     const float ROTATIONSMOOTHNESS = 3f; // Higher is slower and smoother
     public bool CanMove;
+    public Vector2 direction;
 
     public Player(Vector2 startPosition)
-        : base(3, "player")
+        : base(5, "player")
     {
         this.LoadAnimation("Sprites/spr_player", "player", false, 1);
         this.PlayAnimation("player");
@@ -108,8 +109,8 @@ class Player : AnimatedGameObject
 
         sprite.Rotation += smoothRotationValue;
 
-        Vector2 direction = new Vector2((float)Math.Cos(sprite.Rotation - Math.PI / 2),
-                                    (float)Math.Sin(sprite.Rotation - Math.PI / 2));
+        direction = new Vector2((float)Math.Cos(sprite.Rotation - Math.PI / 2),
+                                (float)Math.Sin(sprite.Rotation - Math.PI / 2));
         direction.Normalize();
         position += direction * moveSpeed;
     }

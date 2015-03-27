@@ -125,29 +125,50 @@ class ShadowMap : GameObject
                 {
                     //Check of geheel in range van zaklamp
                     double distanceFL = DistanceTo((x + 0.5) * Tile.TILESIZE, (y + 0.5) * Tile.TILESIZE, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
-                    if (distanceFL + tileIns < Player.flashLightInnerRange)
+                    double angle = TileInRangeFL((x + 0.5) * Tile.TILESIZE, (y + 0.5) * Tile.TILESIZE, distanceFL);
+                    if (distanceFL + tileIns < Player.flashLightInnerRange && distanceFL > Tile.TILESIZE && (angle < Player.flashLightFOV / 2 - 45 || angle > 360 - (Player.flashLightFOV / 2 - 45)))
                     {
                         SetTileSMTo(x, y, 1, shadowMap);
                     }
                     //Check gedeeltelijk in range zaklamp
-                    else if (distanceFL - tileIns < Player.flashLightRange)
+                    else if (distanceFL < Tile.TILESIZE || (distanceFL - tileIns < Player.flashLightRange && (angle < Player.flashLightFOV / 2 + 45 || angle > 360 - (Player.flashLightFOV / 2 + 45))))
                     {
                         for (int xi = 0; xi < lightTileSep; xi++)
                             for (int yi = 0; yi < lightTileSep; yi++)
                             {
                                 double distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
-                                double temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
-                                if (temp < 0)
-                                    temp = 0;
-                                lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
-                                lightLevel = Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
-                                if (lightLevel > 1)
-                                    lightLevel = 1;
-                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
+                                double angleSep = TileInRangeFL(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize, distanceFLBlock);
+                                if ((angleSep < Player.flashLightFOV / 2 || angleSep > 360 - (Player.flashLightFOV / 2)))
+                                {
+                                    double temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
+                                    if (temp < 0)
+                                        temp = 0;
+                                    lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
+                                    lightLevel = Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
+                                    if (lightLevel > 1)
+                                        lightLevel = 1;
+                                    shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
+                                }
                             }
                     }
                 }
             }
+    }
+
+    private double TileInRangeFL(double x, double y, double p13)
+    {
+        double p12 = 10; //DistanceTo(player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y,
+           // player.GlobalPosition.X - levelOffset.X + player.direction.X * 10, player.GlobalPosition.Y - levelOffset.Y + player.direction.Y * 10);
+        double p23 = DistanceTo(player.GlobalPosition.X - levelOffset.X + player.direction.X * 10, player.GlobalPosition.Y - levelOffset.Y + player.direction.Y * 10, x, y);
+
+        //Console.WriteLine(p23);
+
+        return CalculateAngle(p12, p13, p23);
+    }
+    private double CalculateAngle(double p12, double p13, double p23)
+    {
+        double result = Math.Acos((p12 * p12 + p13 * p13 - p23 * p23) / (2 * p12 * p13)) / (2 * Math.PI) * 360;
+        return result;
     }
 
     public override void Update(GameTime gameTime)
