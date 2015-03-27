@@ -98,7 +98,6 @@
     <Compile Include="Level\Level.cs" />
     <Compile Include="Level\LevelConfigs.cs" />
     <Compile Include="Level\LevelGameLoop.cs" />
-    <Compile Include="Menu\CheckBox.cs" />
     <Compile Include="Menu\PauseButton.cs" />
     <Compile Include="Menu\Button.cs" />
     <Compile Include="Menu\LevelButton.cs" />
