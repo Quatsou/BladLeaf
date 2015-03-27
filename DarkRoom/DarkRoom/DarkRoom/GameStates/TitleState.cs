@@ -7,9 +7,10 @@ using System.Text;
 class TitleState : GameObjectList
 {
     protected Button playbutton, quitbutton;
-    protected Game darkroom;
+    protected CheckBox fs;
+    protected DarkRoom darkroom;
 
-    public TitleState(Game game)
+    public TitleState(DarkRoom game)
     {
         darkroom = game;
 
@@ -24,6 +25,16 @@ class TitleState : GameObjectList
         quitbutton = new Button("Quit");
         quitbutton.Position = new Vector2(100, 590);
         this.Add(quitbutton);
+
+        fs = new CheckBox();
+        fs.Position = new Vector2(110, 745);
+        this.Add(fs);
+
+        TextGameObject fscr = new TextGameObject("Full Screen");
+        fscr.Position = new Vector2(190, 750);
+        this.Add(fscr);
+
+        GameEnvironment.AssetManager.PlayMusic("Audio/MenuLoop", true);
     }
 
     public override void HandleInput(InputHelper inputHelper)
@@ -35,6 +46,14 @@ class TitleState : GameObjectList
 
         if (quitbutton.Pressed)
             darkroom.Exit();
+
+        if (fs.Pressed)
+        {
+            if (!fs.Ticked)
+                darkroom.SetFullScreen(true);
+            else
+                darkroom.SetFullScreen(false);
+        }
 
     }
 }

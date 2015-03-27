@@ -29,7 +29,10 @@ class GameOverState : GameObjectList
     public override void HandleInput(InputHelper inputHelper)
     {
         if (quitbutton.Pressed)
+        {
+            GameEnvironment.AssetManager.PlayMusic("Audio/MenuLoop", true);
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
+        }
 
         if (retrybutton.Pressed || inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.Space))
         {

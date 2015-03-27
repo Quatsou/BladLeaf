@@ -209,16 +209,6 @@
       <Time>2015-03-25T15:07:16.5307179+01:00</Time>
     </Item>
     <Item>
-      <Source>Audio\Dark Room.mp3</Source>
-      <Name>Audio\Dark Room</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\Dark Room.xnb</Output>
-      <Extra>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\Dark Room.wma</Extra>
-      <Time>2015-03-25T19:00:12.364861+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\spr_cone_up.png</Source>
       <Name>Sprites\spr_cone_up</Name>
       <Importer>TextureImporter</Importer>
@@ -334,6 +324,53 @@
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player_hands.xnb</Output>
       <Time>2015-03-27T14:28:04.8000413+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\MenuLoop.mp3</Source>
+      <Name>Audio\MenuLoop</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\MenuLoop.xnb</Output>
+      <Extra>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\MenuLoop.wma</Extra>
+      <Time>2015-03-27T16:15:41.9650084+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\GameLoop.mp3</Source>
+      <Name>Audio\GameLoop</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\GameLoop.xnb</Output>
+      <Extra>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Audio\GameLoop.wma</Extra>
+      <Time>2015-03-27T16:15:41.9650084+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_checkbox.png</Source>
+      <Name>Sprites\Menu\spr_checkbox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_checkbox.xnb</Output>
+      <Time>2015-03-27T16:28:06.8752215+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_checkbox_selected.png</Source>
+      <Name>Sprites\Menu\spr_checkbox_selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_checkbox_selected.xnb</Output>
+      <Time>2015-03-27T16:28:42.4040661+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu\spr_checkbox_ticked.png</Source>
+      <Name>Sprites\Menu\spr_checkbox_ticked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\Menu\spr_checkbox_ticked.xnb</Output>
+      <Time>2015-03-27T16:28:49.3924628+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

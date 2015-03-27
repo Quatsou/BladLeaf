@@ -57,7 +57,7 @@ partial class Level : GameObjectList
             if (endTimer > 0)
             {
                 endTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (endTimer < 1 && Level.killedEnemies)
+                if (endTimer < 1.25 && Level.killedEnemies)
                 {
                     GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
                     foreach (Friendly f in friendlyList.Objects)
@@ -132,6 +132,9 @@ partial class Level : GameObjectList
                 deadEnemyCount++;
             if (deadEnemyCount == enemyList.Objects.Count)
             {
+                foreach (Friendly f in friendlyList.Objects)
+                    f.Sprite.Alpha = 1;
+
                 Level.killedEnemies = true;
                 Player player = GameWorld.Find("player") as Player;
                 player.CanMove = false;

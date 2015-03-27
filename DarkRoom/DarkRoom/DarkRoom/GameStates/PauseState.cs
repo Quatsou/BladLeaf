@@ -14,7 +14,7 @@ class PauseState : GameObjectList
         playingstate = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
 
         TextGameObject gameover = new TextGameObject("Paused");
-        gameover.Position = new Vector2(GameEnvironment.Screen.X / 2 - 150, 100);
+        gameover.Position = new Vector2(GameEnvironment.Screen.X / 2 - 110, 100);
         this.Add(gameover);
 
         quitbutton = new Button("Quit");
@@ -22,14 +22,17 @@ class PauseState : GameObjectList
         this.Add(quitbutton);
 
         resumebutton = new Button("Resume");
-        resumebutton.Position = new Vector2(GameEnvironment.Screen.X / 2 - resumebutton.Width / 2, 400);
+        resumebutton.Position = new Vector2(GameEnvironment.Screen.X / 2 - 20 - resumebutton.Width / 2, 400);
         this.Add(resumebutton);
     }
 
     public override void HandleInput(InputHelper inputHelper)
     {
         if (quitbutton.Pressed)
+        {
+            GameEnvironment.AssetManager.PlayMusic("Audio/MenuLoop", true); 
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
+        }
 
         if (resumebutton.Pressed || inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.Space))
         {

@@ -21,8 +21,6 @@ Content\Audio\snd_slash.xnb
 Content\Audio\snd_friendlyreleased.xnb
 Content\Audio\snd_clocktick.xnb
 Content\Sprites\spr_dot_glow.xnb
-Content\Audio\Dark Room.xnb
-Content\Audio\Dark Room.wma
 Content\Sprites\spr_cone_up.xnb
 Content\Sprites\spr_cone_down.xnb
 Content\Sprites\spr_cone_down_left.xnb
@@ -36,3 +34,10 @@ Content\Sprites\spr_frenemy_selected.xnb
 Content\Sprites\spr_black_top.xnb
 Content\Sprites\spr_black_side.xnb
 Content\Sprites\spr_player_hands.xnb
+Content\Audio\MenuLoop.xnb
+Content\Audio\MenuLoop.wma
+Content\Audio\GameLoop.xnb
+Content\Audio\GameLoop.wma
+Content\Sprites\Menu\spr_checkbox.xnb
+Content\Sprites\Menu\spr_checkbox_selected.xnb
+Content\Sprites\Menu\spr_checkbox_ticked.xnb

@@ -76,7 +76,7 @@ class LevelConfigs
             {0,0,0,0,0,0},
             {0,0,0,0,0,0},
             {0,0,0,0,0,0}};
-        CreateConfig(10, 6, ToTileType(level3, 10, 6), enemies3, friendlies3, 60);
+        CreateConfig(10, 6, ToTileType(level3, 10, 6), enemies3, friendlies3, 20);
 
         //Level4
         List<Enemy> enemies4 = new List<Enemy>();
@@ -137,8 +137,7 @@ class LevelConfigs
             {0,0,0,0,0,0,0,0,0,1,1,1},
             {0,0,0,0,0,0,0,0,0,1,1,1},
             {0,0,0,0,0,0,0,0,0,1,1,1}};
-        CreateConfig(13, 12, ToTileType(level4, 13, 12), enemies4, friendlies4, 60);
-
+        CreateConfig(13, 12, ToTileType(level4, 13, 12), enemies4, friendlies4, 30);
     }
 
     private Vector2[] CreateCoords(int x1, int y1, int x2, int y2, int x3, int y3)
