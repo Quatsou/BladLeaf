@@ -314,7 +314,7 @@ class LevelConfigs
          {0,0,1,1,0,0,1,0,1,0,},
          {0,0,0,1,0,0,0,0,1,0,},
          {0,0,0,0,0,0,0,0,0,0,}};
-        CreateConfig(19, 10, ToTileType(level7, 19, 10), enemies6, friendlies6, 45);
+        CreateConfig(19, 10, ToTileType(level7, 19, 10), enemies7, friendlies7, 45);
 
         
     }
