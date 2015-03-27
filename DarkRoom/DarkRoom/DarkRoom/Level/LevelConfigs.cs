@@ -73,11 +73,29 @@ class LevelConfigs
         lvl3Coordsf2[2] = new Vector2(5, 1); lvl3rotationsf2[2] = 3.141f;
         friendlies3.Add(new Friendly(lvl3Coordsf2, lvl3rotationsf2));
 
-        TileType[,] level3 = new TileType[10, 6];
-        level3[0, 5] = TileType.Door;
-        level3[4, 2] = TileType.Wall; level3[4, 3] = TileType.Wall;
-        level3[5, 2] = TileType.Wall; level3[5, 3] = TileType.Wall;
-        CreateConfig(10, 6, level3, enemies3, friendlies3, 60);
+        int[,] level3 = new int[10, 6]
+           {{0,0,0,0,0,2},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,1,1,0,0},
+            {0,0,1,1,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0}};
+        CreateConfig(10, 6, ToTileType(level3, 10, 6), enemies3, friendlies3, 60);
+    }
+
+    private TileType[,] ToTileType(int[,] array, int x, int y)
+    {
+        TileType[,] result = new TileType[x, y];
+        for (int xi = 0; xi < x; xi++)
+            for (int yi = 0; yi < y; yi++)
+            {
+                result[xi, yi] = (TileType)array[xi, yi];
+            }
+        return result;
     }
 
     public void CreateConfig(int sizeX, int sizeY, TileType[,] config, List<Enemy> enemies, List<Friendly> friendlies, float timer)

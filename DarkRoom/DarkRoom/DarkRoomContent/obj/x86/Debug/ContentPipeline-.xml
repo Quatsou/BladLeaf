@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player.xnb</Output>
-      <Time>2015-03-27T12:08:58.6938073+01:00</Time>
+      <Time>2015-03-27T14:28:04.7985391+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spr_enemy.png</Source>
@@ -333,7 +333,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\casfa_000\Documents\GitHub\BladLeaf\DarkRoom\DarkRoom\GameManagement\bin\x86\Debug\Content\Sprites\spr_player_hands.xnb</Output>
-      <Time>2015-03-27T12:08:43.0131465+01:00</Time>
+      <Time>2015-03-27T14:28:04.8000413+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
