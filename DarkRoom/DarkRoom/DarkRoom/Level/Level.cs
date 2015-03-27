@@ -38,7 +38,7 @@ partial class Level : GameObjectList
         killedEnemies = false;
         finishedRandomizing = false;
         randomTimer = 1.5f;
-        randomizeCounter = 1;
+        randomizeCounter = 5;
         endTimer = 2f;
         this.timer = timer;
         this.sizeX = sizeX;
@@ -115,6 +115,7 @@ partial class Level : GameObjectList
 
         ShadowMap shadowMap = new ShadowMap(sizeX, sizeY, levelConfig, lightSources, new Vector2(startX, startY), player);
         this.Add(shadowMap);
+        this.Add(new BlackScreen());
     }
 
     public void Randomize()

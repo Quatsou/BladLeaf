@@ -78,6 +78,7 @@
     <Compile Include="GameObjects\Enemies\Enemy.cs" />
     <Compile Include="GameObjects\Friendly\Friendly.cs" />
     <Compile Include="GameObjects\Player\Hands.cs" />
+    <Compile Include="GameObjects\Shadow\BlackScreen.cs" />
     <Compile Include="GameObjects\Shadow\ShadowMap.cs" />
     <Compile Include="GameObjects\Tiles\BlackBar.cs" />
     <Compile Include="GameObjects\Tiles\LightSource.cs" />
