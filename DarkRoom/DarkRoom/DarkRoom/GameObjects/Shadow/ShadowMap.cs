@@ -138,17 +138,27 @@ class ShadowMap : GameObject
                             {
                                 double distanceFLBlock = DistanceTo(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize, player.GlobalPosition.X - levelOffset.X, player.GlobalPosition.Y - levelOffset.Y);
                                 double angleSep = TileInRangeFL(x * Tile.TILESIZE + (xi + 0.5) * lightBlockSize, y * Tile.TILESIZE + (yi + 0.5) * lightBlockSize, distanceFLBlock);
-                                if ((angleSep < Player.flashLightFOV / 2 || angleSep > 360 - (Player.flashLightFOV / 2)))
+                                double temp = 0;
+                                if ((angleSep < Player.flashLightFOV / 2 - 15 || angleSep > 360 - (Player.flashLightFOV / 2 - 15)))
                                 {
-                                    double temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
-                                    if (temp < 0)
-                                        temp = 0;
-                                    lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
-                                    lightLevel = Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
-                                    if (lightLevel > 1)
-                                        lightLevel = 1;
-                                    shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
+                                    temp = 1 - (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange);
                                 }
+                                else if (angleSep < Player.flashLightFOV / 2 + 15)
+                                {
+                                    temp = 1 - Math.Max((angleSep - Player.flashLightFOV / 2) / 30, (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange));
+                                }
+                                else if(angleSep > 360 - (Player.flashLightFOV / 2 + 15))
+                                {
+                                    temp = 1 - Math.Max((360 - (angleSep - Player.flashLightFOV / 2)) / 30, (distanceFLBlock - Player.flashLightInnerRange) / (Player.flashLightRange - Player.flashLightInnerRange));
+                                }
+                                if (temp < 0)
+                                    temp = 0;
+                                lightLevel = shadowMapInitial[x * lightTileSep + xi, y * lightTileSep + yi];
+                                lightLevel = Math.Sqrt(Math.Pow(lightLevel, 2) + Math.Pow(temp, 2));
+                                if (lightLevel > 1)
+                                    lightLevel = 1;
+                                shadowMap[x * lightTileSep + xi, y * lightTileSep + yi] = lightLevel;
+                                
                             }
                     }
                 }
