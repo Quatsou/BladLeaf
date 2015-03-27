@@ -24,9 +24,20 @@ class LevelConfigs
 
         List<Friendly> friendlies1 = new List<Friendly>();
 
-        TileType[,] level1 = new TileType[11, 6];
-        level1[5, 5] = TileType.Door;
-        CreateConfig(11, 6, level1, enemies1, friendlies1, 60);
+        int[,] level1 = new int[11, 6]
+           {{0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,2},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0}}; 
+        
+        CreateConfig(11, 6, ToTileType(level1, 11, 6), enemies1, friendlies1, 60);
 
         //Level2
         List<Enemy> enemies2 = new List<Enemy>();
@@ -55,6 +66,17 @@ class LevelConfigs
                 level2[x, y] = TileType.Wall;
 
         CreateConfig(13, 8, level2, enemies2, friendlies2, 60);
+    }
+
+    private TileType[,] ToTileType(int[,] array, int x, int y)
+    {
+        TileType[,] result = new TileType[x, y];
+        for (int xi = 0; xi < x; xi++)
+            for (int yi = 0; yi < y; yi++)
+            {
+                result[xi, yi] = (TileType)array[xi, yi];
+            }
+        return result;
     }
 
     public void CreateConfig(int sizeX, int sizeY, TileType[,] config, List<Enemy> enemies, List<Friendly> friendlies, float timer)

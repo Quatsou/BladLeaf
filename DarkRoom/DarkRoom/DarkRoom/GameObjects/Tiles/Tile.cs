@@ -7,10 +7,10 @@ using System.Text;
 
 enum TileType
 {
-    Background,
-    Wall,
-    Door,
-    LightSource
+    Background = 0,
+    Wall = 1,
+    Door = 2,
+    LightSource = 3
 }
 
 class Tile : SpriteGameObject
