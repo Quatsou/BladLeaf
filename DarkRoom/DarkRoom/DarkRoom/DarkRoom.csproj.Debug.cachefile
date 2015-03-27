@@ -39,6 +39,5 @@ Content\Audio\GameLoop.xnb
 Content\Sprites\Menu\spr_checkbox.xnb
 Content\Sprites\Menu\spr_checkbox_selected.xnb
 Content\Sprites\Menu\spr_checkbox_ticked.xnb
-Content\Sprites\spr_tile_black.xnb
 Content\Audio\MenuLoop.wma
 Content\Audio\GameLoop.wma

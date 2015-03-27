@@ -23,7 +23,7 @@ class LevelsState : GameObjectList
         quitbutton.Position = new Vector2(100, 590);
         this.Add(quitbutton);
 
-        buttons = new LevelButton[5];
+        buttons = new LevelButton[7];
 
         for (int i = 0; i < buttons.Length; i++)
         {
