@@ -197,7 +197,6 @@ class ShadowMap : GameObject
     {
         if (lightsoff)
         {
-            DrawingHelper.DrawFillRectangle(new Rectangle(0, 0, GameEnvironment.Screen.X, GameEnvironment.Screen.Y), spriteBatch, Color.Black);
             return;
         }
         if (flashLightMode)
