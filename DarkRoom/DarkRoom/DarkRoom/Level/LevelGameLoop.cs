@@ -133,7 +133,10 @@ partial class Level : GameObjectList
             if (deadEnemyCount == enemyList.Objects.Count)
             {
                 foreach (Friendly f in friendlyList.Objects)
-                    f.Sprite.Alpha = 1;
+                {
+                    if (!f.escaped)
+                        f.Sprite.Alpha = 1;
+                }
 
                 Level.killedEnemies = true;
                 Player player = GameWorld.Find("player") as Player;

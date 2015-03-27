@@ -38,7 +38,7 @@ partial class Level : GameObjectList
         killedEnemies = false;
         finishedRandomizing = false;
         randomTimer = 1.5f;
-        randomizeCounter = 5;
+        randomizeCounter = 1;
         endTimer = 2f;
         this.timer = timer;
         this.sizeX = sizeX;
@@ -155,6 +155,8 @@ partial class Level : GameObjectList
             Friendly subject = friendlyList.Objects[0] as Friendly;
             config = GameEnvironment.Random.Next(0, subject.Coords.Length);
         }
+
+        config = 1;
 
         foreach (Enemy e in enemyList.Objects)
         {

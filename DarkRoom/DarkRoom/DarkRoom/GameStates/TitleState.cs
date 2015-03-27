@@ -48,12 +48,7 @@ class TitleState : GameObjectList
             darkroom.Exit();
 
         if (fs.Pressed)
-        {
-            if (!fs.Ticked)
-                darkroom.SetFullScreen(true);
-            else
-                darkroom.SetFullScreen(false);
-        }
+            darkroom.SetFullScreen(fs.Ticked);
 
     }
 }

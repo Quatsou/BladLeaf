@@ -6,7 +6,7 @@ using System.Text;
 
 class LevelConfigs
 {
-    public static int levelsCompleted = 3;
+    public static int levelsCompleted = 5;
     public List<TileType[,]> configurations = new List<TileType[,]>();
     public List<int> sizesX = new List<int>();
     public List<int> sizesY = new List<int>();
@@ -26,6 +26,8 @@ class LevelConfigs
 
         TileType[,] level1 = new TileType[11, 6];
         level1[5, 5] = TileType.Door;
+        level1[0, 3] = TileType.Wall; level1[1, 3] = TileType.Wall;
+        level1[4, 0] = TileType.Wall; level1[4, 1] = TileType.Wall;
         CreateConfig(11, 6, level1, enemies1, friendlies1, 10);
 
         //Level2
@@ -138,6 +140,84 @@ class LevelConfigs
             {0,0,0,0,0,0,0,0,0,1,1,1},
             {0,0,0,0,0,0,0,0,0,1,1,1}};
         CreateConfig(13, 12, ToTileType(level4, 13, 12), enemies4, friendlies4, 30);
+
+        List<Enemy> enemies5 = new List<Enemy>();
+
+        enemies5.Add(new Enemy(
+            CreateCoords(0, 2, 2, 0, 2, 0),
+            CreateRotations("up_right", "down_left", "down")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(3, 0, 1, 2, 0, 6),
+            CreateRotations("down_left", "up_right", "up_right")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(0, 7, 2, 3, 0, 9),
+            CreateRotations("down", "up_right", "right")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(8, 7, 6, 7, 8, 7),
+            CreateRotations("right", "right", "up_right")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(10, 5, 9, 5, 10, 5),
+            CreateRotations("left", "down", "down")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(14, 2, 12, 7, 13, 3),
+            CreateRotations("up", "left", "down")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(16, 1, 9, 8, 14, 0),
+            CreateRotations("down_right", "up", "down")));
+
+        enemies5.Add(new Enemy(
+            CreateCoords(18, 9, 17, 5, 18, 4),
+            CreateRotations("up", "down", "down")));
+
+        List<Friendly> friendlies5 = new List<Friendly>();
+
+        friendlies5.Add(new Friendly(
+            CreateCoords(0, 0, 0, 0, 0, 1),
+            CreateRotations("down_right", "down_right", "down")));
+
+        friendlies5.Add(new Friendly(
+            CreateCoords(0, 9, 4, 2, 1, 6),
+            CreateRotations("up", "down_left", "up")));
+
+        friendlies5.Add(new Friendly(
+            CreateCoords(9, 6, 9, 6, 2, 9),
+            CreateRotations("down", "up", "left")));
+
+        friendlies5.Add(new Friendly(
+            CreateCoords(14, 0, 17, 7, 9, 6),
+            CreateRotations("down", "up", "down")));
+
+        friendlies5.Add(new Friendly(
+            CreateCoords(18, 0, 18, 0, 13, 2),
+            CreateRotations("down_left", "down", "down_right")));
+
+        int[,]level5 = new int[19, 10]
+        {{0,0,0,1,0,0,0,0,0,0,},
+         {0,0,0,1,0,0,0,0,1,0,},
+         {0,0,0,0,0,0,1,0,1,0,},
+         {0,0,0,0,0,0,1,0,1,0,},
+         {1,1,0,0,0,0,1,0,1,0,},
+         {1,1,1,1,0,0,1,0,1,0,},
+         {1,1,1,1,1,0,1,0,1,0,},
+         {1,1,1,1,1,0,1,0,1,0,},
+         {1,1,1,1,1,0,0,0,1,0,},
+         {1,1,1,1,1,0,0,0,0,2,},
+         {1,1,1,1,1,0,0,0,1,0,},
+         {1,1,1,1,1,0,1,0,1,0,},
+         {1,1,1,1,0,0,1,0,1,0,},
+         {1,1,0,0,0,0,1,0,1,0,},
+         {0,0,0,0,0,0,1,0,1,0,},
+         {0,1,1,1,0,0,1,0,1,0,},
+         {0,0,1,1,0,0,1,0,1,0,},
+         {0,0,0,1,0,0,0,0,1,0,},
+         {0,0,0,0,0,0,0,0,0,0,}};
+        CreateConfig(19, 10, ToTileType(level5, 19, 10), enemies5, friendlies5, 45);
     }
 
     private Vector2[] CreateCoords(int x1, int y1, int x2, int y2, int x3, int y3)

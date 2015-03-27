@@ -38,6 +38,12 @@ class Enemy : AnimatedGameObject
             player.CanMove = false;
             ShadowMap.flashLightMode = false;
             cone.Visible = true;
+            GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+            foreach (Friendly f in friendlyList.Objects)
+            {
+                if (!f.escaped)
+                    f.Sprite.Alpha = 1;
+            }
             Level.failed = true;
         }
     }

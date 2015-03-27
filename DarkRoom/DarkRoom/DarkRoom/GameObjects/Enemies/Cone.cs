@@ -25,6 +25,12 @@ class Cone : SpriteGameObject
             player.CanMove = false;
             ShadowMap.flashLightMode = false;
             this.visible = true;
+            GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+            foreach (Friendly f in friendlyList.Objects)
+            {
+                if (!f.escaped)
+                    f.Sprite.Alpha = 1;
+            }
             Level.failed = true;
         }
     }

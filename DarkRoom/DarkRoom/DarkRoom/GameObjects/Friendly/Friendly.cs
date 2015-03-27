@@ -66,8 +66,6 @@ class Friendly : AnimatedGameObject
     {
         //Check collision with player
         Player player = GameWorld.Find("player") as Player;
-        //Console.WriteLine(sprite.Alpha.ToString());
-        //Console.WriteLine(visible);
 
         if (!escaped)
         {
@@ -77,7 +75,7 @@ class Friendly : AnimatedGameObject
         else
         {
             if (sprite.Alpha < 0)
-                return;//visible = false;
+                visible = false;
             else
             {
                 sprite.Alpha -= escapeRotateValue / 12f;
