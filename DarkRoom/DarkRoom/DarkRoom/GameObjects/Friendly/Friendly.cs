@@ -99,7 +99,7 @@ class Friendly : AnimatedGameObject
 
     public void Escape()
     {
-        if (!dead)
+        if (!dead && !escaped)
         {
             sprite.Alpha = 1;
             escaped = true;

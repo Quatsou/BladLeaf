@@ -20,9 +20,12 @@ class Cone : SpriteGameObject
         base.Update(gameTime);
 
         Player player = GameWorld.Find("player") as Player;
-        if (this.CollidesWith(player) && player.CanMove)
+        if (player.CollidesWith(this) && player.CanMove)
         {
-            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+            player.CanMove = false;
+            ShadowMap.flashLightMode = false;
+            this.visible = true;
+            Level.failed = true;
         }
     }
 

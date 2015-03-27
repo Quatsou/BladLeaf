@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 partial class Level : GameObjectList
 {
@@ -49,6 +50,29 @@ partial class Level : GameObjectList
                 randomTimer = 1f;
             }
             return;
+        }
+
+        if (Level.failed || Level.killedEnemies)
+        {
+            if (endTimer > 0)
+            {
+                endTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+                if (endTimer < 1 && Level.killedEnemies)
+                {
+                    GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
+                    foreach (Friendly f in friendlyList.Objects)
+                        f.Escape();
+                }
+                return;
+            }
+            else
+            {
+                if (Level.failed)
+                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+                if (Level.killedEnemies)
+                    GameEnvironment.GameStateManager.SwitchTo("levelsState");
+                return;
+            }
         }
 
         if (clockTimer > 0)
@@ -108,8 +132,13 @@ partial class Level : GameObjectList
                 deadEnemyCount++;
             if (deadEnemyCount == enemyList.Objects.Count)
             {
-                GameEnvironment.GameStateManager.SwitchTo("levelsState");
-                LevelConfigs.levelsCompleted++;
+                Level.killedEnemies = true;
+                Player player = GameWorld.Find("player") as Player;
+                player.CanMove = false;
+                ShadowMap.flashLightMode = false;
+                PlayingState p = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
+                if (LevelConfigs.levelsCompleted == p.levelNum - 1)
+                    LevelConfigs.levelsCompleted++;
             }
         }
     }
@@ -120,7 +149,9 @@ partial class Level : GameObjectList
         Player player = GameWorld.Find("player") as Player;
         if (player.BoundingBox.Intersects(door.BoundingBox))
         {
-            LevelConfigs.levelsCompleted++;
+            PlayingState p = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
+            if (LevelConfigs.levelsCompleted == p.levelNum - 1)
+                LevelConfigs.levelsCompleted++;
             GameEnvironment.GameStateManager.SwitchTo("levelsState");
         }
     }

@@ -6,7 +6,7 @@ using System.Text;
 
 class LevelConfigs
 {
-    public static int levelsCompleted = 0;
+    public static int levelsCompleted = 3;
     public List<TileType[,]> configurations = new List<TileType[,]>();
     public List<int> sizesX = new List<int>();
     public List<int> sizesY = new List<int>();
@@ -26,35 +26,58 @@ class LevelConfigs
 
         TileType[,] level1 = new TileType[11, 6];
         level1[5, 5] = TileType.Door;
-        CreateConfig(11, 6, level1, enemies1, friendlies1, 60);
+        CreateConfig(11, 6, level1, enemies1, friendlies1, 10);
 
         //Level2
         List<Enemy> enemies2 = new List<Enemy>();
-        Vector2[] lvl2Coordse = new Vector2[3]; float[] lvl2rotationse = new float[3];
-        lvl2Coordse[0] = new Vector2(0, 1); lvl2rotationse[0] = 0.785f;
-        lvl2Coordse[1] = new Vector2(1, 2); lvl2rotationse[1] = 1.570f;
-        lvl2Coordse[2] = new Vector2(2, 3); lvl2rotationse[2] = 3.927f;
-        enemies2.Add(new Enemy(lvl2Coordse, lvl2rotationse));
 
         List<Friendly> friendlies2 = new List<Friendly>();
-        Vector2[] lvl2Coordsf = new Vector2[3]; float[] lvl2rotationsf = new float[3];
-        lvl2Coordsf[0] = new Vector2(0, 0); lvl2rotationsf[0] = 3.14f;
-        lvl2Coordsf[1] = new Vector2(1, 1); lvl2rotationsf[1] = 4.20f;
-        lvl2Coordsf[2] = new Vector2(2, 2); lvl2rotationsf[2] = 1.11f;
+        Vector2[] lvl2Coordsf = new Vector2[1]; float[] lvl2rotationsf = new float[1];
+        lvl2Coordsf[0] = new Vector2(5, 2); lvl2rotationsf[0] = 3.141f;
         friendlies2.Add(new Friendly(lvl2Coordsf, lvl2rotationsf));
 
-        TileType[,] level2 = new TileType[13, 8];
-        level2[6, 7] = TileType.Door;
-        level2[2, 4] = TileType.LightSource;
-        //level2[7, 1] = TileType.LightSource;
-        for (int x = 3; x < 5; x++)
-            for (int y = 0; y < 3; y++)
-                level2[x, y] = TileType.Wall;
-        for (int x = 8; x < 10; x++)
-            for (int y = 0; y < 3; y++)
-                level2[x, y] = TileType.Wall;
+        TileType[,] level2 = new TileType[11, 6];
+        level2[5, 5] = TileType.Door;
+        CreateConfig(11, 6, level2, enemies2, friendlies2, 10);
 
-        CreateConfig(13, 8, level2, enemies2, friendlies2, 60);
+        //Level3
+        List<Enemy> enemies3 = new List<Enemy>();
+        Vector2[] lvl3Coordse1 = new Vector2[3]; float[] lvl3rotationse1 = new float[3];
+        lvl3Coordse1[0] = new Vector2(0, 2); lvl3rotationse1[0] = 1.570f;
+        lvl3Coordse1[1] = new Vector2(3, 0); lvl3rotationse1[1] = 3.141f;
+        lvl3Coordse1[2] = new Vector2(0, 2); lvl3rotationse1[2] = 3.141f;
+        enemies3.Add(new Enemy(lvl3Coordse1, lvl3rotationse1));
+
+        Vector2[] lvl3Coordse2 = new Vector2[3]; float[] lvl3rotationse2 = new float[3];
+        lvl3Coordse2[0] = new Vector2(3, 0); lvl3rotationse2[0] = 3.141f;
+        lvl3Coordse2[1] = new Vector2(4, 1); lvl3rotationse2[1] = 1.570f;
+        lvl3Coordse2[2] = new Vector2(2, 1); lvl3rotationse2[2] = 1.570f;
+        enemies3.Add(new Enemy(lvl3Coordse2, lvl3rotationse2));
+
+        Vector2[] lvl3Coordse3 = new Vector2[3]; float[] lvl3rotationse3 = new float[3];
+        lvl3Coordse3[0] = new Vector2(3, 5); lvl3rotationse3[0] = 4.712f;
+        lvl3Coordse3[1] = new Vector2(6, 4); lvl3rotationse3[1] = 3.927f;
+        lvl3Coordse3[2] = new Vector2(6, 1); lvl3rotationse3[2] = 3.141f;
+        enemies3.Add(new Enemy(lvl3Coordse3, lvl3rotationse3));
+
+        List<Friendly> friendlies3 = new List<Friendly>();
+        Vector2[] lvl3Coordsf1 = new Vector2[3]; float[] lvl3rotationsf1 = new float[3];
+        lvl3Coordsf1[0] = new Vector2(0, 0); lvl3rotationsf1[0] = 3.141f;
+        lvl3Coordsf1[1] = new Vector2(4, 0); lvl3rotationsf1[1] = 2.356f;
+        lvl3Coordsf1[2] = new Vector2(3, 2); lvl3rotationsf1[2] = 4.712f;
+        friendlies3.Add(new Friendly(lvl3Coordsf1, lvl3rotationsf1));
+
+        Vector2[] lvl3Coordsf2 = new Vector2[3]; float[] lvl3rotationsf2 = new float[3];
+        lvl3Coordsf2[0] = new Vector2(4, 5); lvl3rotationsf2[0] = 0f;
+        lvl3Coordsf2[1] = new Vector2(6, 5); lvl3rotationsf2[1] = 0.785f;
+        lvl3Coordsf2[2] = new Vector2(5, 1); lvl3rotationsf2[2] = 3.141f;
+        friendlies3.Add(new Friendly(lvl3Coordsf2, lvl3rotationsf2));
+
+        TileType[,] level3 = new TileType[10, 6];
+        level3[0, 5] = TileType.Door;
+        level3[4, 2] = TileType.Wall; level3[4, 3] = TileType.Wall;
+        level3[5, 2] = TileType.Wall; level3[5, 3] = TileType.Wall;
+        CreateConfig(10, 6, level3, enemies3, friendlies3, 60);
     }
 
     public void CreateConfig(int sizeX, int sizeY, TileType[,] config, List<Enemy> enemies, List<Friendly> friendlies, float timer)

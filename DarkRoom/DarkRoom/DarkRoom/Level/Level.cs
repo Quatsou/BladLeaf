@@ -8,7 +8,7 @@ using System.Text;
 partial class Level : GameObjectList
 {
     float clockTimer;
-    public float timer, randomTimer;
+    public float timer, randomTimer, endTimer;
     public float[] rotations;
     public SpriteFont font;
     public bool completed, finishedRandomizing;
@@ -17,6 +17,7 @@ partial class Level : GameObjectList
     public int sizeX, sizeY, randomizeCounter;
     PauseButton pauseButton;
     public TileType[,] levelLayout;
+    public static bool failed, killedEnemies;
 
     public Level(int sizeX, int sizeY, TileType[,] levelConfig, List<Enemy> enemies, List<Friendly> friendlies, float timer)
     {
@@ -33,9 +34,12 @@ partial class Level : GameObjectList
         rotations[7] = 5.498f;
 
         completed = false;
+        failed = false;
+        killedEnemies = false;
         finishedRandomizing = false;
         randomTimer = 1.5f;
         randomizeCounter = 5;
+        endTimer = 2f;
         this.timer = timer;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
@@ -48,6 +52,7 @@ partial class Level : GameObjectList
 
         Player player = new Player(new Vector2(20, 100));
         this.Add(player);
+        this.Add(new Hands(player));
 
         TileField tiles = new TileField(sizeY, sizeX, 0, "tiles");
         this.Add(tiles);
@@ -138,8 +143,18 @@ partial class Level : GameObjectList
         GameObjectList enemyList = GameWorld.Find("enemyList") as GameObjectList;
         GameObjectList friendlyList = GameWorld.Find("friendlyList") as GameObjectList;
 
-        Enemy subject = enemyList.Objects[0] as Enemy;
-        int config = GameEnvironment.Random.Next(0, subject.Coords.Length);
+        int config = 0;
+
+        if (enemyList.Objects.Count != 0)
+        {
+            Enemy subject = enemyList.Objects[0] as Enemy;
+            config = GameEnvironment.Random.Next(0, subject.Coords.Length);
+        }
+        else
+        {
+            Friendly subject = friendlyList.Objects[0] as Friendly;
+            config = GameEnvironment.Random.Next(0, subject.Coords.Length);
+        }
 
         foreach (Enemy e in enemyList.Objects)
         {

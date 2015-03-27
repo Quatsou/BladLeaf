@@ -44,12 +44,6 @@ class LevelsState : GameObjectList
                 GameEnvironment.GameStateManager.SwitchTo("playingState");
             }
 
-        if (inputHelper.KeyPressed(Keys.Space))
-        {
-            p.LoadLevel(2);
-            GameEnvironment.GameStateManager.SwitchTo("playingState");
-        }
-
         if (quitbutton.Pressed)
             GameEnvironment.GameStateManager.SwitchTo("titleState");
     }

@@ -19,6 +19,9 @@ class LevelButton : SpriteGameObject
 
     public override void HandleInput(InputHelper inputHelper)
     {
+        if (LevelConfigs.levelsCompleted < number - 1)
+            return;
+
         pressed = inputHelper.MouseLeftButtonPressed() &&
             BoundingBox.Contains((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y);
 

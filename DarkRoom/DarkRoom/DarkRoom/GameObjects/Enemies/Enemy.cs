@@ -34,7 +34,12 @@ class Enemy : AnimatedGameObject
 
         Player player = GameWorld.Find("player") as Player;
         if (!dead && this.CollidesWith(player))
-            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+        {
+            player.CanMove = false;
+            ShadowMap.flashLightMode = false;
+            cone.Visible = true;
+            Level.failed = true;
+        }
     }
 
     public override Rectangle BoundingBox

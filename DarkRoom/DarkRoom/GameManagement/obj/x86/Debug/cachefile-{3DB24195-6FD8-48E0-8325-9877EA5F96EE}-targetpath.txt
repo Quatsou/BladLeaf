@@ -35,3 +35,4 @@ Content\Sprites\spr_darkfrenemy.xnb
 Content\Sprites\spr_frenemy_selected.xnb
 Content\Sprites\spr_black_top.xnb
 Content\Sprites\spr_black_side.xnb
+Content\Sprites\spr_player_hands.xnb
