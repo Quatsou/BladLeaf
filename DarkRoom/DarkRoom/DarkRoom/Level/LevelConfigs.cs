@@ -42,36 +42,28 @@ class LevelConfigs
 
         //Level3
         List<Enemy> enemies3 = new List<Enemy>();
-        Vector2[] lvl3Coordse1 = new Vector2[3]; float[] lvl3rotationse1 = new float[3];
-        lvl3Coordse1[0] = new Vector2(0, 2); lvl3rotationse1[0] = 1.570f;
-        lvl3Coordse1[1] = new Vector2(3, 0); lvl3rotationse1[1] = 3.141f;
-        lvl3Coordse1[2] = new Vector2(0, 2); lvl3rotationse1[2] = 3.141f;
-        enemies3.Add(new Enemy(lvl3Coordse1, lvl3rotationse1));
 
-        Vector2[] lvl3Coordse2 = new Vector2[3]; float[] lvl3rotationse2 = new float[3];
-        lvl3Coordse2[0] = new Vector2(3, 0); lvl3rotationse2[0] = 3.141f;
-        lvl3Coordse2[1] = new Vector2(4, 1); lvl3rotationse2[1] = 1.570f;
-        lvl3Coordse2[2] = new Vector2(2, 1); lvl3rotationse2[2] = 1.570f;
-        enemies3.Add(new Enemy(lvl3Coordse2, lvl3rotationse2));
+        enemies3.Add(new Enemy(
+            CreateCoords(0, 2, 3, 0, 0, 2), 
+            CreateRotations("right", "down", "down")));
 
-        Vector2[] lvl3Coordse3 = new Vector2[3]; float[] lvl3rotationse3 = new float[3];
-        lvl3Coordse3[0] = new Vector2(3, 5); lvl3rotationse3[0] = 4.712f;
-        lvl3Coordse3[1] = new Vector2(6, 4); lvl3rotationse3[1] = 3.927f;
-        lvl3Coordse3[2] = new Vector2(6, 1); lvl3rotationse3[2] = 3.141f;
-        enemies3.Add(new Enemy(lvl3Coordse3, lvl3rotationse3));
+        enemies3.Add(new Enemy(
+            CreateCoords(3, 0, 4, 1, 2, 1),
+            CreateRotations("down", "right", "right")));
+
+        enemies3.Add(new Enemy(
+            CreateCoords(3, 5, 6, 4, 6, 1),
+            CreateRotations("left", "down_left", "down")));
 
         List<Friendly> friendlies3 = new List<Friendly>();
-        Vector2[] lvl3Coordsf1 = new Vector2[3]; float[] lvl3rotationsf1 = new float[3];
-        lvl3Coordsf1[0] = new Vector2(0, 0); lvl3rotationsf1[0] = 3.141f;
-        lvl3Coordsf1[1] = new Vector2(4, 0); lvl3rotationsf1[1] = 2.356f;
-        lvl3Coordsf1[2] = new Vector2(3, 2); lvl3rotationsf1[2] = 4.712f;
-        friendlies3.Add(new Friendly(lvl3Coordsf1, lvl3rotationsf1));
 
-        Vector2[] lvl3Coordsf2 = new Vector2[3]; float[] lvl3rotationsf2 = new float[3];
-        lvl3Coordsf2[0] = new Vector2(4, 5); lvl3rotationsf2[0] = 0f;
-        lvl3Coordsf2[1] = new Vector2(6, 5); lvl3rotationsf2[1] = 0.785f;
-        lvl3Coordsf2[2] = new Vector2(5, 1); lvl3rotationsf2[2] = 3.141f;
-        friendlies3.Add(new Friendly(lvl3Coordsf2, lvl3rotationsf2));
+        friendlies3.Add(new Friendly(
+            CreateCoords(0, 0, 4, 0, 3, 2),
+            CreateRotations("down", "down_right", "left")));
+
+        friendlies3.Add(new Friendly(
+            CreateCoords(4, 5, 6, 5, 5, 1),
+            CreateRotations("up", "up_right", "down")));
 
         int[,] level3 = new int[10, 6]
            {{0,0,0,0,0,2},
@@ -85,6 +77,102 @@ class LevelConfigs
             {0,0,0,0,0,0},
             {0,0,0,0,0,0}};
         CreateConfig(10, 6, ToTileType(level3, 10, 6), enemies3, friendlies3, 60);
+
+        //Level4
+        List<Enemy> enemies4 = new List<Enemy>();
+
+        enemies4.Add(new Enemy(
+            CreateCoords(0, 7, 0, 1, 1, 6),
+            CreateRotations("down_right", "down", "down")));
+
+        enemies4.Add(new Enemy(
+            CreateCoords(4, 3, 1, 0, 2, 6),
+            CreateRotations("down", "down", "right")));
+
+        enemies4.Add(new Enemy(
+            CreateCoords(6, 0, 4, 3, 4, 2),
+            CreateRotations("down", "right", "down")));
+
+        enemies4.Add(new Enemy(
+            CreateCoords(8, 3, 6, 5, 6, 5),
+            CreateRotations("down", "down", "up")));
+
+        enemies4.Add(new Enemy(
+            CreateCoords(11, 3, 8, 3, 6, 8),
+            CreateRotations("down", "left", "down")));
+
+        enemies4.Add(new Enemy(
+            CreateCoords(12, 5, 11, 0, 8, 2),
+            CreateRotations("left", "down", "down")));
+
+        List<Friendly> friendlies4 = new List<Friendly>();
+
+        friendlies4.Add(new Friendly(
+            CreateCoords(0, 8, 0, 0, 0, 8),
+            CreateRotations("up", "down_right", "up")));
+
+        friendlies4.Add(new Friendly(
+            CreateCoords(4, 0, 6, 0, 2, 5),
+            CreateRotations("down", "down", "up")));
+
+        friendlies4.Add(new Friendly(
+            CreateCoords(8, 0, 6, 4, 5, 3),
+            CreateRotations("down", "down", "left")));
+
+        friendlies4.Add(new Friendly(
+            CreateCoords(11, 0, 12, 0, 7, 3),
+            CreateRotations("down", "down_left", "right")));
+
+        int[,] level4 = new int[13, 12]
+           {{0,0,0,0,0,0,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {1,1,1,1,1,1,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {1,1,1,0,1,1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,2},
+            {1,1,1,0,1,1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {1,1,1,1,1,1,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1},
+            {0,0,0,0,0,0,0,0,0,1,1,1}};
+        CreateConfig(13, 12, ToTileType(level4, 13, 12), enemies4, friendlies4, 60);
+
+    }
+
+    private Vector2[] CreateCoords(int x1, int y1, int x2, int y2, int x3, int y3)
+    {
+        Vector2[] result = new Vector2[3];
+        result[0] = new Vector2(x1, y1);
+        result[1] = new Vector2(x2, y2);
+        result[2] = new Vector2(x3, y3);
+        return result;
+    }
+
+    private float[] CreateRotations(string dir1, string dir2, string dir3)
+    {
+        float[] result = new float[3];
+        result[0] = StringToRotation(dir1);
+        result[1] = StringToRotation(dir2);
+        result[2] = StringToRotation(dir3);
+        return result;
+    }
+
+    private float StringToRotation(string s)
+    {
+        switch (s)
+        {
+            case "up": return 0f;
+            case "up_right": return 0.785f;
+            case "right": return 1.570f;
+            case "down_right": return 2.356f;
+            case "down": return 3.141f;
+            case "down_left": return 3.927f;
+            case "left": return 4.712f;
+            case "up_left": return 5.498f;
+        }
+        return 0f;
     }
 
     private TileType[,] ToTileType(int[,] array, int x, int y)
