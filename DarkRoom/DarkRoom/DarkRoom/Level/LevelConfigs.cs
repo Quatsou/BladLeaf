@@ -70,10 +70,14 @@ class LevelConfigs
             CreateCoords(5, 2, 5, 2, 5, 2),
             CreateRotations("left", "left", "left")));
 
+        enemies3.Add(new Enemy(
+            CreateCoords(7, 7, 7, 7, 7, 7),
+            CreateRotations("up", "up", "up")));
+
         List<Friendly> friendlies3 = new List<Friendly>();
 
         friendlies3.Add(new Friendly(
-            CreateCoords(6, 7, 6, 7, 6, 7),
+            CreateCoords(7, 6, 7, 6, 7, 6),
             CreateRotations("down", "down_right", "left")));
 
         int[,] level3 = new int[8, 8]
