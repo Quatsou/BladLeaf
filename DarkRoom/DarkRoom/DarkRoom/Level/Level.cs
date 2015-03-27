@@ -156,8 +156,6 @@ partial class Level : GameObjectList
             config = GameEnvironment.Random.Next(0, subject.Coords.Length);
         }
 
-        config = 1;
-
         foreach (Enemy e in enemyList.Objects)
         {
             e.Position = new Vector2(tiles.fieldAnchor.X + 32 + (e.Coords[config].X * Tile.TILESIZE), tiles.fieldAnchor.Y + 32 + (e.Coords[config].Y * Tile.TILESIZE));

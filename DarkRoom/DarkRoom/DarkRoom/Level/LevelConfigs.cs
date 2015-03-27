@@ -6,7 +6,7 @@ using System.Text;
 
 class LevelConfigs
 {
-    public static int levelsCompleted = 5;
+    public static int levelsCompleted = 0;
     public List<TileType[,]> configurations = new List<TileType[,]>();
     public List<int> sizesX = new List<int>();
     public List<int> sizesY = new List<int>();
